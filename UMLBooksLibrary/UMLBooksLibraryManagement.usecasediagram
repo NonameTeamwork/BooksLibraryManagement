@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="305aeb60-d211-437c-81f9-0206e3bc93ad" name="UMLBooksLibraryManagement" linkedPackageId="071b660d-846b-4166-882a-4fd266faa9c1" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b18f2720-e882-49a7-a45a-0b87b4b20934" name="Guest" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3b6710be-f200-4ec8-9192-d57bcecd8a9e" />
+        <targetEnds>
+          <association Id="03a1266b-1742-4d8e-87d6-9393aa5b43f4" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="Log in" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2ddc1e37-3b3f-4553-925c-6022596ab7ca" LastKnownName="Log in" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7cb439a8-3e14-4121-ab0e-5c03733afde2" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4db121ac-e107-46b5-b63a-930ddb2f7cbd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d2663ce1-367e-4093-a34d-55d240839bcc" name="Log in" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5f1db696-a205-4c12-8508-6a6cba079b7f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d05c800a-d325-461b-a14b-4bd1e47d56d9" />
+          </association>
+          <association Id="9dbfe033-a0b2-4e33-806c-d05c3e791865" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="Search book" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ea114cf-1856-4ad0-9808-bcb9906fb7e8" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="10471395-1a12-41dd-9ef5-0c40c186a327" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9af8cc52-8415-4c12-91e5-72245e03e976" name="Search book" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1a2d181f-0150-4d28-822d-49a12a9bb90b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1b6e208c-0ab1-40fa-ae92-61003071722b" />
+          </association>
+          <association Id="7be17a6d-b02f-44eb-8ec4-dde4d40aaacf" isDerived="false" sourceEndRoleName="Anonymous User" targetEndRoleName="View list books" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="423e7e6d-c49e-48c3-ba49-1c0de734b676" LastKnownName="View list books" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="27a2b215-7fbc-4080-b39c-ce4c6ed9d2b9" name="Anonymous User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="356174f4-f3c8-496d-8bda-ae67e95e39e4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dc2bf843-269a-4233-86b9-2513873481e9" name="View list books" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4b923c46-cc62-438e-a23e-ca9d9c2f5d28" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0bc5c819-6a30-4a77-9087-c161997ccfcd" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="423e7e6d-c49e-48c3-ba49-1c0de734b676" name="View list books" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="925ca5bc-0017-4a20-a94e-d0b200f56153" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="27868eae-e699-4b18-bb06-104e3f84e3d7" name="Search book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="738e89bd-88f7-40de-8283-3f22bd58f048" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2ddc1e37-3b3f-4553-925c-6022596ab7ca" name="Log in" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3f3fcf04-5b38-459c-ac15-909bb2963b9f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="eb9d25c2-bf13-431b-b785-3f0b265f2d14" name="Logged in User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19e27cc6-27cb-4221-a88e-4c389ffa531a" />
+        <targetEnds>
+          <association Id="76e0fa49-97bb-4855-ae16-fab0ec067794" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="Search book" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b99fed7f-b4c0-4c6b-818f-dd08134b8678" LastKnownName="Search book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2eaf4586-2ea2-469e-8de6-def8aee8b1bb" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e3ae8839-b3ff-4065-83a5-9934b80d37e3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="97ac2025-3f8d-455b-bf03-9787d3619b20" name="Search book" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="84731fd0-5756-4d63-b0d0-1d413763b911" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bbd6ad7b-20d2-4ff3-b80e-59dba7c2ecdc" />
+          </association>
+          <association Id="a6751c62-38b8-4992-b4a3-e49d7d198fe3" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="Log out" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4f1c2b60-3e26-44be-acff-79e9826a18f6" LastKnownName="Log out" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3cda510-f152-49fd-ba67-d088ceb147ed" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="419f6976-b1c9-4193-aa47-d5d31a87ef9d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c4d0f4b-2ec5-4266-b79c-620b18857862" name="Log out" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9647471c-4692-4db5-bee6-29289478b72a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c22fabcd-058c-41ca-a476-321e98191939" />
+          </association>
+          <association Id="e8fce687-e189-46eb-b03c-a9700617a256" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="View Profile" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ad8a8d51-3d69-4e3a-8d54-2b22deac420e" LastKnownName="View Profile" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a137a5fe-04c1-4508-9834-d69b4732fda2" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a2d2daa5-5b58-4069-8f72-900673426dd0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e76a7ef3-a661-460d-9914-d5307b83adeb" name="View Profile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bacdadda-52fb-4156-a1ab-f64492050554" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="98b71bd8-9df4-4047-bb88-067919329d03" />
+          </association>
+          <association Id="44146b74-0539-4f8b-ad35-5af2adc87e76" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="View Notification" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="726e32b7-8b54-4e8e-82db-a902c5919099" LastKnownName="View Notification" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0cd5e320-fa24-41a4-8512-3d07f3dbd629" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="df806677-ef84-4067-b26b-7889f6c0c40d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="73eb1e03-c225-4930-96b2-e159e5fb0dd3" name="View Notification" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="85a56f3a-4e68-461e-b4f4-dfa34de9942d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="96af54f2-c502-48ce-af26-30b6e3275a7d" />
+          </association>
+          <association Id="0f1a78a7-f521-4b01-aca6-bdd93c64f17d" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="View list book rent" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7b334187-6473-4e21-9ba8-0e11318dbf00" LastKnownName="View list book rent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a86fbd27-a472-4a33-ae1c-a9260ff78106" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="50eafeb8-60ba-4adf-b423-212945f6910d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e814f9af-4aa4-4b4d-9e23-cf045730f3ac" name="View list book rent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0553fc9f-75ba-4774-b20e-a78cabd9c94b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="768f8dc6-a1bb-4380-aefb-d2786639806c" />
+          </association>
+          <association Id="d3062004-0ed6-4adc-b624-35d885cdedc2" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="View list books" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="423e7e6d-c49e-48c3-ba49-1c0de734b676" LastKnownName="View list books" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a67aa8ff-ef0a-469c-91e0-d3722ddbbeba" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="053dc7e3-6a96-4437-98c4-a5f05e7f6b9b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5ee4e7e3-d778-4c62-8f4f-0031cbf5db78" name="View list books" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="902c6ea6-8474-44ea-a81e-b7f262a0529b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b7e10826-9a65-4b2b-838d-43c824d5106b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ad8a8d51-3d69-4e3a-8d54-2b22deac420e" name="View Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9d82fdc6-ec49-4408-8e0a-fdb947485a4e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4f1c2b60-3e26-44be-acff-79e9826a18f6" name="Log out" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ad391fd-4622-49d9-ac44-313a1e2b20f2" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b99fed7f-b4c0-4c6b-818f-dd08134b8678" name="Search book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d0ffc2d3-f7a8-4d4b-a1cd-b15aba22a909" />
+        <generalsInternal>
+          <generalization Id="07c4ffbd-1a69-4dc8-a056-504fca21b45f" isSubstitutable="false">
+            <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
+            <elementDefinition Id="700d6aed-cc14-4974-b36c-f5ccf027d6b2" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="726e32b7-8b54-4e8e-82db-a902c5919099" name="View Notification" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1ee4b606-9b98-485d-8c70-942e6639a361" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6ca1bedb-ffcd-4888-a7fa-287ad184ea91" name="View book info" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9f1da7e5-5c23-4459-a6ed-398ed35f6ff0" />
+        <extendedCases>
+          <extend Id="83588ba9-a68e-415a-8782-b80b6440da2c">
+            <useCaseMoniker Id="423e7e6d-c49e-48c3-ba49-1c0de734b676" LastKnownName="View list books" />
+            <elementDefinition Id="0a552833-eff1-45e8-9abe-bb2cc266156c" />
+          </extend>
+          <extend Id="4a46af16-be5a-45ba-9bc0-eef4263e2ea7">
+            <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
+            <elementDefinition Id="1a0b1fb1-cb80-4848-adc0-9d7e73f71490" />
+          </extend>
+          <extend Id="213f9173-3051-49b4-a0a7-81fffe0e18de">
+            <useCaseMoniker Id="7b334187-6473-4e21-9ba8-0e11318dbf00" LastKnownName="View list book rent" />
+            <elementDefinition Id="817aa784-b010-4a73-b926-3d6cd75efa36" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7b334187-6473-4e21-9ba8-0e11318dbf00" name="View list book rent" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="130acc54-a90d-4e22-995b-40bab25ac3fc" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="b24bcc15-4e7f-46e9-8455-b8d79f684bcf" name="Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="49ebc04a-9cff-409a-ad81-949ed1e6a579" />
+        <targetEnds>
+          <association Id="51cec6dd-6e3c-407e-aff7-d7769c417c11" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Manage user" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1fcc0873-584e-4618-8d43-b46b734a505d" LastKnownName="Manage user" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="566ebe32-3605-4b93-8d24-1d64a4917313" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e1da4bc5-7e1b-4d78-b0f6-33b6da564d00" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e2ee4603-e393-4b73-bae3-fbb158ba37bf" name="Manage user" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9f1261f7-b3b2-486e-bcc6-293685420306" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2c78619b-6b8f-45f6-91da-e775ce21ad9f" />
+          </association>
+          <association Id="2fff3ed7-7701-48ce-8c9a-79b43b1d65f1" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Log out" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4f1c2b60-3e26-44be-acff-79e9826a18f6" LastKnownName="Log out" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="730dcc48-52bd-4468-b10c-b2d556491501" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="83f4894c-9483-465a-8193-af1eac0b4670" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6aabb457-8987-4872-be0e-b5c9838c5216" name="Log out" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="23f1d985-6a8f-486d-b4a6-4dd2db8c0893" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1b306eee-5341-4d71-a27a-ad5a7fdb00c1" />
+          </association>
+          <association Id="51785c74-2af3-4856-b9fb-6ed9d7064fb2" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Manage Transaction" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="10b297b7-b8c7-4cad-a3b1-dc47f4efdb2e" LastKnownName="Manage Transaction" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ab8a7e61-b596-4132-a081-c77bf67fc8c7" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4b49af9d-072f-4403-b919-b22339dd04c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ca5f6d49-8177-4313-be08-909f10ddb064" name="Manage Transaction" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="87ff211c-62a3-4021-946d-e71afdaeff37" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2e8f029f-ff67-43e8-afb8-a26e04c77da8" />
+          </association>
+          <association Id="b7365198-4ad2-41e5-be32-0a8ce3da2ded" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Manage book" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="005bc854-d5e8-4c3c-8531-38b4ef281a83" LastKnownName="Manage book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a2b75b1-9921-4d7c-9c67-c48dbdd4c3e1" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5c732ed7-c4dc-428b-9c99-e30b05a924ad" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b520bcc9-372a-4588-8751-253950eceb43" name="Manage book" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="94c5f909-24c5-4f08-b4a9-6f1bde1be068" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="92fd9eb4-7322-44e4-b96e-358d038c4a4c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ff3f85fe-abdb-47c4-a2b4-24f3cb39a398" name="View list books" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5cd9e5b7-25db-4519-91df-7b786e844215" />
+        <generalsInternal>
+          <generalization Id="b858633c-035e-43a6-9f00-44d17a7e90b1" isSubstitutable="false">
+            <useCaseMoniker Id="423e7e6d-c49e-48c3-ba49-1c0de734b676" LastKnownName="View list books" />
+            <elementDefinition Id="dc323940-1822-495d-9242-4fc3f8b58103" />
+          </generalization>
+        </generalsInternal>
+        <extendedCases>
+          <extend Id="f6725956-f292-453c-82f2-a37ce7a1bee3">
+            <useCaseMoniker Id="005bc854-d5e8-4c3c-8531-38b4ef281a83" LastKnownName="Manage book" />
+            <elementDefinition Id="f443107b-c545-473a-b257-60dc19087117" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2f92fbd4-1733-45c3-8b78-71b6bd5b1deb" name="Search book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="109e8914-2996-463a-9823-4af716a5937d" />
+        <generalsInternal>
+          <generalization Id="d0e761cc-895b-4ab8-ba58-20ea358565cc" isSubstitutable="false">
+            <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
+            <elementDefinition Id="8131db79-ac26-49d7-9f31-2cc6cd5aadd6" />
+          </generalization>
+        </generalsInternal>
+        <extendedCases>
+          <extend Id="d05afa68-ada0-4c0d-8786-9e3b424321e4">
+            <useCaseMoniker Id="005bc854-d5e8-4c3c-8531-38b4ef281a83" LastKnownName="Manage book" />
+            <elementDefinition Id="a6b010eb-b1da-4669-b84b-479e8687f3f2" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6cdc4f29-c159-4171-87ee-ae179747ba49" name="Add book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c6c61d66-1538-481b-aed9-8e9914d7ed55" />
+        <extendedCases>
+          <extend Id="e887c5f7-fea6-429a-8ac7-95323f61c63d">
+            <useCaseMoniker Id="005bc854-d5e8-4c3c-8531-38b4ef281a83" LastKnownName="Manage book" />
+            <elementDefinition Id="b258e237-019b-49ac-a4cb-1b17e84cda80" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5b7c8f7d-9f19-45c2-bef5-9e81fbd47625" name="Delete book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="87c96a62-3a9b-4afd-8fd4-839e8c5e8c53" />
+        <extendedCases>
+          <extend Id="a118efa2-73f2-4426-8071-fcb630fbf1d2">
+            <useCaseMoniker Id="2f92fbd4-1733-45c3-8b78-71b6bd5b1deb" LastKnownName="Search book" />
+            <elementDefinition Id="af519b04-2b45-445f-ba68-54d39d67e732" />
+          </extend>
+          <extend Id="e17ff2d1-21b0-47a1-aa70-d39f6b3d115e">
+            <useCaseMoniker Id="ff3f85fe-abdb-47c4-a2b4-24f3cb39a398" LastKnownName="View list books" />
+            <elementDefinition Id="387c226c-1d4b-401a-88f3-ed168f43d2d5" />
+          </extend>
+          <extend Id="a9e9397b-8f0f-481f-8527-b6a115c521f6">
+            <useCaseMoniker Id="e835fd8b-28c3-4613-978b-11786268056f" LastKnownName="View book info" />
+            <elementDefinition Id="45e1c660-c3f6-4a74-b1f7-ffa2989933f6" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="34eb813c-1c0b-4342-b194-d2a92d3623d6" name="Update/ Modify book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5db2946c-a4b5-4d3e-824b-ffddba3e2259" />
+        <extendedCases>
+          <extend Id="b6cc3ccf-9b02-4712-8bff-94f494dfc60d">
+            <useCaseMoniker Id="ff3f85fe-abdb-47c4-a2b4-24f3cb39a398" LastKnownName="View list books" />
+            <elementDefinition Id="8c665b3b-5031-41a8-aa0b-e4a4e9953cae" />
+          </extend>
+          <extend Id="439b47f9-aec2-4f7b-aa21-ce5d11b2a6fa">
+            <useCaseMoniker Id="2f92fbd4-1733-45c3-8b78-71b6bd5b1deb" LastKnownName="Search book" />
+            <elementDefinition Id="8acef699-41a3-44d1-814c-e9c9d5c65ea7" />
+          </extend>
+          <extend Id="62d83b5e-a1f8-4546-90bd-2a7636c5b5b7">
+            <useCaseMoniker Id="e835fd8b-28c3-4613-978b-11786268056f" LastKnownName="View book info" />
+            <elementDefinition Id="29a4dad4-4a32-48c2-8947-3bb9f6a03185" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e835fd8b-28c3-4613-978b-11786268056f" name="View book info" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f9440f52-2e9b-4695-9d0d-ba9a5f356459" />
+        <generalsInternal>
+          <generalization Id="22930682-dd4f-46bf-858a-7cfbbacc4b13" isSubstitutable="false">
+            <useCaseMoniker Id="6ca1bedb-ffcd-4888-a7fa-287ad184ea91" LastKnownName="View book info" />
+            <elementDefinition Id="f4de9701-872c-4c6a-a504-e43bb3cce50b" />
+          </generalization>
+        </generalsInternal>
+        <extendedCases>
+          <extend Id="baccc7a3-1275-4cf8-9292-ffc3668fd647">
+            <useCaseMoniker Id="ff3f85fe-abdb-47c4-a2b4-24f3cb39a398" LastKnownName="View list books" />
+            <elementDefinition Id="2b58239c-b360-45e8-94cb-94de7b8760cb" />
+          </extend>
+          <extend Id="e22ae31a-5c13-4a43-963e-a6ebbb69634f">
+            <useCaseMoniker Id="2f92fbd4-1733-45c3-8b78-71b6bd5b1deb" LastKnownName="Search book" />
+            <elementDefinition Id="82896bea-f28b-4dfb-81f7-a37f2ca7f184" />
+          </extend>
+          <extend Id="dac3fc28-5fda-4b91-bad2-73677b787151">
+            <useCaseMoniker Id="71b2783d-3467-4870-a66b-2b210308e064" LastKnownName="View transaction info" />
+            <elementDefinition Id="d8da2762-f4c8-4951-aabb-6d5c082a042c" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="005bc854-d5e8-4c3c-8531-38b4ef281a83" name="Manage book" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9b576c12-6263-45ba-a7d1-0727954fb147" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1fcc0873-584e-4618-8d43-b46b734a505d" name="Manage user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f3a28673-9084-4392-84ab-4673c21a0739" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="34b40218-d55f-481b-9276-672adcf536a1" name="Search user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="390bdc71-a1b2-48da-a531-09000b07d4ba" />
+        <extendedCases>
+          <extend Id="ba4fbda8-c14e-4b15-b227-ef59367089fa">
+            <useCaseMoniker Id="1fcc0873-584e-4618-8d43-b46b734a505d" LastKnownName="Manage user" />
+            <elementDefinition Id="4be3ffc1-6514-4fd5-ac1b-2bb1651b9250" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="47314fc1-e18c-48a8-b15d-7b094cbcd423" name="View list user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0f315b57-d18e-494e-8a9c-aa4e5368a9f2" />
+        <extendedCases>
+          <extend Id="d8a9b5ba-a5c1-48db-9af3-6b1af904b4cc">
+            <useCaseMoniker Id="1fcc0873-584e-4618-8d43-b46b734a505d" LastKnownName="Manage user" />
+            <elementDefinition Id="ffdba024-5269-4e45-89eb-ec53444edff8" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3b20f2be-a02e-4148-8ab8-09d7098db73f" name="View user profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fc068ac2-60d8-4e50-9f5b-93a5888a446a" />
+        <generalsInternal>
+          <generalization Id="a8bd8503-f7f2-4c0f-afbf-7dd169641502" isSubstitutable="false">
+            <useCaseMoniker Id="ad8a8d51-3d69-4e3a-8d54-2b22deac420e" LastKnownName="View Profile" />
+            <elementDefinition Id="18f5e672-a2ad-4411-af76-fd8467c451ba" />
+          </generalization>
+        </generalsInternal>
+        <extendedCases>
+          <extend Id="d6f2a320-bb45-40c3-8de9-468fe2621342">
+            <useCaseMoniker Id="34b40218-d55f-481b-9276-672adcf536a1" LastKnownName="Search user" />
+            <elementDefinition Id="7a2a0694-9f3e-4ac9-b09e-944f9aada9c6" />
+          </extend>
+          <extend Id="9a4f2e0d-566f-48fe-9e7e-005e3ce0f377">
+            <useCaseMoniker Id="47314fc1-e18c-48a8-b15d-7b094cbcd423" LastKnownName="View list user" />
+            <elementDefinition Id="e98960b3-b0d4-43d4-93e2-29a2e6a498ed" />
+          </extend>
+          <extend Id="457ece27-b27e-4316-a398-6c346c9ea8aa">
+            <useCaseMoniker Id="71b2783d-3467-4870-a66b-2b210308e064" LastKnownName="View transaction info" />
+            <elementDefinition Id="339b0778-0549-43ed-8287-5b5502aa2c12" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0c999072-d51e-4f7a-96d4-308a0a78150c" name="Add user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d813414-68ca-4976-a868-5ae83894e8da" />
+        <extendedCases>
+          <extend Id="d18559b1-7595-4c0c-b3e2-ad1ea6af26a8">
+            <useCaseMoniker Id="1fcc0873-584e-4618-8d43-b46b734a505d" LastKnownName="Manage user" />
+            <elementDefinition Id="1a980479-c5c0-4503-8804-ac53e5bba65c" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8c4da82c-54e1-464e-b687-98d1af8275f0" name="Delete user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5136de15-1f8e-423d-9484-7a3688d9b4a0" />
+        <extendedCases>
+          <extend Id="c3030d11-f1f8-428e-bff8-7fcd2d46ea17">
+            <useCaseMoniker Id="47314fc1-e18c-48a8-b15d-7b094cbcd423" LastKnownName="View list user" />
+            <elementDefinition Id="91e408f5-a381-4715-991c-fa93eaf673fb" />
+          </extend>
+          <extend Id="943d2336-d66a-4ffe-af28-3285190ce328">
+            <useCaseMoniker Id="34b40218-d55f-481b-9276-672adcf536a1" LastKnownName="Search user" />
+            <elementDefinition Id="702c4c90-2222-4330-9c76-c82de9712b4e" />
+          </extend>
+          <extend Id="1054b3dc-b6ae-4892-934d-dc295120fd9c">
+            <useCaseMoniker Id="3b20f2be-a02e-4148-8ab8-09d7098db73f" LastKnownName="View user profile" />
+            <elementDefinition Id="3d43c724-0d4f-492c-995a-4d5644d97b13" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="72ebe463-75e2-44e8-9d2f-5f6cd2137af1">
+            <useCaseMoniker Id="3b20f2be-a02e-4148-8ab8-09d7098db73f" LastKnownName="View user profile" />
+            <elementDefinition Id="9e1caaff-2d71-4619-8a3b-7c24a1b6d729" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d7637a21-f279-4fa7-9706-fbe70e117374" name="Update/ Modify user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1911e799-94ee-4761-9a1b-3490412da5ec" />
+        <extendedCases>
+          <extend Id="16b50936-98ec-4e66-a8fa-d7e159dea969">
+            <useCaseMoniker Id="34b40218-d55f-481b-9276-672adcf536a1" LastKnownName="Search user" />
+            <elementDefinition Id="0437a3b2-6bd6-46d8-b7de-7d502bbfa77a" />
+          </extend>
+          <extend Id="e00404df-1678-46f8-9310-f82fe2d399ca">
+            <useCaseMoniker Id="47314fc1-e18c-48a8-b15d-7b094cbcd423" LastKnownName="View list user" />
+            <elementDefinition Id="8e6a0d30-6ddb-42db-afc1-04303d389a85" />
+          </extend>
+          <extend Id="9a95c503-abc8-4a96-a65b-bd84cd283004">
+            <useCaseMoniker Id="3b20f2be-a02e-4148-8ab8-09d7098db73f" LastKnownName="View user profile" />
+            <elementDefinition Id="e914417c-3ba6-477b-b34a-b4c470b4765f" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="10b297b7-b8c7-4cad-a3b1-dc47f4efdb2e" name="Manage Transaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c5b28a51-c0ab-436d-8137-39de970d41c3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0143c71e-755e-4813-88e7-1ee928c81648" name="Create transaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="baa97cb2-efad-4c22-a9a1-29df2b4ad789" />
+        <extendedCases>
+          <extend Id="f8a4fd66-ccc8-4899-9e99-53737a90a785">
+            <useCaseMoniker Id="10b297b7-b8c7-4cad-a3b1-dc47f4efdb2e" LastKnownName="Manage Transaction" />
+            <elementDefinition Id="5ede52f3-f501-481c-9f1f-f57cdfced132" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e499056e-631d-4a2b-ae72-cd280ddf3cd4" name="View list transaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="401a685e-b62f-4abb-a129-0e07bb427d95" />
+        <extendedCases>
+          <extend Id="7f39feb1-0464-4044-807e-fd74b0314eda">
+            <useCaseMoniker Id="10b297b7-b8c7-4cad-a3b1-dc47f4efdb2e" LastKnownName="Manage Transaction" />
+            <elementDefinition Id="c2234f0d-ad06-4c0e-8bdc-cdac2fb63714" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="71b2783d-3467-4870-a66b-2b210308e064" name="View transaction info" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9fce3d4f-dae8-465f-a770-852364f14c53" />
+        <extendedCases>
+          <extend Id="7a594e78-b3a6-4c2b-9819-c2d6c1a987a9">
+            <useCaseMoniker Id="e499056e-631d-4a2b-ae72-cd280ddf3cd4" LastKnownName="View list transaction" />
+            <elementDefinition Id="b057e51c-a9c6-4a27-824a-be6f510fb2bc" />
+          </extend>
+          <extend Id="9c89a71b-3fab-48b0-8ab0-7df69aec39c8">
+            <useCaseMoniker Id="d644a9ae-f70a-4137-9a4c-70af1b3469c9" LastKnownName="Set transaction state" />
+            <elementDefinition Id="292180f0-899b-4358-877d-b53052aeecde" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d644a9ae-f70a-4137-9a4c-70af1b3469c9" name="Set transaction state" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f87ed660-b9c9-49d7-936e-35d85353af19" />
+        <extendedCases>
+          <extend Id="cec4ca1f-4369-4f7c-bb97-1653b86b1e5c">
+            <useCaseMoniker Id="e499056e-631d-4a2b-ae72-cd280ddf3cd4" LastKnownName="View list transaction" />
+            <elementDefinition Id="bc52731c-ec01-45b0-8ec5-203079577414" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="631c298e-1cc4-4454-a2cf-118035fd1da6">
+            <useCaseMoniker Id="71b2783d-3467-4870-a66b-2b210308e064" LastKnownName="View transaction info" />
+            <elementDefinition Id="157b59da-1b6c-421b-aec9-a563a780a4f3" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="071b660d-846b-4166-882a-4fd266faa9c1" name="BooksLibraryManagement">
+    <elementDefinition Id="f2d0a74a-b6a0-4cae-a9d2-5f56b67afba9" />
+    <profileInstances>
+      <packageHasProfileInstances Id="11a3c8dd-5660-4d3a-90fe-88f631b0085b">
+        <profileInstance Id="81640cea-5534-449c-bc28-c1551cceaa40" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c445b732-998c-4a53-8c13-14dcfda4ce6f">
+        <profileInstance Id="bdd20411-0792-4ba8-b96a-f0cef0aba7ad" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>
