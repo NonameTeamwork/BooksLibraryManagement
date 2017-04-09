@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="094cc55d-1913-445b-a800-1d44062497cf" name="Activity1" linkedPackageId="84cba12f-fe8b-48d4-8859-d9459b072e2b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="8001a280-03d5-4c67-a154-9e87358d999d">
+      <elementDefinition Id="b04212ab-4de1-4aab-948d-47cd95f6dfb1" />
+      <body>Invalid</body>
+    </comment>
+    <comment Id="e3671ff6-fdaf-4121-8a32-b95543e58d31">
+      <elementDefinition Id="4f36fe08-05d7-421f-94fc-e0647963e9c4" />
+      <body>Valid</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="ce99f86c-d188-494a-87f8-4750c5ed7915" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="dbd2b14a-86f1-4700-8d40-b1045a41b141" />
+        <nodes>
+          <initialNode Id="a4883681-4b30-450d-8543-8baf07078210" name="Initial1" isLeaf="false">
+            <elementDefinition Id="1aa10145-e156-44fa-9658-c885059b2fd9" />
+            <flowNodeTargets>
+              <controlFlow Id="a02c0944-12cc-48b9-8101-c2e81f679dc3" isLeaf="false">
+                <opaqueActionMoniker Id="31b91ace-194a-475d-a8ce-386df95b9d84" LastKnownName="Access in Library website" />
+                <elementDefinition Id="675c279f-9082-4c80-bc09-c86131e6f7e8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="31b91ace-194a-475d-a8ce-386df95b9d84" name="Access in Library website" isLeaf="false">
+            <elementDefinition Id="979fbe81-dc98-48cd-9a6a-b78eb213380a" />
+            <flowNodeTargets>
+              <controlFlow Id="af1d0265-d3bb-43bb-914d-2c4e6d5e4247" isLeaf="false">
+                <opaqueActionMoniker Id="025db7de-2384-49da-be49-e9d4ea6874de" LastKnownName="Click in box of searching books" />
+                <elementDefinition Id="958896df-ab51-4c38-ae8a-e1b452ec8d59" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="025db7de-2384-49da-be49-e9d4ea6874de" name="Click in box of searching books" isLeaf="false">
+            <elementDefinition Id="c7edcf71-eaf4-406a-8eb3-2b4c18879c4e" />
+            <flowNodeTargets>
+              <controlFlow Id="5958fdc5-bb3a-41c7-a320-ae179bf7f87d" isLeaf="false">
+                <forkNodeMoniker Id="ec14aa92-b0df-4f12-b5a9-8d60af4bf9b4" LastKnownName="Fork1" />
+                <elementDefinition Id="de3c1efc-a7ea-4242-90b1-599cdc9b6cfb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f553222b-a08c-43de-8990-6a0b525e028b" name="Input book title" isLeaf="false">
+            <elementDefinition Id="f4894042-1ab1-4b0b-a072-3fe73d7192d3" />
+            <flowNodeTargets>
+              <controlFlow Id="0903bac1-b232-4a5c-8145-a696970cedae" isLeaf="false">
+                <joinNodeMoniker Id="d498c1be-a45f-470d-962d-cee56cb7d06b" LastKnownName="Join1" />
+                <elementDefinition Id="c78c3dcd-1bd2-47e5-a96b-da5688f04c33" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2d2fccad-dfdf-4d75-b638-222cd673db14" name="Input author's name" isLeaf="false">
+            <elementDefinition Id="ea50f116-4955-4fb4-a03c-2b4a5f983897" />
+            <flowNodeTargets>
+              <controlFlow Id="f59fe6cb-8570-43b9-b7fd-3533f351eb96" isLeaf="false">
+                <joinNodeMoniker Id="d498c1be-a45f-470d-962d-cee56cb7d06b" LastKnownName="Join1" />
+                <elementDefinition Id="9fa83b70-9d5b-4af9-bf1d-c5d1efdcf0da" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="d498c1be-a45f-470d-962d-cee56cb7d06b" name="Join1" isLeaf="false">
+            <elementDefinition Id="010f8bee-1992-4837-bf0f-3fbd7eaca7ed" />
+            <flowNodeTargets>
+              <controlFlow Id="61241309-2b15-4c98-807c-571fe6c3ecff" isLeaf="false">
+                <decisionNodeMoniker Id="a4f8a97b-a60a-41c0-8870-60a9c7a33166" LastKnownName="Decision1" />
+                <elementDefinition Id="d22d592d-6d47-4459-bc78-0a7684487a4f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityFinalNode Id="065a21ed-25e1-44fb-96b3-288d2a7cfb02" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="94c63610-4ec5-4ff3-86cc-e8be7bef716d" />
+          </activityFinalNode>
+          <decisionNode Id="a4f8a97b-a60a-41c0-8870-60a9c7a33166" name="Decision1" isLeaf="false">
+            <elementDefinition Id="16bd258e-284e-4faf-bfc1-3f205dd5b46b" />
+            <flowNodeTargets>
+              <controlFlow Id="233bb1ac-47ab-4755-9c8a-52e1652a91d0" isLeaf="false">
+                <opaqueActionMoniker Id="1944231d-d5dd-46eb-908b-84e3e43c296e" LastKnownName="The related information about that book is shown" />
+                <elementDefinition Id="7b82fd2a-cec9-44e6-a1d6-dbb01b11a6b5" />
+              </controlFlow>
+              <controlFlow Id="11db0a63-13ad-44f0-8b06-99d068cceb29" isLeaf="false">
+                <opaqueActionMoniker Id="025db7de-2384-49da-be49-e9d4ea6874de" LastKnownName="Click in box of searching books" />
+                <elementDefinition Id="8fa913d6-6d41-4055-b0e6-a7577e76d67a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="1944231d-d5dd-46eb-908b-84e3e43c296e" name="The related information about that book is shown" isLeaf="false">
+            <elementDefinition Id="e293bc00-d86f-46fe-b383-19b19b9b1425" />
+            <flowNodeTargets>
+              <controlFlow Id="14ad5d9b-2072-4f66-8d26-22dd63df714f" isLeaf="false">
+                <activityFinalNodeMoniker Id="065a21ed-25e1-44fb-96b3-288d2a7cfb02" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="06f6f441-7ea1-4cb9-b968-e363af25e555" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="ec14aa92-b0df-4f12-b5a9-8d60af4bf9b4" name="Fork1" isLeaf="false">
+            <elementDefinition Id="5954bc90-ebc3-4697-afa7-d2b2c7dd0fa0" />
+            <flowNodeTargets>
+              <controlFlow Id="b507582e-a5aa-48bd-a0f9-97e248e6c783" isLeaf="false">
+                <opaqueActionMoniker Id="f553222b-a08c-43de-8990-6a0b525e028b" LastKnownName="Input book title" />
+                <elementDefinition Id="3dccddd1-9d6f-4935-9bd7-d6923ae0ef8d" />
+              </controlFlow>
+              <controlFlow Id="48bd748c-21c5-46d7-88aa-e5c03c16178a" isLeaf="false">
+                <opaqueActionMoniker Id="2d2fccad-dfdf-4d75-b638-222cd673db14" LastKnownName="Input author's name" />
+                <elementDefinition Id="3938e464-5a2d-4b67-b9a9-c950675fe081" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="84cba12f-fe8b-48d4-8859-d9459b072e2b" name="ModelingProject2">
+    <elementDefinition Id="f9c7c584-14ce-4ccf-90e8-0d91e944f084" />
+    <profileInstances>
+      <packageHasProfileInstances Id="81926184-9f05-4961-a9b4-01cfe7dd7582">
+        <profileInstance Id="4544d67e-a289-42d4-9666-8b99629c270f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b70ea727-4ae7-45d1-b2ca-24792537c9d1">
+        <profileInstance Id="29f3b173-1ac7-4c9f-b480-25f5d14757a8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

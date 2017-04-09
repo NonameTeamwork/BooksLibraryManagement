@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="a810d305-ccad-4926-864f-dfdd148d0a2f"
+  name="ModelingProject6" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="c2763e6f-ac03-4fb8-bc69-84774ade8ef6">
+      <body>Valid</body>
+    </comment>
+    <comment
+      Id="19b307b9-7735-481b-8e25-3d09c105015f">
+      <body>Invalid</body>
+    </comment>
+    <comment
+      Id="c76c3d90-ca8c-46e0-841a-92a164ab8ea1">
+      <body>Input again</body>
+    </comment>
+    <comment
+      Id="5e1df322-fd92-4567-bba5-88e0522e6b05">
+      <body>Don't input again</body>
+    </comment>
+    <comment
+      Id="e2b8f01a-8b40-491e-8a73-8beda2d869fa">
+      <body>Invalid</body>
+    </comment>
+    <comment
+      Id="a26be2fc-dd85-4e29-ad47-17462b05939f">
+      <body>Valid</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="76bc74a8-4536-4135-9319-e0a4372838c1"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="11bc5e92-db2b-4af2-a1a9-0f5df8a83fcf"
+            name="User"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="e39a1125-4ac9-4511-9ada-0e6b70e31db0"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="a58e3470-65bb-46b8-96b1-dc7e2985d3ec"
+            name="System"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="fa4b09f2-3a09-4be6-bf8e-36176e5be2dd"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <initialNode
+            Id="815c50be-9f2f-46d9-9710-d0cfdbbe9842"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c5b874e2-02b8-4b1f-9161-5e8b099a61ca"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e73b8ff1-8bef-4880-b3f7-e55dafcc96f2"
+                  LastKnownName="Access in Library website"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="e73b8ff1-8bef-4880-b3f7-e55dafcc96f2"
+            name="Access in Library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4b4541f1-0cec-42b6-b118-e9835644325f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e22ae9e5-78cf-4d7a-86a6-3e34bcb72c74"
+                  LastKnownName="Click in login button"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e22ae9e5-78cf-4d7a-86a6-3e34bcb72c74"
+            name="Click in login button"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="608a2ff7-352d-4916-9d74-97bae76b3d4f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cd394ccc-b025-4938-bc64-e2931fc6c87b"
+                  LastKnownName="Input Email or Phone number"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="cd394ccc-b025-4938-bc64-e2931fc6c87b"
+            name="Input Email or Phone number"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1a8569dd-88b2-43fd-a820-61481cc29e5d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2e7c2a6e-9d20-4b8f-a63a-0ff06d0116a9"
+                  LastKnownName="Check Email or Phone number"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="59a32bbc-e955-4d60-ac33-5866a190c9c1"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4e16c8cf-6b50-4f46-a0b2-bddafaf297d9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="95dcce51-5b60-4049-8b05-e63119e6cefe"
+                  LastKnownName="Login successfully"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="ac394a11-db9b-4b85-8d3f-70267cffdd5f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="2c950731-74c7-4e47-b22a-857cbbdff934"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2e7c2a6e-9d20-4b8f-a63a-0ff06d0116a9"
+            name="Check Email or Phone number"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c35e1d65-8cdf-44d4-baa6-b71fc831b59e"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="59a32bbc-e955-4d60-ac33-5866a190c9c1"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="95dcce51-5b60-4049-8b05-e63119e6cefe"
+            name="Login successfully"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b5c8fb8b-88b8-4a5f-bb57-f283f24ce145"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e2752b99-61da-450a-8315-6abe91bd4d58"
+                  LastKnownName="View and update user's personal information"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="2c950731-74c7-4e47-b22a-857cbbdff934"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8c272560-d337-4f6c-bf1d-9e723a3c500b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cd394ccc-b025-4938-bc64-e2931fc6c87b"
+                  LastKnownName="Input Email or Phone number"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="622fa45f-120b-4fff-b547-fcc3ec0c6250"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7325aeb7-8c6d-4b45-85d0-d9aea3e38111"
+                  LastKnownName="Click in &quot;Forgot Password&quot;"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="7325aeb7-8c6d-4b45-85d0-d9aea3e38111"
+            name="Click in &quot;Forgot Password&quot;"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="acd99387-1a4e-4507-9c17-84d0035cab4a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="18d2c091-5875-4e70-a138-ac3055626f08"
+                  LastKnownName="Check email linked with account again"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="18d2c091-5875-4e70-a138-ac3055626f08"
+            name="Check email linked with account again"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6ca5708b-c611-407f-8c63-147930bd0d0e"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="d131214d-6e3a-418e-84da-987a31026a82"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="d131214d-6e3a-418e-84da-987a31026a82"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ec28f43e-ac7c-4240-a6b8-1495cad67a59"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fce0867f-45bf-4951-b38d-83ab1415a76d"
+                  LastKnownName="Send a mail to reset password"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="631b5a84-d2eb-46c5-9949-fce51fe9f8dc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="18d2c091-5875-4e70-a138-ac3055626f08"
+                  LastKnownName="Check email linked with account again"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="fce0867f-45bf-4951-b38d-83ab1415a76d"
+            name="Send a mail to reset password"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c74d6a61-02fb-48d3-bb3f-f91a8aecd426"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b8735219-fb5f-4578-9f0f-02b481071be3"
+                  LastKnownName="Check mail &amp; get a new password"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b8735219-fb5f-4578-9f0f-02b481071be3"
+            name="Check mail &amp; get a new password"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4b70e7dd-88d0-40b4-a2a5-bbdaea20c907"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cd394ccc-b025-4938-bc64-e2931fc6c87b"
+                  LastKnownName="Input Email or Phone number"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e2752b99-61da-450a-8315-6abe91bd4d58"
+            name="View and update user's personal information"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8b4a943c-b91c-4586-9a20-edf85f6798b7"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="00f62a7a-c3ac-46d8-a599-27a733bcb185"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ModelingProject6.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="00f62a7a-c3ac-46d8-a599-27a733bcb185"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
