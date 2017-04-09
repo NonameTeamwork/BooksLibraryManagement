@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="37e25bb8-341b-4044-9999-f2f3d7298962" name="Activity1" linkedPackageId="04b6e607-63a1-4bf0-9efa-1fa5875eef9d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="b3b60e6c-390f-4a72-b15e-2c20765f6dd4">
+      <elementDefinition Id="dc4f3962-6c99-4b1f-8ee8-23659ece8825" />
+      <body>Valid</body>
+    </comment>
+    <comment Id="a255691a-d2a4-4a15-a23d-e5e93b48a7bf">
+      <elementDefinition Id="10c7ce28-cfe1-4aba-a0c6-db7cb181e8ed" />
+      <body>Invalid</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="bb94823d-6b61-4902-a95f-3b7779ac8527" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="dc18ecea-7716-427b-a561-275548495606" />
+        <nodes>
+          <objectNode Id="2435eda1-3ed4-41ca-9167-79f1436a4f9c" name="User" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="bdd453d0-6838-4c83-b4a3-ee2481afe238" />
+            <upperBound>
+              <literalInteger Id="ea5d05f4-fb2d-4826-9523-7218fb76d032" name="2147483647" value="2147483647">
+                <elementDefinition Id="3aa968df-04c5-4933-952c-d64a00e6448d" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="e18ee9b0-dbc0-44f1-9d98-1fb493c5191c" name="Librarian" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="50b52c4e-9f73-49da-9cad-7c1b49bb8c60" />
+            <upperBound>
+              <literalInteger Id="44e2f8e3-2713-45b9-ac99-ca8db930469b" name="2147483647" value="2147483647">
+                <elementDefinition Id="282e3565-467a-4d42-9fbc-9cfe297b0065" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <initialNode Id="acc3ecc0-d345-4021-8a3f-619c3f8ea89e" name="Initial1" isLeaf="false">
+            <elementDefinition Id="b12000d4-325a-41b8-9da3-54204f05bf13" />
+            <flowNodeTargets>
+              <controlFlow Id="d9a12924-3e39-4a1f-9b7d-75741a14224b" isLeaf="false">
+                <opaqueActionMoniker Id="8c5b43c2-8445-4c0d-9ccc-9eb48b1686b4" LastKnownName="Send a registered application" />
+                <elementDefinition Id="ee107ccb-bd61-43d2-8ce5-34355df89d7b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="c9142f49-5a5f-47d6-aa5c-7ed1d2ec3bad" name="Fill in information fully" isLeaf="false">
+            <elementDefinition Id="3b5d3e0c-e26f-41f7-b0e5-c5220eb6a163" />
+            <flowNodeTargets>
+              <controlFlow Id="42d929a4-848c-4862-bb9e-e9abf8496589" isLeaf="false">
+                <opaqueActionMoniker Id="3534cd11-3d95-4240-a6aa-3f5bdf683eff" LastKnownName="Return a registered application" />
+                <elementDefinition Id="29cf4c79-52a8-4d40-9a9d-b470c73bd94b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8c5b43c2-8445-4c0d-9ccc-9eb48b1686b4" name="Send a registered application" isLeaf="false">
+            <elementDefinition Id="26ac754d-1dbd-4c01-8925-2cee0fa65058" />
+            <flowNodeTargets>
+              <controlFlow Id="b93ec4b8-36f7-4e67-9a73-cb4958cd56b5" isLeaf="false">
+                <opaqueActionMoniker Id="c9142f49-5a5f-47d6-aa5c-7ed1d2ec3bad" LastKnownName="Fill in information fully" />
+                <elementDefinition Id="c83e2237-0d06-45df-b094-4628df29a1ff" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3534cd11-3d95-4240-a6aa-3f5bdf683eff" name="Return a registered application" isLeaf="false">
+            <elementDefinition Id="d9635a12-0d0c-441a-bf5d-8531610d88c6" />
+            <flowNodeTargets>
+              <controlFlow Id="94ba47dd-1017-4f9a-8dfa-cadb31a1ff19" isLeaf="false">
+                <opaqueActionMoniker Id="24699a98-dedd-464a-b8f6-3a7e8a26025f" LastKnownName="Check information" />
+                <elementDefinition Id="1a56f9fe-d890-4e35-ab1b-211d58d6c017" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="527ffb91-2259-4551-8fce-0859b290e2a7" name="Provide a library card and an account online" isLeaf="false">
+            <elementDefinition Id="1f5cbf01-e324-43ad-8dcc-50ce807352de" />
+            <flowNodeTargets>
+              <controlFlow Id="a77f7d8a-525a-4594-9340-94c479048637" isLeaf="false">
+                <opaqueActionMoniker Id="24a6599a-d7e2-496b-9663-07dccb9faa4f" LastKnownName="Send a mail (password) to verify user's mail" />
+                <elementDefinition Id="150c64d8-d3a8-405d-bb76-144a569e87f3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="24a6599a-d7e2-496b-9663-07dccb9faa4f" name="Send a mail (password) to verify user's mail" isLeaf="false">
+            <elementDefinition Id="a97fea3a-bca9-47d8-9984-2fc23cc12239" />
+            <flowNodeTargets>
+              <controlFlow Id="dbfc73cd-7a3d-4bf6-8d97-990f0166e2c1" isLeaf="false">
+                <opaqueActionMoniker Id="fe016ccb-0fc7-42e0-8ce0-50b4c67632b6" LastKnownName="Register an account successfully" />
+                <elementDefinition Id="8ef7d7b8-af87-4b34-b7d2-7628f14aa4dc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fe016ccb-0fc7-42e0-8ce0-50b4c67632b6" name="Register an account successfully" isLeaf="false">
+            <elementDefinition Id="a701ccac-c4b1-48d6-a6b1-95d8450bb562" />
+            <flowNodeTargets>
+              <controlFlow Id="4b7e1b52-c8af-44a7-b014-5b195abff071" isLeaf="false">
+                <activityFinalNodeMoniker Id="6fe25b7b-3cbb-46ab-9419-6d0bdedd74b5" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="4c29c0eb-319f-414d-8016-402e4f9e3595" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="6fe25b7b-3cbb-46ab-9419-6d0bdedd74b5" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="6486c663-dc29-4dd1-b1a3-67fc36c46c88" />
+          </activityFinalNode>
+          <opaqueAction Id="24699a98-dedd-464a-b8f6-3a7e8a26025f" name="Check information" isLeaf="false">
+            <elementDefinition Id="18c41dcc-3011-4654-bd62-3836e947431b" />
+            <flowNodeTargets>
+              <controlFlow Id="d1e4b343-86fd-4d95-ada7-c5da4b283304" isLeaf="false">
+                <decisionNodeMoniker Id="fdf592ec-6d7a-42ce-9b26-54bc900e98dc" LastKnownName="Decision1" />
+                <elementDefinition Id="d7dc12d4-dba8-4572-9efc-ba89f9e9c494" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="fdf592ec-6d7a-42ce-9b26-54bc900e98dc" name="Decision1" isLeaf="false">
+            <elementDefinition Id="8a2b3f58-5e2c-47d6-a49a-91fc81a229b5" />
+            <flowNodeTargets>
+              <controlFlow Id="325e431e-2da8-4031-a291-9914a775d2a1" isLeaf="false">
+                <opaqueActionMoniker Id="527ffb91-2259-4551-8fce-0859b290e2a7" LastKnownName="Provide a library card and an account online" />
+                <elementDefinition Id="90143b99-edbf-4eda-bb4f-714c6449bafd" />
+              </controlFlow>
+              <controlFlow Id="441ecd5f-72d8-4a5b-bb3e-110f32fedb48" isLeaf="false">
+                <opaqueActionMoniker Id="c9142f49-5a5f-47d6-aa5c-7ed1d2ec3bad" LastKnownName="Fill in information fully" />
+                <elementDefinition Id="a5dae3dc-a489-492c-959b-0e880d25e723" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="04b6e607-63a1-4bf0-9efa-1fa5875eef9d" name="ModelingProject4">
+    <elementDefinition Id="b2054ce0-ca96-49fd-95c1-3b5181aaccad" />
+    <profileInstances>
+      <packageHasProfileInstances Id="10934a2c-6a64-4108-8095-4a04d3f15e6a">
+        <profileInstance Id="f8077082-b54e-4bd9-81f5-6453dddeb07f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="edcfe334-3e84-40ac-a518-46f5ad3514d6">
+        <profileInstance Id="f15434a0-71ac-423d-93e6-3cded712618f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

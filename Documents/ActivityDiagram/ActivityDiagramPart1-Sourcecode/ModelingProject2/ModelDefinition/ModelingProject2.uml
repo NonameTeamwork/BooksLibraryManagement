@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="f9c7c584-14ce-4ccf-90e8-0d91e944f084"
+  name="ModelingProject2" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="b04212ab-4de1-4aab-948d-47cd95f6dfb1">
+      <body>Invalid</body>
+    </comment>
+    <comment
+      Id="4f36fe08-05d7-421f-94fc-e0647963e9c4">
+      <body>Valid</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="dbd2b14a-86f1-4700-8d40-b1045a41b141"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="1aa10145-e156-44fa-9658-c885059b2fd9"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="675c279f-9082-4c80-bc09-c86131e6f7e8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="979fbe81-dc98-48cd-9a6a-b78eb213380a"
+                  LastKnownName="Access in Library website"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="979fbe81-dc98-48cd-9a6a-b78eb213380a"
+            name="Access in Library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="958896df-ab51-4c38-ae8a-e1b452ec8d59"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c7edcf71-eaf4-406a-8eb3-2b4c18879c4e"
+                  LastKnownName="Click in box of searching books"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c7edcf71-eaf4-406a-8eb3-2b4c18879c4e"
+            name="Click in box of searching books"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="de3c1efc-a7ea-4242-90b1-599cdc9b6cfb"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="5954bc90-ebc3-4697-afa7-d2b2c7dd0fa0"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f4894042-1ab1-4b0b-a072-3fe73d7192d3"
+            name="Input book title"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c78c3dcd-1bd2-47e5-a96b-da5688f04c33"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="010f8bee-1992-4837-bf0f-3fbd7eaca7ed"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ea50f116-4955-4fb4-a03c-2b4a5f983897"
+            name="Input author's name"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9fa83b70-9d5b-4af9-bf1d-c5d1efdcf0da"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="010f8bee-1992-4837-bf0f-3fbd7eaca7ed"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="010f8bee-1992-4837-bf0f-3fbd7eaca7ed"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d22d592d-6d47-4459-bc78-0a7684487a4f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="16bd258e-284e-4faf-bfc1-3f205dd5b46b"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityFinalNode
+            Id="94c63610-4ec5-4ff3-86cc-e8be7bef716d"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <decisionNode
+            Id="16bd258e-284e-4faf-bfc1-3f205dd5b46b"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7b82fd2a-cec9-44e6-a1d6-dbb01b11a6b5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e293bc00-d86f-46fe-b383-19b19b9b1425"
+                  LastKnownName="The related information about that book is shown"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="8fa913d6-6d41-4055-b0e6-a7577e76d67a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c7edcf71-eaf4-406a-8eb3-2b4c18879c4e"
+                  LastKnownName="Click in box of searching books"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="e293bc00-d86f-46fe-b383-19b19b9b1425"
+            name="The related information about that book is shown"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="06f6f441-7ea1-4cb9-b968-e363af25e555"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="94c63610-4ec5-4ff3-86cc-e8be7bef716d"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="5954bc90-ebc3-4697-afa7-d2b2c7dd0fa0"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3dccddd1-9d6f-4935-9bd7-d6923ae0ef8d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f4894042-1ab1-4b0b-a072-3fe73d7192d3"
+                  LastKnownName="Input book title"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="3938e464-5a2d-4b67-b9a9-c950675fe081"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ea50f116-4955-4fb4-a03c-2b4a5f983897"
+                  LastKnownName="Input author's name"
+                  LastKnownLocation="ModelingProject2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

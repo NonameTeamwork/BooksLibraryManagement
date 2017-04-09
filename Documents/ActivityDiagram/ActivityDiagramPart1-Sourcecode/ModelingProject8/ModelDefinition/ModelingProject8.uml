@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="1b06ee6b-8f11-4f33-996a-32f64b0bb275"
+  name="ModelingProject8" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="021f2cc7-e5d2-4fe4-9104-2bd247346b0f">
+      <body>Invalid</body>
+    </comment>
+    <comment
+      Id="a7d74149-dfa6-46cb-b017-136ad91e5314">
+      <body>Valid</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="39fe5bcb-2b02-4a0c-a916-65edd90f4a71"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="2c74e504-a4dc-43dc-b59c-07a81e9e11c9"
+            name="User"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="633a1630-4646-4e8a-aa12-20b99de95652"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="53b6aa0f-dde9-47a6-ab7a-707c6e5fa187"
+            name="Librarian"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="ff954a60-cac9-4dc7-9510-9222dedbc42f"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <initialNode
+            Id="b862e4b1-e172-4bd3-ab7c-401bc5be30d8"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="70ec99a2-9e78-445b-812c-9023c1f9bbe3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="739c3b3e-7166-46c7-a3ad-558678ef566b"
+                  LastKnownName="Chose the books need borrowing"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="739c3b3e-7166-46c7-a3ad-558678ef566b"
+            name="Chose the books need borrowing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d6e5e45e-6c03-443f-bdd8-092ef5bf637a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="962dd047-e934-453c-ae1c-9bb730c89664"
+                  LastKnownName="Write information of books borrowed"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="962dd047-e934-453c-ae1c-9bb730c89664"
+            name="Write information of books borrowed"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0226e3a8-bb8d-439e-8e1a-ae20150d4cff"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="917f14bd-558c-46c6-97a2-5b69db2f53d3"
+                  LastKnownName="Send borrowed slip"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="bca7bc5e-db16-4778-b46d-fa28a1652fed"
+            name="Fill in information fully"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b8a4048e-cc83-4cae-aae4-a39819e5fcf8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8bf41dba-c949-4fd7-97f0-0e137598fd20"
+                  LastKnownName="Check information"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8bf41dba-c949-4fd7-97f0-0e137598fd20"
+            name="Check information"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9568129e-acf5-4e6e-ad2c-b2c2b3824240"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="0de491a8-d591-4185-92ec-3b6849cfacb5"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="0de491a8-d591-4185-92ec-3b6849cfacb5"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a469e902-3087-4112-b33f-db30078973a7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b3641f44-ff20-4594-8ffc-9700d8ca8062"
+                  LastKnownName="Deposit"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="604c381e-2838-4f15-87ca-faac78643109"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bca7bc5e-db16-4778-b46d-fa28a1652fed"
+                  LastKnownName="Fill in information fully"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="b3641f44-ff20-4594-8ffc-9700d8ca8062"
+            name="Deposit"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="098bf710-1a9d-49b8-9eff-8362962d96be"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="408afa79-c18a-4eaf-9a44-4d4da90cb32e"
+                  LastKnownName="Borrow books"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="917f14bd-558c-46c6-97a2-5b69db2f53d3"
+            name="Send borrowed slip"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5cdca30c-6102-435c-a540-420aa231b5c9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bca7bc5e-db16-4778-b46d-fa28a1652fed"
+                  LastKnownName="Fill in information fully"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="408afa79-c18a-4eaf-9a44-4d4da90cb32e"
+            name="Borrow books"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="efc6897f-aa00-487f-82b6-61794a68a399"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="632ea4f8-498a-41fd-a9ce-3004407808fd"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ModelingProject8.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="632ea4f8-498a-41fd-a9ce-3004407808fd"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
