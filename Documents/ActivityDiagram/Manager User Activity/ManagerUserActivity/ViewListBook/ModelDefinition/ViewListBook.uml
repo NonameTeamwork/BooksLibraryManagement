@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="745c58de-5e2c-4b7b-8898-3625574133aa"
+  name="ViewListBook" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="37728545-5b2a-4eac-8cc4-e89109335c11"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <activityFinalNode
+            Id="f6d55821-657b-4fcc-a122-d72f32875615"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <initialNode
+            Id="5c339c3a-31b4-4edf-b949-16f125cf4a30"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6c42454b-eb69-47bd-aa9e-c83ace1fad99"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73b39d18-d4a5-40c5-be8b-205238575a40"
+                  LastKnownName="Access in Library website"
+                  LastKnownLocation="ViewListBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="73b39d18-d4a5-40c5-be8b-205238575a40"
+            name="Access in Library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="39970ec4-e362-4d81-bbef-6d829ec353da"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="67a7e029-afca-4436-8928-9c54a53694a4"
+                  LastKnownName="Click in list box of books"
+                  LastKnownLocation="ViewListBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="67a7e029-afca-4436-8928-9c54a53694a4"
+            name="Click in list box of books"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="16b066d3-a6bf-4784-982e-61a40861bf44"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="70122b0a-4703-425c-8e64-a8bed960663d"
+                  LastKnownName="View the list of books are shown"
+                  LastKnownLocation="ViewListBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="70122b0a-4703-425c-8e64-a8bed960663d"
+            name="View the list of books are shown"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="870a1428-1e97-41eb-ae40-a4d2478cb849"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="f6d55821-657b-4fcc-a122-d72f32875615"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ViewListBook.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

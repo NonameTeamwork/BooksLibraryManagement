@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1954ee16-34a7-400c-a6b2-a38aa5983489" name="Activity1" linkedPackageId="5f1f01c6-748d-4f55-b379-9bee672d380e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="1cf7ee67-114f-4078-98f6-6a82e9036c8f">
+      <profileInstance Id="ec1000a8-1c5f-474f-90da-4375d22a800b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9921b9a1-0db6-4d6f-987c-929a96411d47">
+      <profileInstance Id="46723238-4efd-450f-8d49-6418587ce3b9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="9b809998-6ec4-401d-a550-2c2b0c36c3bd" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c9d7cee1-d4c6-486f-a488-a4e27cfb000b" />
+        <nodes>
+          <objectNode Id="4a2bdb2d-6b80-4e18-b5a8-823711034e7d" name="User" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="9ee3f195-11d5-4e5c-b549-98ca2f8e308e" />
+            <upperBound>
+              <literalInteger Id="fce88687-4a11-4744-adb6-f365e72aeb1b" name="2147483647" value="2147483647">
+                <elementDefinition Id="18fd84d8-8900-480b-8b33-2de8d928adde" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="008ec1d4-2cce-4f68-9552-e96e813a8c27" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="ef8772d1-12f1-477f-ba33-9ba728ec708b" />
+            <upperBound>
+              <literalInteger Id="942521c6-6acc-485f-8d58-d7c052b4696f" name="2147483647" value="2147483647">
+                <elementDefinition Id="6766894b-b3cc-4816-843d-e0aaa6d2bf6f" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <initialNode Id="01b1a0f9-ad94-4cda-84f7-e0e9c2dbfb25" name="Initial1" isLeaf="false">
+            <elementDefinition Id="e8a26bee-cde0-41f4-85d4-585520bc78e1" />
+            <flowNodeTargets>
+              <controlFlow Id="836fcf80-7918-455d-b1a1-34925b7f5e29" isLeaf="false">
+                <opaqueActionMoniker Id="5b857b39-8d28-45dc-b662-48674b424b73" LastKnownName="Choose a book to show information" />
+                <elementDefinition Id="b8f9d50b-4733-445a-b8a0-4868641ecba2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="5b857b39-8d28-45dc-b662-48674b424b73" name="Choose a book to show information" isLeaf="false">
+            <elementDefinition Id="bcf07f6e-281a-4a50-82c3-ad5e88503faf" />
+            <flowNodeTargets>
+              <controlFlow Id="b61c5758-c30d-44ff-9bb6-6db7f758bc8b" isLeaf="false">
+                <opaqueActionMoniker Id="d58860a0-ffb2-46da-98a6-9ca25c0da56d" LastKnownName="Show all information of book" />
+                <elementDefinition Id="83189fdd-b48d-46fe-b814-721ef39e6660" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="d58860a0-ffb2-46da-98a6-9ca25c0da56d" name="Show all information of book" isLeaf="false">
+            <elementDefinition Id="6e86a8a5-fb7f-4289-a0db-cbe6914ae7cc" />
+            <flowNodeTargets>
+              <controlFlow Id="70a47e0a-9a54-4393-9160-72224ff4d134" isLeaf="false">
+                <activityFinalNodeMoniker Id="e52b68f6-28e5-4686-bccf-f71d4c0ecdaa" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="dd9531a5-f190-421f-86d5-4bcfd2ddf7fd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="e52b68f6-28e5-4686-bccf-f71d4c0ecdaa" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="edfd8086-1f93-4f6f-b752-6a9f893dc257" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="5f1f01c6-748d-4f55-b379-9bee672d380e" name="ViewBookInformation">
+    <elementDefinition Id="abc0016a-efef-49e8-b24b-3a50e43968ea" />
+  </package>
+</activityRootModel>
