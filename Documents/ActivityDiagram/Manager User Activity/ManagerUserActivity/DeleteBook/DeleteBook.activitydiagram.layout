@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DeleteBook">
+  <activityRootModelMoniker Id="a843629b-e3bc-435d-921f-a1afa5a37a3e" />
+  <nestedChildShapes>
+    <objectNodeShape Id="aa2b6922-0943-433b-be8c-04eb0d03a38d" absoluteBounds="3.25, 1, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="7129ab24-d2ac-41a0-8c8f-28d4e7acbba5" LastKnownName="User" />
+    </objectNodeShape>
+    <objectNodeShape Id="3a95426a-1105-4303-8886-ff2d8b87abb5" absoluteBounds="8, 1, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="1a1f30fd-6ca5-433a-8bf3-b0899ebe72e1" LastKnownName="System" />
+    </objectNodeShape>
+    <initialNodeShape Id="8d5fa7c4-f62e-4da9-81a5-06c0eac97d43" absoluteBounds="1.875, 1.75, 0.125, 0.125" customColor="89, 89, 89">
+      <initialNodeMoniker Id="f11b7cd4-3c9e-4573-a444-1a90ddadec56" LastKnownName="Initial1" />
+    </initialNodeShape>
+    <actionShape Id="25e1e9a7-900b-4433-91e3-1ab063778896" absoluteBounds="3.25, 1.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="93f2b257-68ec-4121-a9bf-561190be138d" LastKnownName="Choose a book to remove" />
+    </actionShape>
+    <actionShape Id="f0e56bdc-670d-4a1b-8197-bd488e93da4a" absoluteBounds="3.25, 2.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="ebd0677f-54e1-43a1-b21b-a3f8470a3a46" LastKnownName="Click delete button" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(3.8125 : 2); (3.8125 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="92d9ab0a-a983-4963-978c-ced9ae867092" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="25e1e9a7-900b-4433-91e3-1ab063778896" />
+        <actionShapeMoniker Id="f0e56bdc-670d-4a1b-8197-bd488e93da4a" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="5acdc6ca-61c4-4b65-85bc-2784d5324c6b" absoluteBounds="8, 1.875, 1.125, 0.625" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="21b34f03-128e-40c2-abca-d55f310b292b" LastKnownName="Display the message to user confirms delete or not" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(4.375 : 2.8125); (8.1231884057971 : 2.8125); (8.1231884057971 : 2.5)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <controlFlowMoniker Id="cf54461e-65bc-47c2-b03c-527c81c86200" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="f0e56bdc-670d-4a1b-8197-bd488e93da4a" />
+        <actionShapeMoniker Id="5acdc6ca-61c4-4b65-85bc-2784d5324c6b" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="b87413c6-dbc3-42f4-927b-64fa4903c06a" absoluteBounds="3.25, 3.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="21bf670e-71c6-44cc-8f57-ecebbf1bae46" LastKnownName="User confirm delete or not" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(2 : 1.8125); (3.25 : 1.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="afe0dd47-fa42-47c3-9dae-9bf24696fc1e" />
+      <relativeChildShapes />
+      <nodes>
+        <initialNodeShapeMoniker Id="8d5fa7c4-f62e-4da9-81a5-06c0eac97d43" />
+        <actionShapeMoniker Id="25e1e9a7-900b-4433-91e3-1ab063778896" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(8.57352941176471 : 2.5); (8.57352941176471 : 3.325); (3.93112244897959 : 3.325); (3.93112244897959 : 3.625)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <controlFlowMoniker Id="cc7a2f95-e910-4304-9eb4-7be72dd34f03" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="5acdc6ca-61c4-4b65-85bc-2784d5324c6b" />
+        <actionShapeMoniker Id="b87413c6-dbc3-42f4-927b-64fa4903c06a" />
+      </nodes>
+    </controlFlowConnector>
+    <decisionNodeShape Id="8c6eeca5-0ba3-4721-a70f-f5b173951999" absoluteBounds="3.625, 4.75, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="890edef4-87bc-411e-8c71-b97c43610619" LastKnownName="Decision1" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(3.8125 : 4); (3.8125 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="3537088f-3527-4315-a110-2a35083704c3" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="b87413c6-dbc3-42f4-927b-64fa4903c06a" />
+        <decisionNodeShapeMoniker Id="8c6eeca5-0ba3-4721-a70f-f5b173951999" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="52b91567-b96d-445b-adf4-a3a89de8736f" absoluteBounds="8, 4.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="1b5c4dee-1e96-4c17-8a4f-4f90f145ec8f" LastKnownName="Remove all data of book" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(3.98425572519084 : 4.92175572519084); (8 : 4.92175572519084)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="1ca0a5f2-8cf4-4e0e-b75c-61d5c14305fb" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="8c6eeca5-0ba3-4721-a70f-f5b173951999" />
+        <actionShapeMoniker Id="52b91567-b96d-445b-adf4-a3a89de8736f" />
+      </nodes>
+    </controlFlowConnector>
+    <activityFinalNodeShape Id="0a6c3b27-f98d-4bfb-9df2-53807e428095" absoluteBounds="8.5, 7.5, 0.125, 0.125" customColor="89, 89, 89">
+      <activityFinalNodeMoniker Id="4873e80d-0cb9-42e0-92e4-abddc684917a" LastKnownName="ActivityFinal1" />
+    </activityFinalNodeShape>
+    <controlFlowConnector edgePoints="[(3.8125 : 5.125); (3.8125 : 7.5625); (8.5 : 7.5625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="1beff778-d6a2-4da8-b7c8-8e26e31a0d72" />
+      <relativeChildShapes />
+      <nodes>
+        <decisionNodeShapeMoniker Id="8c6eeca5-0ba3-4721-a70f-f5b173951999" />
+        <activityFinalNodeShapeMoniker Id="0a6c3b27-f98d-4bfb-9df2-53807e428095" />
+      </nodes>
+    </controlFlowConnector>
+    <objectNodeShape Id="6c568cf0-1c86-4631-88e5-0c5068868bfc" absoluteBounds="5.5, 4.25, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="9d0aa542-a814-4f02-946c-7f17d0225c0c" LastKnownName="yes" />
+    </objectNodeShape>
+    <objectNodeShape Id="188d4a19-e6e8-475b-bffa-92f97b996bac" absoluteBounds="4.25, 5.875, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="c547ab42-e32d-467a-8219-a22f9c4d79d5" LastKnownName="No" />
+    </objectNodeShape>
+    <actionShape Id="f5d60585-9ab9-41d9-97c5-cbb5465fef74" absoluteBounds="8, 5.875, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="b5eb7d80-ea41-43f8-bb4e-98f5502ed173" LastKnownName="Display the message, deleted successful" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(8.5625 : 5); (8.5625 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="e3caa8c8-7306-40d2-9d59-8fe9fb72e1f7" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="52b91567-b96d-445b-adf4-a3a89de8736f" />
+        <actionShapeMoniker Id="f5d60585-9ab9-41d9-97c5-cbb5465fef74" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(8.5625 : 6.25); (8.5625 : 7.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="194ca9fa-1a99-4fb5-bc22-4d296f8f7dbc" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="f5d60585-9ab9-41d9-97c5-cbb5465fef74" />
+        <activityFinalNodeShapeMoniker Id="0a6c3b27-f98d-4bfb-9df2-53807e428095" />
+      </nodes>
+    </controlFlowConnector>
+  </nestedChildShapes>
+</activityDiagram>

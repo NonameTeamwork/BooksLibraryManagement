@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9e40e0e9-e7e8-4338-9979-2ca6442673fd" name="SearchBook" linkedPackageId="fc69bf46-8a6d-4f8e-b801-c4b1e1f3e1a8" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="672c1b54-356e-4444-a179-e61e4c0fba05">
+      <profileInstance Id="777ff513-0174-4437-bb93-fd7f22fa0dbd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="920f30d6-6795-4b0c-ac9d-23833032dfe7">
+      <profileInstance Id="30d82beb-f86c-477b-942c-aef01a6eb42f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="8686543b-bc05-4077-99ab-aecf350b25da" name="SearchBook" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="78a3ae57-7bdf-46eb-89ba-553b1e1650ad" />
+        <nodes>
+          <objectNode Id="460e1ae4-517b-4289-82cd-1e6b3faf8073" name="User" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="90fef266-ed57-4cf3-a6fc-caf6979ce302" />
+            <upperBound>
+              <literalInteger Id="ce5edd87-89fb-484c-8e69-6a9e3b1ed2a9" name="2147483647" value="2147483647">
+                <elementDefinition Id="d5aecfd8-5b2b-4b21-9c8b-e0ef9135f235" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="a2683da4-6e1b-4606-99c4-4ec8c9092e60" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="d52dca1a-94a9-4916-a64a-9d0c4da4a240" />
+            <upperBound>
+              <literalInteger Id="f6c75544-f85c-4612-8322-a7945d6e2a91" name="2147483647" value="2147483647">
+                <elementDefinition Id="c075521c-f4fc-4dba-8a70-a32ef7f53018" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <initialNode Id="2f355bbb-a2fb-492a-b57d-fbf6fde7fb62" name="Initial1" isLeaf="false">
+            <elementDefinition Id="f58e4f00-167e-4b33-9cde-593b2ad80b26" />
+            <flowNodeTargets>
+              <controlFlow Id="593529fa-31f9-4b16-a88b-76c16fe62d68" isLeaf="false">
+                <opaqueActionMoniker Id="e7448280-f833-44ad-a852-3f43517a6e33" LastKnownName="Access in Library website" />
+                <elementDefinition Id="7b6e9f54-4ffc-4747-889b-28d2ac9e7d50" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="e7448280-f833-44ad-a852-3f43517a6e33" name="Access in Library website" isLeaf="false">
+            <elementDefinition Id="4005d468-3a90-4a92-9fb4-0bb8615d88a9" />
+            <flowNodeTargets>
+              <controlFlow Id="9e03aa8c-4ae8-445e-b2f9-e674fe104d9d" isLeaf="false">
+                <opaqueActionMoniker Id="eee22b62-da9a-42b4-bef9-c934fee095c0" LastKnownName="Display the form for the user input search information" />
+                <elementDefinition Id="dfe3dbef-6a70-47bf-bffc-4ac4469c02c0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="eee22b62-da9a-42b4-bef9-c934fee095c0" name="Display the form for the user input search information" isLeaf="false">
+            <elementDefinition Id="b186c7c4-aa5f-42fc-a998-680b7e5b91d6" />
+            <flowNodeTargets>
+              <controlFlow Id="76ff7dbb-7da5-44d8-adf6-f2ca35de12be" isLeaf="false">
+                <opaqueActionMoniker Id="fdf1b82f-eeff-490c-80ce-4149a9bd4f55" LastKnownName="Enter search information" />
+                <elementDefinition Id="55330ccc-8857-4250-a3c5-99c1a2cec91c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fdf1b82f-eeff-490c-80ce-4149a9bd4f55" name="Enter search information" isLeaf="false">
+            <elementDefinition Id="e9f0fae1-29da-49a5-9705-f9548d1b3b66" />
+            <flowNodeTargets>
+              <controlFlow Id="81bafe8e-84ef-4495-9304-e90a7d10ad7f" isLeaf="false">
+                <opaqueActionMoniker Id="fa1905f1-d79b-45a4-aaea-7a2189ba32b0" LastKnownName="Check the validity of the information" />
+                <elementDefinition Id="af20e8d5-f443-483f-8e94-716f5ebac7df" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fa1905f1-d79b-45a4-aaea-7a2189ba32b0" name="Check the validity of the information" isLeaf="false">
+            <elementDefinition Id="06689655-df33-462f-9da1-f0dfb2ef52f6" />
+            <flowNodeTargets>
+              <controlFlow Id="a175beab-858f-4fba-a0aa-ffbf1a2a144b" isLeaf="false">
+                <decisionNodeMoniker Id="93f2c5a0-3451-465e-b048-0d5fec73ccc7" LastKnownName="Decision1" />
+                <elementDefinition Id="d1dbd299-3ec4-4531-9bfd-313754bd5a8c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="93f2c5a0-3451-465e-b048-0d5fec73ccc7" name="Decision1" isLeaf="false">
+            <elementDefinition Id="d4107ec7-c2d0-4f46-befc-3574ab36742f" />
+            <flowNodeTargets>
+              <controlFlow Id="eafedcdb-a04f-4453-ba00-8d5b69ea6251" isLeaf="false">
+                <opaqueActionMoniker Id="12eb6d4c-060c-4297-9aeb-27352b069797" LastKnownName="Notice the information not found" />
+                <elementDefinition Id="30a385d7-a2e0-4e07-8724-e1e6c4117490" />
+              </controlFlow>
+              <controlFlow Id="fad25df3-a288-44e8-98ef-606abc065ce9" isLeaf="false">
+                <opaqueActionMoniker Id="a01e3f71-9107-4f2d-9032-861330852b2c" LastKnownName="Display the information of a book" />
+                <elementDefinition Id="ecdc91d3-89f5-4b86-aabb-1d741ac81aa2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="12eb6d4c-060c-4297-9aeb-27352b069797" name="Notice the information not found" isLeaf="false">
+            <elementDefinition Id="d23c51cf-9060-4a61-b516-3716ef09d4e9" />
+            <flowNodeTargets>
+              <controlFlow Id="888d7ecc-af39-407b-8718-cf271c2482bd" isLeaf="false">
+                <activityFinalNodeMoniker Id="6844d8da-b69a-4f22-8885-eb5506b77391" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="bf784024-f0eb-4637-8605-515b180c0d2c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a01e3f71-9107-4f2d-9032-861330852b2c" name="Display the information of a book" isLeaf="false">
+            <elementDefinition Id="dcefc2f8-3b1a-41da-b369-5d3d605fa40e" />
+            <flowNodeTargets>
+              <controlFlow Id="53745f00-6b78-4dd3-981c-d669dd4cc36a" isLeaf="false">
+                <activityFinalNodeMoniker Id="6844d8da-b69a-4f22-8885-eb5506b77391" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="50254096-d512-43c0-82b9-b64e8c75303b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode Id="785ff05f-64ed-4558-9967-548aa896e98f" name="Invalid information" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="aece61d7-8361-464c-96cc-761168d1f289" />
+            <upperBound>
+              <literalInteger Id="a337b716-72c7-4353-97f1-822ba845364c" name="2147483647" value="2147483647">
+                <elementDefinition Id="f7f49af0-5c4b-4bab-aa9e-cc7cc309af57" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="618f08f6-3a9a-4af7-a12c-b303e5f71dc3" name="Valid information1" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="1ace1777-eac9-4d3d-b4d0-d26adc5de4d3" />
+            <upperBound>
+              <literalInteger Id="496aad4d-ac33-4191-b943-0df95504a22f" name="2147483647" value="2147483647">
+                <elementDefinition Id="b4b085cd-48d1-48ec-b443-cd79873f61d4" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <activityFinalNode Id="6844d8da-b69a-4f22-8885-eb5506b77391" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="8367a2f6-e793-49bf-85e1-5af6dbc13643" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="fc69bf46-8a6d-4f8e-b801-c4b1e1f3e1a8" name="SearchBook">
+    <elementDefinition Id="e3cb489f-b34e-4179-941d-03a524e1d185" />
+  </package>
+</activityRootModel>

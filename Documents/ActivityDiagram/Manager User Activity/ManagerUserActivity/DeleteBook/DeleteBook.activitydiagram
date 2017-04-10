@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a843629b-e3bc-435d-921f-a1afa5a37a3e" name="DeleteBook" linkedPackageId="ae1e5aa3-218f-4531-b7e5-6f7465f941d4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="7fb4472e-f07d-41e0-8817-26867b35096b">
+      <profileInstance Id="490a9f30-b4b6-4a20-ba40-f47e6a0e4d8b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="88e2a694-3611-4a96-8e54-0a8ad8d377b3">
+      <profileInstance Id="8b704587-ccbb-42bc-99b6-a5cc2e6597ca" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="a45caf90-bbc0-497c-9d59-5337a701e8fd" name="DeleteBook" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="1fb727ed-0327-4b40-90a4-271473b3f214" />
+        <nodes>
+          <objectNode Id="7129ab24-d2ac-41a0-8c8f-28d4e7acbba5" name="User" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="94616178-530b-4081-94b6-77475790d2d1" />
+            <upperBound>
+              <literalInteger Id="f9e4925a-aa6d-4822-973e-9befcb8bc41e" name="2147483647" value="2147483647">
+                <elementDefinition Id="7fe4bb45-4d0a-4961-8759-914891dbbe56" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="1a1f30fd-6ca5-433a-8bf3-b0899ebe72e1" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="9febb909-cb26-4569-8a0f-27be22e628cd" />
+            <upperBound>
+              <literalInteger Id="d2c701ca-607a-4795-85c3-43413cf0d511" name="2147483647" value="2147483647">
+                <elementDefinition Id="a63d7fcb-6311-4af7-93e1-490daf18aafe" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <initialNode Id="f11b7cd4-3c9e-4573-a444-1a90ddadec56" name="Initial1" isLeaf="false">
+            <elementDefinition Id="f5bf00f9-c328-4702-ad4a-a328ef9ac7e7" />
+            <flowNodeTargets>
+              <controlFlow Id="afe0dd47-fa42-47c3-9dae-9bf24696fc1e" isLeaf="false">
+                <opaqueActionMoniker Id="93f2b257-68ec-4121-a9bf-561190be138d" LastKnownName="Choose a book to remove" />
+                <elementDefinition Id="eb0bfbbb-ce1e-48b7-b2c7-03d79807030f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="93f2b257-68ec-4121-a9bf-561190be138d" name="Choose a book to remove" isLeaf="false">
+            <elementDefinition Id="10ea733c-688f-475d-9df0-e231833735ec" />
+            <flowNodeTargets>
+              <controlFlow Id="92d9ab0a-a983-4963-978c-ced9ae867092" isLeaf="false">
+                <opaqueActionMoniker Id="ebd0677f-54e1-43a1-b21b-a3f8470a3a46" LastKnownName="Click delete button" />
+                <elementDefinition Id="2251e3e8-3098-4929-b3e7-0ec6e32e5391" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ebd0677f-54e1-43a1-b21b-a3f8470a3a46" name="Click delete button" isLeaf="false">
+            <elementDefinition Id="c2e8aa69-614c-425c-8811-3775d7b62f3b" />
+            <flowNodeTargets>
+              <controlFlow Id="cf54461e-65bc-47c2-b03c-527c81c86200" isLeaf="false">
+                <opaqueActionMoniker Id="21b34f03-128e-40c2-abca-d55f310b292b" LastKnownName="Display the message to user confirms delete or not" />
+                <elementDefinition Id="89706613-2141-440b-a2f2-dd551bf262e2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="21b34f03-128e-40c2-abca-d55f310b292b" name="Display the message to user confirms delete or not" isLeaf="false">
+            <elementDefinition Id="8190138e-57c3-4a2d-81d5-b5fee1686314" />
+            <flowNodeTargets>
+              <controlFlow Id="cc7a2f95-e910-4304-9eb4-7be72dd34f03" isLeaf="false">
+                <opaqueActionMoniker Id="21bf670e-71c6-44cc-8f57-ecebbf1bae46" LastKnownName="User confirm delete or not" />
+                <elementDefinition Id="a84d38a0-721d-412e-835f-4e74869c3e8a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="21bf670e-71c6-44cc-8f57-ecebbf1bae46" name="User confirm delete or not" isLeaf="false">
+            <elementDefinition Id="1d56f8c1-a9f5-4958-9abd-14738a574a28" />
+            <flowNodeTargets>
+              <controlFlow Id="3537088f-3527-4315-a110-2a35083704c3" isLeaf="false">
+                <decisionNodeMoniker Id="890edef4-87bc-411e-8c71-b97c43610619" LastKnownName="Decision1" />
+                <elementDefinition Id="feaf81f6-bae8-4b68-a4f8-3b03b1c0d92a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="890edef4-87bc-411e-8c71-b97c43610619" name="Decision1" isLeaf="false">
+            <elementDefinition Id="a20e3a5d-0156-4542-81f3-697a0a3a656f" />
+            <flowNodeTargets>
+              <controlFlow Id="1ca0a5f2-8cf4-4e0e-b75c-61d5c14305fb" isLeaf="false">
+                <opaqueActionMoniker Id="1b5c4dee-1e96-4c17-8a4f-4f90f145ec8f" LastKnownName="Remove all data of book" />
+                <elementDefinition Id="fa04352c-9541-4fd0-b059-728376c96091" />
+              </controlFlow>
+              <controlFlow Id="1beff778-d6a2-4da8-b7c8-8e26e31a0d72" isLeaf="false">
+                <activityFinalNodeMoniker Id="4873e80d-0cb9-42e0-92e4-abddc684917a" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="5a1cf562-2506-4a90-8a4f-e06c5b0a797d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="1b5c4dee-1e96-4c17-8a4f-4f90f145ec8f" name="Remove all data of book" isLeaf="false">
+            <elementDefinition Id="dd17c750-be5b-48ef-b65d-1c03dee539a9" />
+            <flowNodeTargets>
+              <controlFlow Id="e3caa8c8-7306-40d2-9d59-8fe9fb72e1f7" isLeaf="false">
+                <opaqueActionMoniker Id="b5eb7d80-ea41-43f8-bb4e-98f5502ed173" LastKnownName="Display the message, deleted successful" />
+                <elementDefinition Id="c465590d-f5ff-439d-a14a-0d95beaabcc3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="4873e80d-0cb9-42e0-92e4-abddc684917a" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="99e30b8e-fdb3-437d-a120-193f32fbf5e1" />
+          </activityFinalNode>
+          <objectNode Id="9d0aa542-a814-4f02-946c-7f17d0225c0c" name="yes" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="9dfda59a-a0c4-4445-a158-1be29ca5286f" />
+            <upperBound>
+              <literalInteger Id="71d80482-5f0a-430a-bd36-bb5d7722fe47" name="2147483647" value="2147483647">
+                <elementDefinition Id="07a371cd-2c29-4589-a83e-b14c2f5c92ff" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="c547ab42-e32d-467a-8219-a22f9c4d79d5" name="No" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="e5d598c9-a5bc-489d-90d5-4aad37c0c11d" />
+            <upperBound>
+              <literalInteger Id="078755eb-9096-443e-b5b0-da489b8f3771" name="2147483647" value="2147483647">
+                <elementDefinition Id="a5e6d00d-f706-4e8d-b674-86cfe43df13e" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="b5eb7d80-ea41-43f8-bb4e-98f5502ed173" name="Display the message, deleted successful" isLeaf="false">
+            <elementDefinition Id="3a9edf52-2e9d-4624-bd23-54d0fcd6deb9" />
+            <flowNodeTargets>
+              <controlFlow Id="194ca9fa-1a99-4fb5-bc22-4d296f8f7dbc" isLeaf="false">
+                <activityFinalNodeMoniker Id="4873e80d-0cb9-42e0-92e4-abddc684917a" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="01169ad7-f44b-4ba6-8df8-acf67c4eebab" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="ae1e5aa3-218f-4531-b7e5-6f7465f941d4" name="DeleteBook">
+    <elementDefinition Id="fdfa8606-8b2d-485b-b32a-9140985e6c56" />
+  </package>
+</activityRootModel>
