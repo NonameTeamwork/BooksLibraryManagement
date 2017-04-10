@@ -225,7 +225,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <actor Id="b24bcc15-4e7f-46e9-8455-b8d79f684bcf" name="Admin" isAbstract="false" isLeaf="false">
+      <actor Id="b24bcc15-4e7f-46e9-8455-b8d79f684bcf" name="Normal Admin" isAbstract="false" isLeaf="false">
         <elementDefinition Id="49ebc04a-9cff-409a-ad81-949ed1e6a579" />
         <targetEnds>
           <association Id="51cec6dd-6e3c-407e-aff7-d7769c417c11" isDerived="false" sourceEndRoleName="Admin" targetEndRoleName="Manage user" isLeaf="false" isAbstract="false">
@@ -572,6 +572,187 @@
             <elementDefinition Id="157b59da-1b6c-421b-aec9-a563a780a4f3" />
           </include>
         </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="2bf9ce4b-4675-446c-8f85-f8ea597614f8" name="System Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="329b9ce6-c881-4b90-9897-e5d64124c053" />
+        <generalsInternal>
+          <generalization Id="ed62873c-063a-4249-9793-161fb1a07fa6" isSubstitutable="false">
+            <actorMoniker Id="b24bcc15-4e7f-46e9-8455-b8d79f684bcf" LastKnownName="Normal Admin" />
+            <elementDefinition Id="a25545cf-52d4-47bb-9637-b691e0f22fba" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="54c48ef3-b3f3-473b-80ba-b9b34992c459" isDerived="false" sourceEndRoleName="System Admin" targetEndRoleName="Add Normal Admin" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="74944c92-c491-4bfa-bf96-f0b76d63e3e2" LastKnownName="Add Normal Admin" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c4762bd2-1219-4750-800e-2fd8b2b4c492" name="System Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2297d2ab-4527-4f48-9eaf-8a0fccbfc0d5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f477b33-35fc-489b-8f62-23d853409e5e" name="Add Normal Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6a2934b4-415f-4eed-a17e-306bcdf819bc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="dbfa9d0a-77cb-4dfe-9e05-a30bccfe5746" />
+          </association>
+          <association Id="1fe30b48-d6c8-42c2-9f7f-1adc8d507175" isDerived="false" sourceEndRoleName="System Admin" targetEndRoleName="View List Admin" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0eb3020d-ea6a-4606-95a8-b4327e0c9254" LastKnownName="View List Admin" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0a7a2e92-2fe9-4ce7-bf81-68410f9dd217" name="System Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ca54e0f3-adf0-481f-bd98-8c25bc94d348" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ba16cf6b-0fbf-422a-9374-d3b27f1c996f" name="View List Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="55d0b2d8-fa1b-47e1-a510-df124e1c9060" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b579ecda-5108-43c6-961a-9b20bcde49bb" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="74944c92-c491-4bfa-bf96-f0b76d63e3e2" name="Add Normal Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a02c8a59-66e6-4fa8-9db5-23909e18a319" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e0f736d1-6054-43df-ad0f-49d302aa562c" name="Modify Normal Admin Info" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1cbc56e9-ab4e-4429-8511-4c09c2066731" />
+        <extendedCases>
+          <extend Id="3ad03ca7-c3cf-4a0d-ab9f-0a8288244587">
+            <useCaseMoniker Id="0eb3020d-ea6a-4606-95a8-b4327e0c9254" LastKnownName="View List Admin" />
+            <elementDefinition Id="ca4a52ff-eb07-4b7c-bf08-168fced1cf3e" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="5e243d29-ddaa-46a5-9bd8-c424be19a186">
+            <useCaseMoniker Id="361c7379-79cb-4005-bda8-28fece63a1f6" LastKnownName="View admin personal info " />
+            <elementDefinition Id="91b3206c-1b67-41a5-8184-505843d5161f" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="95e0ea36-63e1-4a3b-addb-54d89c9e046f" name="Set Normal Admin State" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ebbfb062-3d92-4d99-89bd-2a1ff60a2b9f" />
+        <extendedCases>
+          <extend Id="86857dff-5c8f-4a08-a022-a3843e20646c">
+            <useCaseMoniker Id="0eb3020d-ea6a-4606-95a8-b4327e0c9254" LastKnownName="View List Admin" />
+            <elementDefinition Id="5b10996e-d447-49ff-bec7-89a458865d78" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2cf5f2b1-ad08-4ebe-a04a-c620b213dd03" name="Upgrade Normal Admin to System Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c41c3499-acf4-41e8-a775-10c53cb381f1" />
+        <extendedCases>
+          <extend Id="3fa5f440-a2c4-4e31-962e-256458297d75">
+            <useCaseMoniker Id="0eb3020d-ea6a-4606-95a8-b4327e0c9254" LastKnownName="View List Admin" />
+            <elementDefinition Id="66bc8e4e-cd2c-4de1-b037-926f6ee929ec" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="ba7a0911-ba49-4fbd-9e18-8746daafb8a7">
+            <useCaseMoniker Id="361c7379-79cb-4005-bda8-28fece63a1f6" LastKnownName="View admin personal info " />
+            <elementDefinition Id="97fef2a7-b933-454d-9f59-cfbb19861c83" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0eb3020d-ea6a-4606-95a8-b4327e0c9254" name="View List Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="361c7379-79cb-4005-bda8-28fece63a1f6" name="View admin personal info " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2f896aae-bca1-4f76-ac65-881e23335fcf" />
+        <extendedCases>
+          <extend Id="f73882e5-f18b-4553-8eb7-66ea6d03f415">
+            <useCaseMoniker Id="0eb3020d-ea6a-4606-95a8-b4327e0c9254" LastKnownName="View List Admin" />
+            <elementDefinition Id="5fb20220-5561-4a1f-8803-91c94295b62e" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="096f0162-de8f-4419-b761-85beaabab1ad" name="Block user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8abef1ba-7c66-4a89-92f5-0025552a325a" />
+        <extendedCases>
+          <extend Id="ddddc8c7-d1da-44fa-b6fa-cbc30b7f7c9a">
+            <useCaseMoniker Id="34b40218-d55f-481b-9276-672adcf536a1" LastKnownName="Search user" />
+            <elementDefinition Id="b851ace3-b426-4595-a132-d4b3781e4caf" />
+          </extend>
+          <extend Id="2acdc1f2-d8aa-4efc-a74e-094cb4c811a5">
+            <useCaseMoniker Id="47314fc1-e18c-48a8-b15d-7b094cbcd423" LastKnownName="View list user" />
+            <elementDefinition Id="47a8be89-0497-438b-a95b-f33a9a4fcd99" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="42509625-294f-441c-8c21-f95a3624deb6" name="Block user temporary" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ab4d6d74-2164-4541-a0e5-165eaf3da23f" />
+        <generalsInternal>
+          <generalization Id="50db3e19-5b18-489c-90d4-b02d8a20546a" isSubstitutable="false">
+            <useCaseMoniker Id="096f0162-de8f-4419-b761-85beaabab1ad" LastKnownName="Block user" />
+            <elementDefinition Id="88e15bf5-7931-4302-a2d8-dd123eea8950" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="653bc34c-af98-43ac-b7c6-f83a8889fe8a" name="Block user permanently" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2df0d642-b24f-4617-a354-de899741ce1f" />
+        <generalsInternal>
+          <generalization Id="c9472d87-423d-4ea1-8b8f-ceba9ee91b2b" isSubstitutable="false">
+            <useCaseMoniker Id="096f0162-de8f-4419-b761-85beaabab1ad" LastKnownName="Block user" />
+            <elementDefinition Id="e6e7b1ec-fee0-452b-adb1-7a3ca5ddbf89" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9eee0523-11a7-4034-8b2c-5cc229ffeaba" name="Create borrowing transaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3dae97cf-a19b-4066-9b06-f6df004f2cf6" />
+        <generalsInternal>
+          <generalization Id="4124c70d-4b17-41f8-b581-e009f654d2b4" isSubstitutable="false">
+            <useCaseMoniker Id="0143c71e-755e-4813-88e7-1ee928c81648" LastKnownName="Create transaction" />
+            <elementDefinition Id="9b02e051-3e8d-4a82-ac2f-3d1d798c78ee" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="84bb2eff-951e-4ee2-a7c8-cdfe1d7ea993" name="Create return transacction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="71f24ddc-b850-4258-a9cb-0fca1fbd0e88" />
+        <generalsInternal>
+          <generalization Id="830e130e-d279-4111-ba23-e10e61c8c709" isSubstitutable="false">
+            <useCaseMoniker Id="0143c71e-755e-4813-88e7-1ee928c81648" LastKnownName="Create transaction" />
+            <elementDefinition Id="47528aef-8654-4a42-b5a4-a53504394716" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e209c35d-e0c1-4ac2-aaa8-b99dfcd94fcd" name="Create renewing transaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e8d582e2-6bea-43f7-9a17-6edaf04c9407" />
+        <generalsInternal>
+          <generalization Id="611d7ea7-60dd-4736-8a1e-749c1fd28b9f" isSubstitutable="false">
+            <useCaseMoniker Id="0143c71e-755e-4813-88e7-1ee928c81648" LastKnownName="Create transaction" />
+            <elementDefinition Id="bc449139-986f-4e37-9c19-8ecae912e9c7" />
+          </generalization>
+        </generalsInternal>
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>

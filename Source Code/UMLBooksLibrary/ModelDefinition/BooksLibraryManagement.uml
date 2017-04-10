@@ -641,7 +641,7 @@
     <packageHasNamedElement>
       <actor
         Id="49ebc04a-9cff-409a-ad81-949ed1e6a579"
-        name="Admin"
+        name="Normal Admin"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -1253,6 +1253,2026 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4befad1e-c5ab-4ead-a355-bd3cd6cdd505"
+        name="UserInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="bba37906-6657-4c92-b8b4-ae2a242220fe">
+            <enumerationMoniker
+              Id="f3168687-cfbb-4b8d-89ea-7afc037eca5f"
+              LastKnownName="UserState"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="db792b7c-0e3f-46e2-838c-a2cb044645fd"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f133a52f-48d1-4f78-8606-37e3a4ce0e8d"
+              LastKnownName="TransactionInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a9a8a873-b4f4-48b3-bb03-ab65c29fef71"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="73026559-1ec7-4457-9591-022eb2204192"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a8a97e15-f035-46e1-83e6-50d0bcd54591"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ece81d81-0809-441e-9334-e6d183af39d8"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="67dc1840-5102-4eca-b72a-c46c71f852e5"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="26d16ab1-6b55-41d6-8729-ac5d69356978"
+              LastKnownName="BorrowedBookInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="314aaaad-1153-4318-b805-6a2c3c84033a"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="62e170fc-5e1b-4ebb-a5d1-be469c0cf8c2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f117e82b-52e8-43f7-8659-9635d1d23880"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5dba4858-7ea1-497c-93e2-30416bd47455"
+                      name="Upper"
+                      value="10" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e077fb2a-a462-4944-82e5-27be3c12a02c"
+            name="UserID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0bf5250a-946c-4e34-803d-2c3400ac95c7"
+            name="User's Portrait URL"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="27110e95-3740-45a1-9d04-895c0ed96e4d"
+            name="FullName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="fbbc62da-ae2c-46e7-a358-32f99bab9a8e"
+            name="Gender"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e8f92d93-1a65-40dd-bf17-96298d7e9d54"
+            name="DateOfBirth"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f1e49b6f-d3fc-4ed6-9811-7f2179c27322"
+            name="Password"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ce42f23d-3aae-485b-bb3b-a015cd257efe"
+            name="Hometown"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6037f429-6170-4eb7-81f4-1673899b7124"
+            name="Email"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="bab0fa58-1f3b-4b0d-98aa-1138921e1bdf"
+            name="PhoneNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="cd986424-bf5a-4b09-8fd0-281bad3dcb20"
+            name="Address"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="68d97587-182a-4a29-bd70-b1a19642386a"
+            name="State"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="f3168687-cfbb-4b8d-89ea-7afc037eca5f"
+                LastKnownName="UserState"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="57decd55-bbbf-4785-81da-1b9b812753a9"
+            name="IDNo"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="010c2b0b-a768-4252-890e-b03fa6ff4dc2"
+            name="BorrowedBook"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="9dd18b6c-6636-493d-a2ef-e21c1101578d"
+                name="Lower"
+                value="0" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="5b19b978-6a2c-4f60-bf7c-a1285bb976bf"
+                name="Upper"
+                value="10" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="26d16ab1-6b55-41d6-8729-ac5d69356978"
+                LastKnownName="BorrowedBookInfo"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0cf87b39-19de-48a8-9f7e-efeb1e5b3e10"
+            name="ViewPersonalInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0df602dd-1e13-404e-ba1d-aab31b0955d2"
+            name="ModifyPersonalInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bb242a9c-af96-40ed-82e7-8ea9fd542738"
+            name="ViewListBooksBorrowed"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fc09dbac-8c90-41f2-8b0d-ff593e9a199b"
+            name="SearchBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0dd3a315-0d8f-4bdd-b98c-76e3740fbf05"
+            name="ViewListBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+        name="BookInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="ce854d3b-1b05-4723-9fc7-7c26fe38029a"
+            name="BookID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c261cec8-5369-4df7-ade8-71bf4bf6f592"
+            name="Category"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6f295052-5a4e-487e-97fc-abb2bbaecdad"
+                LastKnownName="Category"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a0433f61-67e3-4c21-b447-402f8e40cebe"
+            name="BookTitle"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2db6980e-4316-47c2-bc38-71f4ac2e4544"
+            name="AuthorName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0644db50-c88d-47be-8a80-767eb08a4db5"
+            name="Publisher"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="924c0476-b8f8-4d66-84fe-3fce65df5831"
+            name="Language"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a747bae6-36fe-4e4b-9991-60509714aa33"
+            name="Country"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1cb21dbd-c8d2-465d-bfa7-bf33fec3352e"
+            name="PublicationDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c2c45a48-5f9c-48cd-b08b-c650b0c44b35"
+            name="Description"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ad856277-e9e1-4a91-87f2-14b71ead3102"
+            name="Price"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d648d682-5ffd-4bac-95ea-1b3473929c66"
+            name="BookCondition"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="83cb7711-822e-41b8-91d2-0caa86327f15"
+            name="NoofCopyAvailable"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6f295052-5a4e-487e-97fc-abb2bbaecdad"
+        name="Category" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f133a52f-48d1-4f78-8606-37e3a4ce0e8d"
+        name="TransactionInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="c8c6f258-bc40-4955-ac54-51c0036b72e0">
+            <enumerationMoniker
+              Id="9cd984de-75f7-4100-8ed4-35592d315d3c"
+              LastKnownName="TransactionState"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="3df9731a-0e7e-4964-aef4-eff0f6f20fc7"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+              LastKnownName="BookInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3bc6c0bc-a924-4948-9fc5-915343edec90"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bfc9d55d-8d00-4bae-81d3-848ef573c6a3"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="310a663d-01c9-415e-91e9-205dd9299aff"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8cb0acd8-cd51-4aa9-b210-3958a5cc12aa"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="30c88275-db29-48f3-ac07-5fa26c31b6df"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8e6d5f81-dda4-4ad9-b3e6-5d1e1a657032"
+                      name="Upper"
+                      value="5" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="213d3dc1-9ec6-4bb1-ac5f-b13158f13116"
+            name="TransactionID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ed9f977d-f54f-4b02-bc0b-089cc3c7cc8a"
+            name="User"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="4befad1e-c5ab-4ead-a355-bd3cd6cdd505"
+                LastKnownName="UserInfo"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="44bef36b-965f-453c-9764-92768c2d98b7"
+            name="BookInfo"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="afcdd408-2924-4900-9851-11e16f77a7f2"
+                name="Lower"
+                value="1" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="dcbda151-458f-4ba6-8efb-19ef898717b1"
+                name="Upper"
+                value="5" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+                LastKnownName="BookInfo"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1643f18c-b283-4ea3-8027-9b2080c1f9c1"
+            name="DateofTransaction"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="dc6b78e6-5379-4220-8583-04e80b8e37c1"
+            name="NoofBook"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="49b90d8f-5a15-4fcd-bdd8-631f6c70c4ae"
+            name="TotalFee"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="51043f2a-b0e6-4eea-9bb2-9c4ab571dfa7"
+            name="State"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="9cd984de-75f7-4100-8ed4-35592d315d3c"
+                LastKnownName="TransactionState"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="428d2fa7-73b9-46df-ba08-f0deff82a412"
+            name="IssuedBy"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0192c248-e685-428a-b155-e4feaf24c11d"
+        name="Borrowing"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="c46a28ce-5e0e-4ac9-9c97-72eab165235b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f133a52f-48d1-4f78-8606-37e3a4ce0e8d"
+              LastKnownName="TransactionInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a0485f3d-9863-4882-aa3f-be76ddfade55"
+            name="DateofReturn"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c7e5c596-2110-4487-88dd-4b3cf5271516"
+        name="Return"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="93511c24-5149-4757-8654-a9b49ba1c385"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f133a52f-48d1-4f78-8606-37e3a4ce0e8d"
+              LastKnownName="TransactionInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="47f0b658-a88e-4217-8466-1f423e3408ad"
+        name="Renewing"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="197086d9-bc0b-43fd-a9db-9395c1700ab9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f133a52f-48d1-4f78-8606-37e3a4ce0e8d"
+              LastKnownName="TransactionInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="48c25391-49e2-4942-80f3-c8399c5d2bc1"
+            name="DateofReturn"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ded8fe8d-cef3-4040-b166-52c11c55d694"
+            name="NoofRenew"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="f3168687-cfbb-4b8d-89ea-7afc037eca5f"
+        name="UserState"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="57b0ef4e-3330-4377-bf70-5d9cac4e896c"
+            name="Active" />
+          <enumerationLiteral
+            Id="1de19834-7ac8-4dee-b53e-4a13c18ff0f8"
+            name="Temporary Block" />
+          <enumerationLiteral
+            Id="3907df92-8407-4b9c-83ee-28b7ef836c74"
+            name="Permanently Block" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="635aadcd-9b0b-4ebb-89d1-f10b5de85264"
+        name="Publisher"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="e8e3d8cf-ee4c-40b0-ad35-2dddce61278d"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+              LastKnownName="BookInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ea0c995-07c6-44a3-be7d-b12b20d0d50f"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="413ff8a2-6ceb-4f04-8c63-34002c407313"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9e1ab8c2-f978-4015-a2f9-7569e3301113"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="28c60dba-ab12-47cc-8126-0e744fa0c5d0"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="71416c24-d4c5-4e47-a8b3-9d76b662d196"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aae31f82-e7df-477a-8992-cc9fdcd03f61"
+        name="Category"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="c2239e9c-8e4a-4f46-a711-84f2cfdf0388"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+              LastKnownName="BookInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da82b86d-892f-43ba-a7cb-98b675312ef7"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ce4c33e-d831-4bf3-a49d-178654e53c9c"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d98a242b-0e96-4524-895a-02b0b5eb74b2"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a798ab76-38e5-4fba-b733-9d78e926e2b7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="18b3aedb-878b-4011-95bd-39694fa534d6"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="9cd984de-75f7-4100-8ed4-35592d315d3c"
+        name="TransactionState"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="ea9384b3-daaf-43a5-a0fa-25bd9003a1a4"
+            name="Active" />
+          <enumerationLiteral
+            Id="478167e7-1283-4273-9014-10e1f690d7fd"
+            name="Closed" />
+          <enumerationLiteral
+            Id="43446204-740b-4d0a-ad56-2b9dc781997c"
+            name="Expired" />
+          <enumerationLiteral
+            Id="e0b861fc-46ab-4466-b5e7-7938bfdc6e56"
+            name="Canceled" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6cf072a9-c962-457f-b761-7ff7c7ae2dcd"
+        name="Author"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="1ded16e9-9ff2-48dc-8196-254e4777459f"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+              LastKnownName="BookInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="948c64a9-4d3a-4c71-8a1b-6623fd1c1d0d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3f966466-105b-4fe6-ad20-159364c90fb9"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e348a92a-f8c4-45d3-8ded-ddf744a1eaff"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a6a1857-5dd0-4a84-9cc5-9e0f6c655960"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="eea8a4ce-efd0-4af6-ab33-62ed8cf9abfa"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="df5a510a-3f42-475c-916a-41d70be61699"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e5ee02a7-4f2b-444c-9d8d-55b7ab30cc56"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2bba1f57-0d1b-4854-bedc-9d9124e5f5e2"
+        name="BookBorrowingInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="e97c1faf-ebcc-4175-9626-ffc96fd50c3a"
+            name="Book"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b"
+                LastKnownName="BookInfo"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4d7b817a-1445-4808-a377-402a6872abb1"
+        name="NormalAdmin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="a6107207-3ab5-4409-bbe4-f1f21c5868f0">
+            <enumerationMoniker
+              Id="d458f39b-9f00-4411-b063-56cb34fe4b2e"
+              LastKnownName="ModState"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="b7e9b673-2b46-44cb-9ed6-4b47e7767bd7"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f133a52f-48d1-4f78-8606-37e3a4ce0e8d"
+              LastKnownName="TransactionInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5d99814d-f507-4d90-a836-2d1cf8b4dcd7"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5ae68c47-57f1-492b-8bc5-44166bf49053"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="03355e5a-3400-4066-9b4c-5bf76f9eba10"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="41e34dd7-b7ac-4f73-bf55-8283d9cc16b7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="014d6ff8-5608-499c-a617-e83a7486634b"
+            name="IDNo"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ab93cf3d-32eb-48c6-bd4d-6767815fca79"
+            name="FullName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f71af260-b95c-481b-83a8-d206ae51fd4d"
+            name="Email"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="95633966-2a5d-40e6-9389-df5b5989bc2d"
+            name="PhoneNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1caab249-2d29-4fd5-b4c0-6ac1c756914c"
+            name="Password"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6c2f279c-6580-435e-a4e8-d742ea17da1b"
+            name="Designation"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ce4330af-6cb9-49fc-a767-3dcd94f2f8dc"
+            name="State"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="d458f39b-9f00-4411-b063-56cb34fe4b2e"
+                LastKnownName="ModState"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="990ea2a0-523b-42be-bc18-e34d6b6ed88a"
+            name="Type"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8d05c917-ac23-4ee2-8cb2-d39a1eba3fb2"
+            name="AddBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1aeca99b-f2db-4d9e-80ea-c79be9e93920"
+            name="DeleteBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2c161662-2c4c-49fb-876a-bef50bbe5865"
+            name="ModifyBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="744a29f0-2339-40d0-afa4-f7d62ea27408"
+            name="ViewBookInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="38e014fa-1162-4ba8-9d18-12a0e7019014"
+            name="CreateAccount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="83dd4b5a-4c88-4dbe-aab1-e0021c1c91fa"
+            name="BlockAccount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2c5dd89f-01de-4e0b-aa81-e0c5becbf3a7"
+            name="ModifyAccount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bb2a6835-9b83-4d90-aeb3-30e2eebc52f9"
+            name="CreateTransaction"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="55c674d0-43d0-4ce7-8e7b-7978c055ced0"
+            name="CancelTransaction"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="61049684-28cf-4353-b840-ab8f7ecb9785"
+            name="SearchBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="df2cdcef-9c7e-4bb9-a8fa-6ed7ce2226f6"
+            name="ViewListBook"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e8c2b66f-893a-460a-a9f3-91dca915746a"
+        name="SystemAdmin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="4550d0d7-ccfd-4402-898c-ec224580e8a7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4d7b817a-1445-4808-a377-402a6872abb1"
+              LastKnownName="NormalAdmin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c55a5ae2-f156-4cfd-860d-a018ad7a5037"
+            name="AddMod"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5663b094-e96c-4773-92c9-57864fa1928f"
+            name="ViewModInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bde70d2c-c048-4674-b7a0-89d6b77c3bf6"
+            name="SetModStatus"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6e1f36c0-f722-4252-8203-698ee2b88856"
+            name="ModifyMod"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="916f96d4-0e34-48c3-9381-d18244731133"
+            name="UpgradetoSystemAdmin"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="26d16ab1-6b55-41d6-8729-ac5d69356978"
+        name="BorrowedBookInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="46560a13-af6e-473a-9135-f4b92d4b94e2">
+            <enumerationMoniker
+              Id="95738e6d-ba3e-4192-8f35-86408c79a582"
+              LastKnownName="BorrowedBookStatus"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="8ec03c2b-667a-438d-b0b8-5ea9e91670b3"
+            name="Status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d81146f7-49da-4422-af3c-23dc2bdfe6d5"
+                LastKnownName="BorrowedAccountStatus"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8423bf70-8ee4-40b5-9946-d14367a31949"
+            name="User"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="4befad1e-c5ab-4ead-a355-bd3cd6cdd505"
+                LastKnownName="UserInfo"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="d458f39b-9f00-4411-b063-56cb34fe4b2e"
+        name="ModState"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="fdfde408-34d3-457c-beb1-32aa869d0bb4"
+            name="Active" />
+          <enumerationLiteral
+            Id="a2bd4b99-f0a3-4125-874f-dfb9216feb59"
+            name="Retired" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="95738e6d-ba3e-4192-8f35-86408c79a582"
+        name="BorrowedBookStatus"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="203e9402-323e-4bfe-a12c-cb76174d1136"
+            name="Borrowed" />
+          <enumerationLiteral
+            Id="75b4016e-6164-4f7d-8282-d019e0fd7972"
+            name="Returned" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d81146f7-49da-4422-af3c-23dc2bdfe6d5"
+        name="BorrowedAccountStatus" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="282142f9-e0ac-4e25-b29d-52a1b715b96a"
+        name="UserStatus" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6e0183d5-3720-48c4-9a18-545205db5bc6"
+        name="BlockedUser"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="65ee6609-a6e2-4563-9723-a50d296a9668"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4befad1e-c5ab-4ead-a355-bd3cd6cdd505"
+              LastKnownName="UserInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="d9c2c54c-deb1-4206-ab98-d8c0ae883086"
+            name="BlockFromDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6e8a8919-9fd0-43b2-aaad-7f0006b57e3b"
+            name="BlockToDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e97524a6-5a60-40ea-a6d5-0283b67d1fd0"
+        name="BlockedUser"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="57a3bdc6-0a41-4612-aa7f-3d28a28aeec7"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4befad1e-c5ab-4ead-a355-bd3cd6cdd505"
+              LastKnownName="UserInfo"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4a248ea8-bcf2-478d-88bd-c0f8837c89ad"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="13b8eb66-c132-46a7-bc10-c006ac44a8c9"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="01289163-4568-4885-b1ac-c7cd903072cd"
+            name="UserInfo"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="4befad1e-c5ab-4ead-a355-bd3cd6cdd505"
+                LastKnownName="UserInfo"
+                LastKnownLocation="BooksLibraryManagement.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="06d58415-449c-4676-a566-dd541e8addaa"
+            name="BlockedFromDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="dc66e409-4284-4936-87d0-4f704b147b07"
+            name="BlockedToDay"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="329b9ce6-c881-4b90-9897-e5d64124c053"
+        name="System Admin"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="a25545cf-52d4-47bb-9637-b691e0f22fba"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="49ebc04a-9cff-409a-ad81-949ed1e6a579"
+              LastKnownName="Normal Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="dbfa9d0a-77cb-4dfe-9e05-a30bccfe5746"
+            isDerived="false"
+            sourceEndRoleName="System Admin"
+            targetEndRoleName="Add Normal Admin"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a02c8a59-66e6-4fa8-9db5-23909e18a319"
+              LastKnownName="Add Normal Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2297d2ab-4527-4f48-9eaf-8a0fccbfc0d5"
+                  name="System Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6a2934b4-415f-4eed-a17e-306bcdf819bc"
+                  name="Add Normal Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fea49f82-0947-4f4d-ba62-1b85e1b83200"
+            isDerived="false"
+            sourceEndRoleName="System Admin"
+            targetEndRoleName="View Normal Admin Info"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e9372f76-1df6-4230-8b8e-316f0003334a"
+              LastKnownName="View Admin Info"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9de123f8-cd5e-4150-b96b-3255d6c2f5ee"
+                  name="System Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b6cb70d9-9f15-4903-83ab-8e0f0fd04c63"
+                  name="View Normal Admin Info"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b579ecda-5108-43c6-961a-9b20bcde49bb"
+            isDerived="false"
+            sourceEndRoleName="System Admin"
+            targetEndRoleName="View List Admin"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1"
+              LastKnownName="View List Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca54e0f3-adf0-481f-bd98-8c25bc94d348"
+                  name="System Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="55d0b2d8-fa1b-47e1-a510-df124e1c9060"
+                  name="View List Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a02c8a59-66e6-4fa8-9db5-23909e18a319"
+        name="Add Normal Admin"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e9372f76-1df6-4230-8b8e-316f0003334a"
+        name="View Admin Info"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1cbc56e9-ab4e-4429-8511-4c09c2066731"
+        name="Modify Normal Admin Info"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="ca4a52ff-eb07-4b7c-bf08-168fced1cf3e">
+            <useCaseMoniker
+              Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1"
+              LastKnownName="View List Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="c224339e-faef-4512-a12d-91056120f244">
+            <useCaseMoniker
+              Id="e9372f76-1df6-4230-8b8e-316f0003334a"
+              LastKnownName="View Admin Info"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </include>
+          <include
+            Id="91b3206c-1b67-41a5-8184-505843d5161f">
+            <useCaseMoniker
+              Id="2f896aae-bca1-4f76-ac65-881e23335fcf"
+              LastKnownName="View admin personal info "
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ebbfb062-3d92-4d99-89bd-2a1ff60a2b9f"
+        name="Set Normal Admin State"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="5b10996e-d447-49ff-bec7-89a458865d78">
+            <useCaseMoniker
+              Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1"
+              LastKnownName="View List Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c41c3499-acf4-41e8-a775-10c53cb381f1"
+        name="Upgrade Normal Admin to System Admin"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="66bc8e4e-cd2c-4de1-b037-926f6ee929ec">
+            <useCaseMoniker
+              Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1"
+              LastKnownName="View List Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="ad4b92c2-810f-45d2-853c-cfb836f15a8a">
+            <useCaseMoniker
+              Id="e9372f76-1df6-4230-8b8e-316f0003334a"
+              LastKnownName="View Admin Info"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </include>
+          <include
+            Id="97fef2a7-b933-454d-9f59-cfbb19861c83">
+            <useCaseMoniker
+              Id="2f896aae-bca1-4f76-ac65-881e23335fcf"
+              LastKnownName="View admin personal info "
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1"
+        name="View List Admin"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2f896aae-bca1-4f76-ac65-881e23335fcf"
+        name="View admin personal info "
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="5fb20220-5561-4a1f-8803-91c94295b62e">
+            <useCaseMoniker
+              Id="9e63db55-74ea-4e12-a5a9-c2bc667b36c1"
+              LastKnownName="View List Admin"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8abef1ba-7c66-4a89-92f5-0025552a325a"
+        name="Block user"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="b851ace3-b426-4595-a132-d4b3781e4caf">
+            <useCaseMoniker
+              Id="390bdc71-a1b2-48da-a531-09000b07d4ba"
+              LastKnownName="Search user"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </extend>
+          <extend
+            Id="47a8be89-0497-438b-a95b-f33a9a4fcd99">
+            <useCaseMoniker
+              Id="0f315b57-d18e-494e-8a9c-aa4e5368a9f2"
+              LastKnownName="View list user"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ab4d6d74-2164-4541-a0e5-165eaf3da23f"
+        name="Block user temporary"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="88e15bf5-7931-4302-a2d8-dd123eea8950"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="8abef1ba-7c66-4a89-92f5-0025552a325a"
+              LastKnownName="Block user"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2df0d642-b24f-4617-a354-de899741ce1f"
+        name="Block user permanently"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="e6e7b1ec-fee0-452b-adb1-7a3ca5ddbf89"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="8abef1ba-7c66-4a89-92f5-0025552a325a"
+              LastKnownName="Block user"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3dae97cf-a19b-4066-9b06-f6df004f2cf6"
+        name="Create borrowing transaction"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="9b02e051-3e8d-4a82-ac2f-3d1d798c78ee"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="baa97cb2-efad-4c22-a9a1-29df2b4ad789"
+              LastKnownName="Create transaction"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="71f24ddc-b850-4258-a9cb-0fca1fbd0e88"
+        name="Create return transacction"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="47528aef-8654-4a42-b5a4-a53504394716"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="baa97cb2-efad-4c22-a9a1-29df2b4ad789"
+              LastKnownName="Create transaction"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e8d582e2-6bea-43f7-9a17-6edaf04c9407"
+        name="Create renewing transaction"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="bc449139-986f-4e37-9c19-8ecae912e9c7"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="baa97cb2-efad-4c22-a9a1-29df2b4ad789"
+              LastKnownName="Create transaction"
+              LastKnownLocation="BooksLibraryManagement.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
