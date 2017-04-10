@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="44d254a2-c254-4f5c-b8ee-ba69e4ef70e0"
+  name="SetTransactionState" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="a4ab34c7-4d18-40a0-ac97-47e5a40dcbac"
+        name="SetTransactionState"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="990327da-ae11-4c87-acbe-3f80661f4693"
+            name="Manager"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="cf4b109f-87e8-48f9-81e4-f3a77cbdd0a1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="fa208fab-f8b8-48da-8b77-5873d8d07e2a"
+            name="System"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="d4c0b201-d038-4fc7-8609-b65c09299a2a"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="e20e18fb-5512-45b3-9603-1ce972e9cd6a"
+            name="Access in library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ec217e28-66d4-4e35-ad61-732ca7c665cb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="43653eda-e979-44f9-9840-cdd09e1fbb2c"
+                  LastKnownName="Check Status of user"
+                  LastKnownLocation="SetTransactionState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode
+            Id="af901e8c-c897-4235-8bcc-3779f9c3cba7"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="37649326-f486-4d0e-9027-e8575e32fc62"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e20e18fb-5512-45b3-9603-1ce972e9cd6a"
+                  LastKnownName="Access in library website"
+                  LastKnownLocation="SetTransactionState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="43653eda-e979-44f9-9840-cdd09e1fbb2c"
+            name="Check Status of user"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e36d67cb-6e77-420f-bc6d-e5c9effd86cc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="97b9579b-6110-4abf-b5c3-c616d6227087"
+                  LastKnownName="Add transaction "
+                  LastKnownLocation="SetTransactionState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="97b9579b-6110-4abf-b5c3-c616d6227087"
+            name="Add transaction "
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="755dfb27-8db5-4ed3-bace-943342a2fc7d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9d01d476-e5dd-4686-a887-cc8035e49c24"
+                  LastKnownName="Save Status of into transaction"
+                  LastKnownLocation="SetTransactionState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9d01d476-e5dd-4686-a887-cc8035e49c24"
+            name="Save Status of into transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5052640f-ede7-4902-995f-99386b82562d"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="9dbbc408-4630-4f64-a2fd-837fa1fceded"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="SetTransactionState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="9dbbc408-4630-4f64-a2fd-837fa1fceded"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

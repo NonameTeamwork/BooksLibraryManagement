@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="ed41618c-148e-41e3-a4f2-56abc033f48e"
+  name="CreateTransaction" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="d691c523-f17e-4874-bd9d-9e07eced5d95"
+        name="CreateTransaction"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="8eb803e4-b0fd-4362-9d7f-5a1389a32e19"
+            name="Manager"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="71e752e7-04f8-434f-a6b3-90e06a3f8a12"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="51965602-6c59-4a73-a8b1-5ccdda3a6545"
+            name="System"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="99702ba2-3b04-4198-adb2-9f20032d7568"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <initialNode
+            Id="304b44ba-0b8e-48e1-999b-3dea61756da2"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e2299f6e-0340-4391-9c19-86ad1e235078"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3849c60d-ca01-4671-a7b9-ee49d759e504"
+                  LastKnownName="Access in library website"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="3849c60d-ca01-4671-a7b9-ee49d759e504"
+            name="Access in library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dbc19168-0262-45a6-81a6-3c25da76e046"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8efff25c-19e2-4ebc-9059-80f690cd143f"
+                  LastKnownName="Click Create Transaction button"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9d08e5eb-6f67-41c4-9645-120e16f2e8ee"
+            name="Show information form to manager enter information transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="623b8b06-2f66-4142-bfe3-9d814ea2c083"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c8f8ff4f-176b-418b-9d9a-e0f10d94ed11"
+                  LastKnownName="Enter all information of transaction"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8efff25c-19e2-4ebc-9059-80f690cd143f"
+            name="Click Create Transaction button"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="049b9d39-ea2d-465d-97d8-d991cf9061a8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9d08e5eb-6f67-41c4-9645-120e16f2e8ee"
+                  LastKnownName="Show information form to manager enter information transaction"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c8f8ff4f-176b-418b-9d9a-e0f10d94ed11"
+            name="Enter all information of transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="30e23b37-2b37-4a6d-abe7-0eb70f6e2503"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ff6fde80-f855-4d46-819f-bee85dbce3df"
+                  LastKnownName="Click Add transaction button"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ff6fde80-f855-4d46-819f-bee85dbce3df"
+            name="Click Add transaction button"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="da1ccbf8-791a-4c15-b16a-e5d28a83e2d7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="43d8ea7a-0a43-401d-89e1-bbacec2c7d8e"
+                  LastKnownName="Check valid information"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="43d8ea7a-0a43-401d-89e1-bbacec2c7d8e"
+            name="Check valid information"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f3833522-d0f2-4896-a37c-a3d62f5eb1e7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="bcfe53ed-90fc-41e1-ab61-273a440c18e0"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="bcfe53ed-90fc-41e1-ab61-273a440c18e0"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="29db6395-7230-4940-80f8-ba9c41b9c77b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="275d4673-c32b-4eac-b5bd-d63fa2aa2d27"
+                  LastKnownName="notice invalid information"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="4b4a2975-0c3d-44ba-bca8-46dcbae8c57f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6d896801-95c0-4ac1-9843-f8e666fc022e"
+                  LastKnownName="Choose Status for transaction"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <objectNode
+            Id="0b490399-6f5f-43fc-9f5c-daaf308af0ab"
+            name="invalid"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="7f9c2f5c-588e-4743-9f83-de3f0ccc8698"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <activityFinalNode
+            Id="698877b1-18cd-4233-98ea-335c7ba68154"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="275d4673-c32b-4eac-b5bd-d63fa2aa2d27"
+            name="notice invalid information"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b4372ec7-9f1d-40cd-a556-1676e1112290"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c8f8ff4f-176b-418b-9d9a-e0f10d94ed11"
+                  LastKnownName="Enter all information of transaction"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode
+            Id="5455c330-06e1-4578-abab-0ac4bc6fdda0"
+            name="valid"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="733f13e9-533a-4082-b7c6-a9854c9d783f"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="15a2b792-1b97-4b63-ad67-ac3d79ec82b9"
+            name="Check condition for status transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b691b2c8-d3b7-4000-9a12-03df1e76b153"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4775e078-913a-4e78-934d-02327c7a9bb0"
+                  LastKnownName="Choose Transaction type(borrow, renew, return)"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode
+            Id="c685ad38-91b7-43ec-998d-19e0adea3fc8"
+            name="user"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="27456a81-c0b1-4b63-bca0-3414b8748f5a"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="6d896801-95c0-4ac1-9843-f8e666fc022e"
+            name="Choose Status for transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e6a9d95a-ec74-41a2-ab41-229b61f50927"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="15a2b792-1b97-4b63-ad67-ac3d79ec82b9"
+                  LastKnownName="Check condition for status transaction"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4775e078-913a-4e78-934d-02327c7a9bb0"
+            name="Choose Transaction type(borrow, renew, return)"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bea2b1f3-2c1a-4bec-a3ea-222ecb78b69d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c2fd3175-5e12-4bfb-bf39-aa351aac17fc"
+                  LastKnownName="Click Create Transaction button1"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7b7a76f4-ed11-4314-acd6-686270566390"
+            name="Save all information for transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a151a98e-d295-49bc-b720-c26565eec600"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="698877b1-18cd-4233-98ea-335c7ba68154"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c2fd3175-5e12-4bfb-bf39-aa351aac17fc"
+            name="Click Create Transaction button1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="613d6b8b-7a7a-4a3e-8756-2e7689296da4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7b7a76f4-ed11-4314-acd6-686270566390"
+                  LastKnownName="Save all information for transaction"
+                  LastKnownLocation="CreateTransaction.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
