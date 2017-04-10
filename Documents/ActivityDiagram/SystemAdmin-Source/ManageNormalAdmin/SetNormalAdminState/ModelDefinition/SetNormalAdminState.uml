@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="d33d2294-c5d9-4c5a-8d87-c6b1654def9a"
+  name="SetNormalAdminState" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="1b39a194-de50-4921-9b2b-1c9b9b11588a">
+      <body>Valid</body>
+    </comment>
+    <comment
+      Id="65ca7886-c01c-4f33-b21b-e162bf7bfd79">
+      <body>Invalid</body>
+    </comment>
+    <comment
+      Id="7050ab1e-2975-4bbd-8a20-4c8c90fe8515">
+      <body>Input again</body>
+    </comment>
+    <comment
+      Id="c5665d35-4989-4096-bde0-12a3c160c2f5">
+      <body>Don't input again</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="8e9360d2-f3b6-459c-b22d-5a00589a42cf"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="e85bfe39-1fb7-4bc4-8b4e-e8f7183ad6f5"
+            name="System Admin"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="36c1d116-5ae3-44e8-bdc2-10e112830e62"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="69a6af84-c643-49f9-95cd-67553e628358"
+            name="System"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="bfb79c92-28bc-4d1b-b365-3a50dd726af8"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <initialNode
+            Id="00a9d49e-116f-4f08-9487-4335dc1c19b6"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4881bf52-4a92-4f6f-baf9-a0cea64b1fa4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="172e71f0-0dfe-4084-8158-762bc7ded150"
+                  LastKnownName="Access in Library website"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="172e71f0-0dfe-4084-8158-762bc7ded150"
+            name="Access in Library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4d4a4720-586d-461c-adf1-2952a85d176c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fb6170c6-9c82-47a2-be3c-755e79fd7468"
+                  LastKnownName="Click in login button"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="fb6170c6-9c82-47a2-be3c-755e79fd7468"
+            name="Click in login button"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ad7019ed-14c5-4dfd-ad2e-e63cb8289db6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dd11e9c3-a186-4d7b-8fe8-0e50d6e31709"
+                  LastKnownName="Input the persional account "
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="dd11e9c3-a186-4d7b-8fe8-0e50d6e31709"
+            name="Input the persional account "
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="96c2e5c7-ce55-480a-8f4f-9eaed49cee40"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0e2029eb-6832-4a21-8b67-0b29dd47afc2"
+                  LastKnownName="Check account"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="1feef629-172e-443a-980e-27099de71c23"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2d693016-07ea-4454-b414-c14c51f9dff2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="abb0ef0f-0f74-4b60-aab5-0b7614955969"
+                  LastKnownName="Login successfully"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="cc31428e-94fa-4b8c-9ea6-8d5725777824"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="19eed042-dcdb-4828-adb0-cd79e53f4d21"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="0e2029eb-6832-4a21-8b67-0b29dd47afc2"
+            name="Check account"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3e78a070-0a36-4b8b-b4ff-59eace69536f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="1feef629-172e-443a-980e-27099de71c23"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="abb0ef0f-0f74-4b60-aab5-0b7614955969"
+            name="Login successfully"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="19a777f0-5a29-4c26-9f7e-c9e1a45da015"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f71c3870-0958-4ecb-ae14-9ddcf31140e1"
+                  LastKnownName="Click in &quot;Manage Normal Admins&quot;"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="19eed042-dcdb-4828-adb0-cd79e53f4d21"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="41d9e8fa-aae2-4f1e-8e79-12f372038636"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dd11e9c3-a186-4d7b-8fe8-0e50d6e31709"
+                  LastKnownName="Input the persional account "
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="417a79ad-3025-413f-aafb-cac6fa3bb802"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e09e40bf-4137-4476-bec0-6d22fb8b5c40"
+                  LastKnownName="Reset password itself"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="e09e40bf-4137-4476-bec0-6d22fb8b5c40"
+            name="Reset password itself"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="972269b7-266f-4229-b115-4f69f3823547"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dd11e9c3-a186-4d7b-8fe8-0e50d6e31709"
+                  LastKnownName="Input the persional account "
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f71c3870-0958-4ecb-ae14-9ddcf31140e1"
+            name="Click in &quot;Manage Normal Admins&quot;"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="81b290de-467b-4b6c-9474-b23b80f62aca"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="20633251-9ecc-4352-a810-eb49058f7038"
+                  LastKnownName="Show list of normal admins"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c14d5969-7a32-49fa-be51-69188d2b6754"
+            name="Choose a specific admin"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6e10ab99-fda8-4200-91bb-98709d38e3ea"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="55d6bf32-c9fc-46e0-97b6-83f4ce570582"
+                  LastKnownName="Set up that admin state"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="20633251-9ecc-4352-a810-eb49058f7038"
+            name="Show list of normal admins"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5ce99465-5f70-4717-b016-7573b7bed536"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c14d5969-7a32-49fa-be51-69188d2b6754"
+                  LastKnownName="Choose a specific admin"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="55d6bf32-c9fc-46e0-97b6-83f4ce570582"
+            name="Set up that admin state"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fd12016f-46ce-4382-8569-c47261301087"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="f5a8eb47-c79b-4b72-8d34-a85c1b689e7f"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="SetNormalAdminState.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="f5a8eb47-c79b-4b72-8d34-a85c1b689e7f"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="be6ea2c3-30dc-438b-b676-ae181aead14b" name="Activity1" linkedPackageId="0045cb62-19c3-4362-bb7e-7ee5a2cbc7c7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="02b201bf-031b-4f9e-bd55-c75d17aeef3f">
+      <elementDefinition Id="1d6643ba-4930-41f5-b11e-453c229ee283" />
+      <body>Valid</body>
+    </comment>
+    <comment Id="46e4ac46-7eea-44da-b00f-477acb999e7b">
+      <elementDefinition Id="6dae0c0a-42ad-467c-a43a-63759141b938" />
+      <body>Invalid</body>
+    </comment>
+    <comment Id="cfca0e33-7350-42b3-ae28-1b7a91e03f14">
+      <elementDefinition Id="1ace7246-4411-4847-8715-833636e3dcc7" />
+      <body>Input again</body>
+    </comment>
+    <comment Id="2a1137e8-8bbd-4b89-b1af-b692a62fa36e">
+      <elementDefinition Id="d53fff11-af7a-41a0-a76f-efa93f8426d0" />
+      <body>Don't input again</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="c12fa913-756b-42c2-885e-17c522ca08f1">
+      <profileInstance Id="1443c0d8-378f-4ca2-a835-aa62ea65c82f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6b715a9e-724f-4534-ad7b-88674ab3cb29">
+      <profileInstance Id="ac9234e1-8f27-4c85-894a-c4db67fea4f1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="fa3905ee-3f25-4a8c-a799-6bac5056ee1a" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="5e3eabd2-9fd6-47dd-a31f-6d54bf4a2451" />
+        <nodes>
+          <objectNode Id="b3bd6819-7295-4cfb-ae28-87487de8ae60" name="System Admin" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="22cec624-cba6-49a6-9f83-ddca40756d92" />
+            <upperBound>
+              <literalInteger Id="eccfb013-553b-4efb-93d3-2bff72bb86e0" name="2147483647" value="2147483647">
+                <elementDefinition Id="bcf17751-e99d-4a5e-9195-0191227a2e56" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="451052dd-0498-4712-97ad-d1c064c73c28" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="2ebf2a2f-899a-4622-a079-6b2016861eb8" />
+            <upperBound>
+              <literalInteger Id="b13a53cc-8668-476a-89df-85ea9141e0e6" name="2147483647" value="2147483647">
+                <elementDefinition Id="85c1b886-421c-46b6-9f2d-c8b8bfe18e49" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <initialNode Id="8059601e-ac94-44b6-a649-af0488e432e4" name="Initial1" isLeaf="false">
+            <elementDefinition Id="8c7437c5-7de0-4470-84c4-d14c98aff53a" />
+            <flowNodeTargets>
+              <controlFlow Id="54e7c6ef-8c83-4ac5-acfa-f89b7f2c3147" isLeaf="false">
+                <opaqueActionMoniker Id="9b0fa821-f7ec-4984-b49e-2925680fc277" LastKnownName="Access in Library website" />
+                <elementDefinition Id="a4e13d25-02c3-4c6e-8138-757bda401bf0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="9b0fa821-f7ec-4984-b49e-2925680fc277" name="Access in Library website" isLeaf="false">
+            <elementDefinition Id="35113672-9be7-42a6-919f-3a6db720a5da" />
+            <flowNodeTargets>
+              <controlFlow Id="d48af208-fb85-4fd2-a110-cf7ede07d2dc" isLeaf="false">
+                <opaqueActionMoniker Id="f406126b-7b74-4d83-ab86-fa8728484485" LastKnownName="Click in login button" />
+                <elementDefinition Id="2a17edee-b962-4e30-90a1-437f1836ecf5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f406126b-7b74-4d83-ab86-fa8728484485" name="Click in login button" isLeaf="false">
+            <elementDefinition Id="6e24bb40-4b3e-46e0-89f0-34442c501d1a" />
+            <flowNodeTargets>
+              <controlFlow Id="c89dacc7-7619-446d-9fa6-108dddbb9d64" isLeaf="false">
+                <opaqueActionMoniker Id="dd45a5a3-cb61-4fae-a93b-78a6313fbf65" LastKnownName="Input the persional account " />
+                <elementDefinition Id="5671b1bb-2ca7-40df-93e5-aab22b0872fe" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="dd45a5a3-cb61-4fae-a93b-78a6313fbf65" name="Input the persional account " isLeaf="false">
+            <elementDefinition Id="fa9dcaec-27b7-49fe-90c4-f9fb6f801e47" />
+            <flowNodeTargets>
+              <controlFlow Id="ac522592-ba0e-4b14-b92e-63ea56526107" isLeaf="false">
+                <opaqueActionMoniker Id="c0b50857-933e-4db7-b4f7-b83075d227c2" LastKnownName="Check account" />
+                <elementDefinition Id="4171c7a9-c73d-458b-94ad-1666d87ccfeb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="47b625a3-a530-4c35-9a63-2c919f9ca9a1" name="Decision1" isLeaf="false">
+            <elementDefinition Id="8b9ef615-1e78-4fc2-87ea-53b2889feda6" />
+            <flowNodeTargets>
+              <controlFlow Id="aec722cd-e1a4-4dc2-b954-d9b5c7710977" isLeaf="false">
+                <opaqueActionMoniker Id="39e0a11f-6fb6-4e75-9b49-6b4cb7e72fe2" LastKnownName="Login successfully" />
+                <elementDefinition Id="900bf138-1660-4a00-a4d1-8bdb1b37b2f0" />
+              </controlFlow>
+              <controlFlow Id="699aef18-f0fe-457b-8ec5-037bda4197ab" isLeaf="false">
+                <decisionNodeMoniker Id="6fccc253-2355-4d4d-ad30-5b9ff9832ba9" LastKnownName="Decision2" />
+                <elementDefinition Id="ef773bb0-9f60-4e4c-83f3-a9ebeb99616c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="c0b50857-933e-4db7-b4f7-b83075d227c2" name="Check account" isLeaf="false">
+            <elementDefinition Id="8d837146-6376-4116-bff4-7b19a43522c2" />
+            <flowNodeTargets>
+              <controlFlow Id="6cafa83a-b8de-461c-9243-5ab21789890e" isLeaf="false">
+                <decisionNodeMoniker Id="47b625a3-a530-4c35-9a63-2c919f9ca9a1" LastKnownName="Decision1" />
+                <elementDefinition Id="918ccd6b-b1d1-4367-8b90-dd9e01cc3e88" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="39e0a11f-6fb6-4e75-9b49-6b4cb7e72fe2" name="Login successfully" isLeaf="false">
+            <elementDefinition Id="fe406c2b-af29-4894-9d55-6c0ce90f4ab7" />
+            <flowNodeTargets>
+              <controlFlow Id="3c2166b6-5b02-4b7a-9f4f-6f1f40e6c81b" isLeaf="false">
+                <opaqueActionMoniker Id="6d8e979b-233c-4e4f-b90d-7b1eda8b6ca7" LastKnownName="Click in &quot;Manage Normal Admins&quot;" />
+                <elementDefinition Id="431ed3bd-ef23-4762-9ff6-8723c1359483" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="6fccc253-2355-4d4d-ad30-5b9ff9832ba9" name="Decision2" isLeaf="false">
+            <elementDefinition Id="ef81aeab-0bf4-492c-881c-57588cabcd2e" />
+            <flowNodeTargets>
+              <controlFlow Id="f498c3f1-5eaa-4241-88c9-4385ed1ab63c" isLeaf="false">
+                <opaqueActionMoniker Id="dd45a5a3-cb61-4fae-a93b-78a6313fbf65" LastKnownName="Input the persional account " />
+                <elementDefinition Id="d78937b6-f562-4411-acb1-588c1c2cd6e1" />
+              </controlFlow>
+              <controlFlow Id="27ce3d87-7dfa-465b-9c9f-354c1e5a6ab1" isLeaf="false">
+                <opaqueActionMoniker Id="25b628e7-a358-43a6-a88f-b3ed339a7da3" LastKnownName="Reset password itself" />
+                <elementDefinition Id="40c91f77-9e85-45bf-a4e5-240281292cd6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="25b628e7-a358-43a6-a88f-b3ed339a7da3" name="Reset password itself" isLeaf="false">
+            <elementDefinition Id="5c6d90a9-54b7-42f4-afbf-91ca2c95118a" />
+            <flowNodeTargets>
+              <controlFlow Id="d481862f-f710-4198-8157-3ccac33d390c" isLeaf="false">
+                <opaqueActionMoniker Id="dd45a5a3-cb61-4fae-a93b-78a6313fbf65" LastKnownName="Input the persional account " />
+                <elementDefinition Id="66a92d99-8a44-443b-91ca-661afcf0dd8f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6d8e979b-233c-4e4f-b90d-7b1eda8b6ca7" name="Click in &quot;Manage Normal Admins&quot;" isLeaf="false">
+            <elementDefinition Id="28b04820-d25b-418c-b773-1015f8b6b537" />
+            <flowNodeTargets>
+              <controlFlow Id="db3d0704-370b-4971-8277-de69a6350c09" isLeaf="false">
+                <opaqueActionMoniker Id="58a75ba3-7f31-4e69-9b99-cddddd44ab0c" LastKnownName="Show list of normal admins" />
+                <elementDefinition Id="ebd51960-10b7-4646-9b41-a62601be4eaa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="292b803d-cd7f-4219-bcd4-4e13045f3da1" name="Choose a specific admin" isLeaf="false">
+            <elementDefinition Id="59d8de14-3bff-443c-b8ba-b9e4424f9667" />
+            <flowNodeTargets>
+              <controlFlow Id="aa4218d2-7ee6-421d-9007-6205ca7c7916" isLeaf="false">
+                <opaqueActionMoniker Id="845fdc4c-74cf-471b-bbde-e0077a2aac72" LastKnownName="View that admin's persional information" />
+                <elementDefinition Id="104d1b4f-48a2-41f5-8f38-bed289c66301" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="58a75ba3-7f31-4e69-9b99-cddddd44ab0c" name="Show list of normal admins" isLeaf="false">
+            <elementDefinition Id="30274f62-46cc-4d03-98d9-3eaf8e3d471d" />
+            <flowNodeTargets>
+              <controlFlow Id="370d5af6-8e5e-4851-a27f-2a0d739dbcf8" isLeaf="false">
+                <opaqueActionMoniker Id="292b803d-cd7f-4219-bcd4-4e13045f3da1" LastKnownName="Choose a specific admin" />
+                <elementDefinition Id="c3e79c3c-9388-427f-bfa8-49c8f9207e46" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="845fdc4c-74cf-471b-bbde-e0077a2aac72" name="View that admin's persional information" isLeaf="false">
+            <elementDefinition Id="a89159f6-5217-4394-836b-50215b236e08" />
+            <flowNodeTargets>
+              <controlFlow Id="024555e6-4663-4c68-b16b-895cf1ccc7d8" isLeaf="false">
+                <activityFinalNodeMoniker Id="14a1b8ed-3486-4220-8294-9302e97f2bd0" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="45ab49d5-6adb-4fdf-8c22-56b04bc87b7a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="14a1b8ed-3486-4220-8294-9302e97f2bd0" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="19809cf8-e9e7-4b2f-b213-ed1b171cc44e" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="0045cb62-19c3-4362-bb7e-7ee5a2cbc7c7" name="ViewAdminPersionalInfor">
+    <elementDefinition Id="c56da53b-d95e-434a-98dd-268de99835b1" />
+  </package>
+</activityRootModel>
