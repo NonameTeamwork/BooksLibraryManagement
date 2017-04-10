@@ -53,6 +53,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="0bc5c819-6a30-4a77-9087-c161997ccfcd" />
           </association>
+          <association Id="4c7e0859-3646-4d49-81e3-2588fa12e15b" isDerived="false" sourceEndRoleName="Guest" targetEndRoleName="Resetpassword" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1895e621-5f20-452f-a526-875145b52a67" LastKnownName="Reset password" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="03fe68fd-b57d-4cb7-a761-73b63c6add71" name="Guest" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2641bdd9-1317-477b-bd4b-f826be992886" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7632846c-db1b-4664-91f6-0ec6a7211d7a" name="Resetpassword" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="40b9bb96-08a5-407c-a193-cec1a44cfc73" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3eed5502-b85f-41fc-9fa7-eb9917298bb8" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -75,22 +91,6 @@
       <actor Id="eb9d25c2-bf13-431b-b785-3f0b265f2d14" name="Logged in User" isAbstract="false" isLeaf="false">
         <elementDefinition Id="19e27cc6-27cb-4221-a88e-4c389ffa531a" />
         <targetEnds>
-          <association Id="76e0fa49-97bb-4855-ae16-fab0ec067794" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="Search book" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="b99fed7f-b4c0-4c6b-818f-dd08134b8678" LastKnownName="Search book" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="2eaf4586-2ea2-469e-8de6-def8aee8b1bb" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="e3ae8839-b3ff-4065-83a5-9934b80d37e3" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="97ac2025-3f8d-455b-bf03-9787d3619b20" name="Search book" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="84731fd0-5756-4d63-b0d0-1d413763b911" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="bbd6ad7b-20d2-4ff3-b80e-59dba7c2ecdc" />
-          </association>
           <association Id="a6751c62-38b8-4992-b4a3-e49d7d198fe3" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="Log out" isLeaf="false" isAbstract="false">
             <useCaseMoniker Id="4f1c2b60-3e26-44be-acff-79e9826a18f6" LastKnownName="Log out" />
             <relationshipOwnedElementsInternal>
@@ -171,6 +171,38 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="b7e10826-9a65-4b2b-838d-43c824d5106b" />
           </association>
+          <association Id="ebf765ca-ae21-4841-a990-e3196bdaf022" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="Change password" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="24f4ff13-36e6-4d35-87c9-235875207698" LastKnownName="Change password" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="12cdb4e4-7b21-4b51-b982-a492c1a306db" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f04ec930-75d0-4441-b876-77c3b17f71e4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="50843865-75f0-456a-a456-d36b596a0a9f" name="Change password" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="71ee656f-a5d5-4092-870b-dbe0de2a8a3f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="da5e6b88-4a89-45b0-ad9c-f6e9a71be9c2" />
+          </association>
+          <association Id="c5fb9999-7292-4fec-8b72-312cd667e1a9" isDerived="false" sourceEndRoleName="Logged in User" targetEndRoleName="Search book" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="35770ebe-19a2-445c-b638-6dbbe7363b68" name="Logged in User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="33f8a76a-51b4-4a8e-ab32-b42b1a8ffa4b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ccb0b04f-ea34-4e3e-b3b0-aeb7c6db3de8" name="Search book" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cb8c4aa2-5905-4cf0-9040-55a310eee7bd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e6eb8f44-af64-4af9-8099-5f0d2ee56202" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -182,17 +214,6 @@
     <useCaseModelRootHasTypes>
       <useCase Id="4f1c2b60-3e26-44be-acff-79e9826a18f6" name="Log out" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5ad391fd-4622-49d9-ac44-313a1e2b20f2" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="b99fed7f-b4c0-4c6b-818f-dd08134b8678" name="Search book" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="d0ffc2d3-f7a8-4d4b-a1cd-b15aba22a909" />
-        <generalsInternal>
-          <generalization Id="07c4ffbd-1a69-4dc8-a056-504fca21b45f" isSubstitutable="false">
-            <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
-            <elementDefinition Id="700d6aed-cc14-4974-b36c-f5ccf027d6b2" />
-          </generalization>
-        </generalsInternal>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -292,6 +313,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="92fd9eb4-7322-44e4-b96e-358d038c4a4c" />
           </association>
+          <association Id="0264ac2f-9f21-4749-82f1-8b31193f4afb" isDerived="false" sourceEndRoleName="Normal Admin" targetEndRoleName="Change password" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="24f4ff13-36e6-4d35-87c9-235875207698" LastKnownName="Change password" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6d4eadb8-2a53-458f-b251-b4cf6e0cb0e6" name="Normal Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b0682fb5-40ef-48cf-a93e-963efbd399ae" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="25477e3c-31eb-4292-bd4c-164c0e93e5ec" name="Change password" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d747fe74-0e4e-474e-b594-5be660ae79d9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6dc343ad-a6ee-4492-a034-adf5a6951469" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -299,9 +336,9 @@
       <useCase Id="ff3f85fe-abdb-47c4-a2b4-24f3cb39a398" name="View list books" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5cd9e5b7-25db-4519-91df-7b786e844215" />
         <generalsInternal>
-          <generalization Id="b858633c-035e-43a6-9f00-44d17a7e90b1" isSubstitutable="false">
+          <generalization Id="eb48d513-bd48-49a3-867b-56599b254895" isSubstitutable="false">
             <useCaseMoniker Id="423e7e6d-c49e-48c3-ba49-1c0de734b676" LastKnownName="View list books" />
-            <elementDefinition Id="dc323940-1822-495d-9242-4fc3f8b58103" />
+            <elementDefinition Id="e4a5d155-b9bf-4b0a-a4a0-07bc3ce06622" />
           </generalization>
         </generalsInternal>
         <extendedCases>
@@ -316,9 +353,9 @@
       <useCase Id="2f92fbd4-1733-45c3-8b78-71b6bd5b1deb" name="Search book" isAbstract="false" isLeaf="false">
         <elementDefinition Id="109e8914-2996-463a-9823-4af716a5937d" />
         <generalsInternal>
-          <generalization Id="d0e761cc-895b-4ab8-ba58-20ea358565cc" isSubstitutable="false">
+          <generalization Id="796939e2-0f18-4670-ad99-be467d2b3757" isSubstitutable="false">
             <useCaseMoniker Id="27868eae-e699-4b18-bb06-104e3f84e3d7" LastKnownName="Search book" />
-            <elementDefinition Id="8131db79-ac26-49d7-9f31-2cc6cd5aadd6" />
+            <elementDefinition Id="1d560744-e1fe-44ad-8bea-112cb99afe47" />
           </generalization>
         </generalsInternal>
         <extendedCases>
@@ -382,9 +419,9 @@
       <useCase Id="e835fd8b-28c3-4613-978b-11786268056f" name="View book info" isAbstract="false" isLeaf="false">
         <elementDefinition Id="f9440f52-2e9b-4695-9d0d-ba9a5f356459" />
         <generalsInternal>
-          <generalization Id="22930682-dd4f-46bf-858a-7cfbbacc4b13" isSubstitutable="false">
+          <generalization Id="6be0552d-d33a-45d2-868b-8cfbdd7a0937" isSubstitutable="false">
             <useCaseMoniker Id="6ca1bedb-ffcd-4888-a7fa-287ad184ea91" LastKnownName="View book info" />
-            <elementDefinition Id="f4de9701-872c-4c6a-a504-e43bb3cce50b" />
+            <elementDefinition Id="8c8d7b34-a2a8-4961-be03-df0b5132d0c3" />
           </generalization>
         </generalsInternal>
         <extendedCases>
@@ -469,31 +506,6 @@
             <elementDefinition Id="1a980479-c5c0-4503-8804-ac53e5bba65c" />
           </extend>
         </extendedCases>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="8c4da82c-54e1-464e-b687-98d1af8275f0" name="Delete user" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="5136de15-1f8e-423d-9484-7a3688d9b4a0" />
-        <extendedCases>
-          <extend Id="c3030d11-f1f8-428e-bff8-7fcd2d46ea17">
-            <useCaseMoniker Id="47314fc1-e18c-48a8-b15d-7b094cbcd423" LastKnownName="View list user" />
-            <elementDefinition Id="91e408f5-a381-4715-991c-fa93eaf673fb" />
-          </extend>
-          <extend Id="943d2336-d66a-4ffe-af28-3285190ce328">
-            <useCaseMoniker Id="34b40218-d55f-481b-9276-672adcf536a1" LastKnownName="Search user" />
-            <elementDefinition Id="702c4c90-2222-4330-9c76-c82de9712b4e" />
-          </extend>
-          <extend Id="1054b3dc-b6ae-4892-934d-dc295120fd9c">
-            <useCaseMoniker Id="3b20f2be-a02e-4148-8ab8-09d7098db73f" LastKnownName="View user profile" />
-            <elementDefinition Id="3d43c724-0d4f-492c-995a-4d5644d97b13" />
-          </extend>
-        </extendedCases>
-        <additions>
-          <include Id="72ebe463-75e2-44e8-9d2f-5f6cd2137af1">
-            <useCaseMoniker Id="3b20f2be-a02e-4148-8ab8-09d7098db73f" LastKnownName="View user profile" />
-            <elementDefinition Id="9e1caaff-2d71-4619-8a3b-7c24a1b6d729" />
-          </include>
-        </additions>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -754,6 +766,39 @@
           </generalization>
         </generalsInternal>
       </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="24f4ff13-36e6-4d35-87c9-235875207698" name="Change password" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b0809fbb-ccf9-4549-9434-c984ac469940" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1895e621-5f20-452f-a526-875145b52a67" name="Reset password" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="57feecab-35fb-45cf-b4df-6ba19d2a49fd" />
+        <targetEnds>
+          <association Id="c772b4c6-889a-469e-9c92-829bb00edb9f" isDerived="false" sourceEndRoleName="Resetpassword" targetEndRoleName="Sendgrid Service" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="89104b37-5475-479c-9ba0-08c88b611753" LastKnownName="Email Service" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3f60da16-cd92-496e-9422-27035215c534" name="Resetpassword" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1566eab7-2acb-4606-b33d-d14e79f3ff78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="429410bb-7a49-431c-aca2-f6979855c051" name="Sendgrid Service" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="04998a6f-53a6-494a-8ef7-f7a3e9aa61c1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8df2b681-e2aa-4dc9-bbbe-50f9311b0217" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="89104b37-5475-479c-9ba0-08c88b611753" name="Email Service" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="29ce696a-9e4f-4e0e-aac7-90d6733e5995" />
+      </actor>
     </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="071b660d-846b-4166-882a-4fd266faa9c1" name="BooksLibraryManagement">

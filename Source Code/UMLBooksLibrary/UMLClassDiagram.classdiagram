@@ -137,6 +137,12 @@
           <operation Id="e9e50049-06a7-40cd-ad5c-3dc9c3203b78" name="ViewListBook" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0dd3a315-0d8f-4bdd-b98c-76e3740fbf05" />
           </operation>
+          <operation Id="75f87100-3d29-476f-80cb-509eadf795fa" name="ChangePassword" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="13c5c470-b94e-437b-b229-1fc09ff1c90d" />
+          </operation>
+          <operation Id="2efc39d2-e4be-4e29-99ed-6c736b061135" name="IsBlocked?" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c6b60e9a-f472-44e3-98ef-a3854decd0f7" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -144,7 +150,7 @@
       <class Id="858bdda2-f018-440d-9724-4ddad74c34b0" name="BookInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="44f410e9-1ca7-493d-9e80-34f965b2ff6b" />
         <ownedAttributesInternal>
-          <property Id="e9ee470e-f267-44ce-8f7b-ffc3e530f4d5" name="BookID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e9ee470e-f267-44ce-8f7b-ffc3e530f4d5" name="Noofbook" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ce854d3b-1b05-4723-9fc7-7c26fe38029a" />
           </property>
           <property Id="0bfc9aca-8520-4bbc-8ee1-52a17b000fbe" name="Category" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -182,6 +188,9 @@
           </property>
           <property Id="df8a0b04-cec7-4007-8b47-34286620ff94" name="NoofCopyAvailable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="83cb7711-822e-41b8-91d2-0caa86327f15" />
+          </property>
+          <property Id="0b3cfef0-c7e0-4ef2-92a5-838d746e444c" name="ISBN" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f16517a2-615c-4894-9b1f-fdd918515852" />
           </property>
         </ownedAttributesInternal>
       </class>
@@ -553,7 +562,7 @@
           <property Id="f9536663-c035-4980-b580-fd01546865a2" name="Password" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1caab249-2d29-4fd5-b4c0-6ac1c756914c" />
           </property>
-          <property Id="1ee18779-47ce-4afe-9397-a0375af7d8e6" name="Designation" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="1ee18779-47ce-4afe-9397-a0375af7d8e6" name="Position" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="6c2f279c-6580-435e-a4e8-d742ea17da1b" />
           </property>
           <property Id="189216df-3d07-4a8d-860c-00adde9ad07e" name="State" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -599,6 +608,12 @@
           </operation>
           <operation Id="c2ab9e0a-8cc6-406a-a6de-6236a4b9dc81" name="ViewListBook" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="df2cdcef-9c7e-4bb9-a8fa-6ed7ce2226f6" />
+          </operation>
+          <operation Id="0c502684-32c3-466d-b793-e1c8e5ce43e5" name="ChangePassword" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d3866c82-7034-467e-8f3e-6b13771542b3" />
+          </operation>
+          <operation Id="c8982648-06d2-47fb-a073-be33e095e46e" name="UnblockAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d8995b6-a7bf-43b5-a720-78c97841408c" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -721,11 +736,31 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="e164ef73-e300-4880-9df2-8f640a3d5b8f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="c9a34b6e-f46d-46d5-a473-723d21b924f1" name="Lower" value="0">
+                      <elementDefinition Id="fdba4e93-5efb-49c1-a4fd-299f414f0909" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d34857f7-a87a-4765-a7ba-ba7cf9e0d5d0" name="Upper" value="1">
+                      <elementDefinition Id="2a8e9504-4ee4-4b65-8c8f-78f2e641ad43" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="4a248ea8-bcf2-478d-88bd-c0f8837c89ad" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="09eda39b-8482-4e94-a6a2-4a9c3cdd7e1e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="7f57d9a6-f9ca-45a7-88f4-5ad744aeb2fa" name="Lower" value="1">
+                      <elementDefinition Id="4455906c-7420-468d-ad5c-d75807794dda" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="e67c3d73-d6da-4476-9fb4-0fe99d6d842a" name="Upper" value="1">
+                      <elementDefinition Id="7a88932b-df9f-4b84-bb9c-d68b24992479" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="13b8eb66-c132-46a7-bc10-c006ac44a8c9" />
                 </memberEnd>
               </associationHasOwnedEnds>
