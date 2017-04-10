@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="108b6ecb-5a03-4302-82a2-a2bde6b98fb4" name="CreateTransaction" linkedPackageId="38fe5451-cec3-4fd4-be5e-0181dc9597e5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b6befb65-c5b8-4633-856e-5a799bd2d360">
+      <profileInstance Id="af9960c2-94da-4ac0-94ec-e4287e05655d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b29c5ffd-ce89-4b59-bea6-c45239213426">
+      <profileInstance Id="2997ebf7-b7ac-4f02-9c16-06ac519f78e8" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="fef916d2-c7e4-4467-815c-d4e7558e64d8" name="CreateTransaction" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="d691c523-f17e-4874-bd9d-9e07eced5d95" />
+        <nodes>
+          <objectNode Id="8f5e0290-05ee-4302-9bbe-6638070873ef" name="Manager" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="8eb803e4-b0fd-4362-9d7f-5a1389a32e19" />
+            <upperBound>
+              <literalInteger Id="d586773e-a959-4605-96ba-e2c7d69ec1cb" name="2147483647" value="2147483647">
+                <elementDefinition Id="71e752e7-04f8-434f-a6b3-90e06a3f8a12" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="f2d76e19-dc5d-4187-b046-c973ad47aa40" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="51965602-6c59-4a73-a8b1-5ccdda3a6545" />
+            <upperBound>
+              <literalInteger Id="04b38f7a-b45d-4712-866d-c607479c15fa" name="2147483647" value="2147483647">
+                <elementDefinition Id="99702ba2-3b04-4198-adb2-9f20032d7568" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <initialNode Id="8f2489ea-4a03-4af2-88cd-e2429daec496" name="Initial1" isLeaf="false">
+            <elementDefinition Id="304b44ba-0b8e-48e1-999b-3dea61756da2" />
+            <flowNodeTargets>
+              <controlFlow Id="f9c08fbd-3b14-4525-b8df-4e84dfc8e919" isLeaf="false">
+                <opaqueActionMoniker Id="7c7975e4-8d8a-4100-bdf7-9134457db217" LastKnownName="Access in library website" />
+                <elementDefinition Id="e2299f6e-0340-4391-9c19-86ad1e235078" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="7c7975e4-8d8a-4100-bdf7-9134457db217" name="Access in library website" isLeaf="false">
+            <elementDefinition Id="3849c60d-ca01-4671-a7b9-ee49d759e504" />
+            <flowNodeTargets>
+              <controlFlow Id="1d9a00a3-ee57-435a-b3e9-49c8b09cd8e4" isLeaf="false">
+                <opaqueActionMoniker Id="a9663a26-4f22-4887-b334-7a33545cd2df" LastKnownName="Click Create Transaction button" />
+                <elementDefinition Id="dbc19168-0262-45a6-81a6-3c25da76e046" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="062bf0d2-7afb-479d-bbce-63ac2300fb88" name="Show information form to manager enter information transaction" isLeaf="false">
+            <elementDefinition Id="9d08e5eb-6f67-41c4-9645-120e16f2e8ee" />
+            <flowNodeTargets>
+              <controlFlow Id="fb1c8067-ad53-4d63-a131-a995f9fe5182" isLeaf="false">
+                <opaqueActionMoniker Id="327d84d4-e7f6-42ea-a807-0a1f9af59a0b" LastKnownName="Enter all information of transaction" />
+                <elementDefinition Id="623b8b06-2f66-4142-bfe3-9d814ea2c083" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a9663a26-4f22-4887-b334-7a33545cd2df" name="Click Create Transaction button" isLeaf="false">
+            <elementDefinition Id="8efff25c-19e2-4ebc-9059-80f690cd143f" />
+            <flowNodeTargets>
+              <controlFlow Id="0b75e16e-1331-4ce3-8c9a-cd275715cf6b" isLeaf="false">
+                <opaqueActionMoniker Id="062bf0d2-7afb-479d-bbce-63ac2300fb88" LastKnownName="Show information form to manager enter information transaction" />
+                <elementDefinition Id="049b9d39-ea2d-465d-97d8-d991cf9061a8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="327d84d4-e7f6-42ea-a807-0a1f9af59a0b" name="Enter all information of transaction" isLeaf="false">
+            <elementDefinition Id="c8f8ff4f-176b-418b-9d9a-e0f10d94ed11" />
+            <flowNodeTargets>
+              <controlFlow Id="a2daec72-13c8-4906-b24d-9e4b64043bfe" isLeaf="false">
+                <opaqueActionMoniker Id="43323cf5-fe30-44d5-887a-4c9f175db27e" LastKnownName="Click Add transaction button" />
+                <elementDefinition Id="30e23b37-2b37-4a6d-abe7-0eb70f6e2503" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="43323cf5-fe30-44d5-887a-4c9f175db27e" name="Click Add transaction button" isLeaf="false">
+            <elementDefinition Id="ff6fde80-f855-4d46-819f-bee85dbce3df" />
+            <flowNodeTargets>
+              <controlFlow Id="31742c8b-84ee-41cf-a7a0-4eede46de5bc" isLeaf="false">
+                <opaqueActionMoniker Id="eb6c333a-592c-4f97-8047-b0b4dc3a60bf" LastKnownName="Check valid information" />
+                <elementDefinition Id="da1ccbf8-791a-4c15-b16a-e5d28a83e2d7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="eb6c333a-592c-4f97-8047-b0b4dc3a60bf" name="Check valid information" isLeaf="false">
+            <elementDefinition Id="43d8ea7a-0a43-401d-89e1-bbacec2c7d8e" />
+            <flowNodeTargets>
+              <controlFlow Id="a678f502-a8c5-4cfb-930a-62fa0766ef2e" isLeaf="false">
+                <decisionNodeMoniker Id="7952c853-0621-43c9-bdcd-9ccf66862cde" LastKnownName="Decision1" />
+                <elementDefinition Id="f3833522-d0f2-4896-a37c-a3d62f5eb1e7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="7952c853-0621-43c9-bdcd-9ccf66862cde" name="Decision1" isLeaf="false">
+            <elementDefinition Id="bcfe53ed-90fc-41e1-ab61-273a440c18e0" />
+            <flowNodeTargets>
+              <controlFlow Id="dac77a4c-ce5f-4a11-8999-00b395d4c039" isLeaf="false">
+                <opaqueActionMoniker Id="22ec632d-db5a-439c-9644-d6420ea1b27e" LastKnownName="notice invalid information" />
+                <elementDefinition Id="29db6395-7230-4940-80f8-ba9c41b9c77b" />
+              </controlFlow>
+              <controlFlow Id="a00488ab-ce10-46c9-a4fc-9b39f699223c" isLeaf="false">
+                <opaqueActionMoniker Id="6d8278d4-9606-4acd-bf37-e84ea93aa158" LastKnownName="Choose Status for transaction" />
+                <elementDefinition Id="4b4a2975-0c3d-44ba-bca8-46dcbae8c57f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <objectNode Id="1869b8bc-460b-41ff-810a-b2f3b1b8d48b" name="invalid" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="0b490399-6f5f-43fc-9f5c-daaf308af0ab" />
+            <upperBound>
+              <literalInteger Id="aebcb60c-aab3-4f60-b45f-6bd515152eb1" name="2147483647" value="2147483647">
+                <elementDefinition Id="7f9c2f5c-588e-4743-9f83-de3f0ccc8698" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <activityFinalNode Id="b4160be0-0aba-4d71-9fbf-5fdc2d069ea1" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="698877b1-18cd-4233-98ea-335c7ba68154" />
+          </activityFinalNode>
+          <opaqueAction Id="22ec632d-db5a-439c-9644-d6420ea1b27e" name="notice invalid information" isLeaf="false">
+            <elementDefinition Id="275d4673-c32b-4eac-b5bd-d63fa2aa2d27" />
+            <flowNodeTargets>
+              <controlFlow Id="7f157633-198f-432d-8038-2876447bd318" isLeaf="false">
+                <opaqueActionMoniker Id="327d84d4-e7f6-42ea-a807-0a1f9af59a0b" LastKnownName="Enter all information of transaction" />
+                <elementDefinition Id="b4372ec7-9f1d-40cd-a556-1676e1112290" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode Id="20246798-a484-4eb9-b64f-ceb0283845c6" name="valid" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="5455c330-06e1-4578-abab-0ac4bc6fdda0" />
+            <upperBound>
+              <literalInteger Id="e0fe2a66-2220-46b4-a1b9-9107b8211330" name="2147483647" value="2147483647">
+                <elementDefinition Id="733f13e9-533a-4082-b7c6-a9854c9d783f" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="5d2a9d03-8c16-47f1-ac7a-d2c6ee758483" name="Check condition for status transaction" isLeaf="false">
+            <elementDefinition Id="15a2b792-1b97-4b63-ad67-ac3d79ec82b9" />
+            <flowNodeTargets>
+              <controlFlow Id="532fab0d-2e4f-4a18-930f-35ed2700fa6c" isLeaf="false">
+                <opaqueActionMoniker Id="8fd94f14-65d2-43cd-bfde-57ec6a91943c" LastKnownName="Choose Transaction type(borrow, renew, return)" />
+                <elementDefinition Id="b691b2c8-d3b7-4000-9a12-03df1e76b153" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode Id="6ed6976f-eac6-455b-8083-9971b1ac244c" name="user" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="c685ad38-91b7-43ec-998d-19e0adea3fc8" />
+            <upperBound>
+              <literalInteger Id="42b57056-9e2c-4076-9518-46409fcb1f24" name="2147483647" value="2147483647">
+                <elementDefinition Id="27456a81-c0b1-4b63-bca0-3414b8748f5a" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="6d8278d4-9606-4acd-bf37-e84ea93aa158" name="Choose Status for transaction" isLeaf="false">
+            <elementDefinition Id="6d896801-95c0-4ac1-9843-f8e666fc022e" />
+            <flowNodeTargets>
+              <controlFlow Id="48e2ee98-a5ef-4c33-97ec-20bdaf443ef4" isLeaf="false">
+                <opaqueActionMoniker Id="5d2a9d03-8c16-47f1-ac7a-d2c6ee758483" LastKnownName="Check condition for status transaction" />
+                <elementDefinition Id="e6a9d95a-ec74-41a2-ab41-229b61f50927" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8fd94f14-65d2-43cd-bfde-57ec6a91943c" name="Choose Transaction type(borrow, renew, return)" isLeaf="false">
+            <elementDefinition Id="4775e078-913a-4e78-934d-02327c7a9bb0" />
+            <flowNodeTargets>
+              <controlFlow Id="209534ca-9169-4714-a7eb-012e38457706" isLeaf="false">
+                <opaqueActionMoniker Id="3b47e33f-29b8-4433-b753-b502464ca5d1" LastKnownName="Click Create Transaction button1" />
+                <elementDefinition Id="bea2b1f3-2c1a-4bec-a3ea-222ecb78b69d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="45ba04d0-73cf-4e3d-b4b8-32fa34c6d1b4" name="Save all information for transaction" isLeaf="false">
+            <elementDefinition Id="7b7a76f4-ed11-4314-acd6-686270566390" />
+            <flowNodeTargets>
+              <controlFlow Id="e3c612c4-701e-41b6-bd6a-d0723b794a85" isLeaf="false">
+                <activityFinalNodeMoniker Id="b4160be0-0aba-4d71-9fbf-5fdc2d069ea1" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="a151a98e-d295-49bc-b720-c26565eec600" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3b47e33f-29b8-4433-b753-b502464ca5d1" name="Click Create Transaction button1" isLeaf="false">
+            <elementDefinition Id="c2fd3175-5e12-4bfb-bf39-aa351aac17fc" />
+            <flowNodeTargets>
+              <controlFlow Id="c2a160b9-aa76-4b07-8ed5-80056bd615c6" isLeaf="false">
+                <opaqueActionMoniker Id="45ba04d0-73cf-4e3d-b4b8-32fa34c6d1b4" LastKnownName="Save all information for transaction" />
+                <elementDefinition Id="613d6b8b-7a7a-4a3e-8756-2e7689296da4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="38fe5451-cec3-4fd4-be5e-0181dc9597e5" name="CreateTransaction">
+    <elementDefinition Id="ed41618c-148e-41e3-a4f2-56abc033f48e" />
+  </package>
+</activityRootModel>

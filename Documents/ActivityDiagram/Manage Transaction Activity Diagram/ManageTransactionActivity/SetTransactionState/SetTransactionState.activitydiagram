@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="baba2221-22cf-4b0b-883d-3c79514c7872" name="SetTransactionState" linkedPackageId="ea42d3e8-8fa3-4251-8be2-131f8abb51ec" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="140f4a2e-e4ff-4251-84c1-20299cc0c43a">
+      <profileInstance Id="dab8af67-33b2-4d19-9748-b6cbc6f2adf8" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6b992622-5174-4392-8633-45317b1551ae">
+      <profileInstance Id="b9ec1bc0-deee-4bb3-97df-252265c6d510" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="b08bf3de-4e15-4856-80b8-295d16b90251" name="SetTransactionState" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="a4ab34c7-4d18-40a0-ac97-47e5a40dcbac" />
+        <nodes>
+          <objectNode Id="0e724cb7-d131-4297-9f54-8c4efbddfc50" name="Manager" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="990327da-ae11-4c87-acbe-3f80661f4693" />
+            <upperBound>
+              <literalInteger Id="20a1bbc6-f34e-4130-982a-c45042323965" name="2147483647" value="2147483647">
+                <elementDefinition Id="cf4b109f-87e8-48f9-81e4-f3a77cbdd0a1" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="555d126c-854b-43d7-acca-cae98bfddd1b" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="fa208fab-f8b8-48da-8b77-5873d8d07e2a" />
+            <upperBound>
+              <literalInteger Id="f7d00db6-e67d-473e-ad5c-a7206c2a699d" name="2147483647" value="2147483647">
+                <elementDefinition Id="d4c0b201-d038-4fc7-8609-b65c09299a2a" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="ae8a5bd1-63fb-4de9-adbe-e58e71ae169b" name="Access in library website" isLeaf="false">
+            <elementDefinition Id="e20e18fb-5512-45b3-9603-1ce972e9cd6a" />
+            <flowNodeTargets>
+              <controlFlow Id="00cc391d-737f-4a35-9976-535fd0db9047" isLeaf="false">
+                <opaqueActionMoniker Id="571ac445-21a0-480e-b03d-e06f83c3c6f9" LastKnownName="Check Status of user" />
+                <elementDefinition Id="ec217e28-66d4-4e35-ad61-732ca7c665cb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode Id="e9308f85-8c98-4ad0-9dee-d43767d7bb09" name="Initial1" isLeaf="false">
+            <elementDefinition Id="af901e8c-c897-4235-8bcc-3779f9c3cba7" />
+            <flowNodeTargets>
+              <controlFlow Id="aa985dcf-3ff3-447d-b417-8185e40cd0d8" isLeaf="false">
+                <opaqueActionMoniker Id="ae8a5bd1-63fb-4de9-adbe-e58e71ae169b" LastKnownName="Access in library website" />
+                <elementDefinition Id="37649326-f486-4d0e-9027-e8575e32fc62" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="571ac445-21a0-480e-b03d-e06f83c3c6f9" name="Check Status of user" isLeaf="false">
+            <elementDefinition Id="43653eda-e979-44f9-9840-cdd09e1fbb2c" />
+            <flowNodeTargets>
+              <controlFlow Id="6fe9c693-6653-4893-8b08-f2286b4f6bc7" isLeaf="false">
+                <opaqueActionMoniker Id="c2ab1021-d6c7-497f-8598-016cf6c86c35" LastKnownName="Add transaction " />
+                <elementDefinition Id="e36d67cb-6e77-420f-bc6d-e5c9effd86cc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c2ab1021-d6c7-497f-8598-016cf6c86c35" name="Add transaction " isLeaf="false">
+            <elementDefinition Id="97b9579b-6110-4abf-b5c3-c616d6227087" />
+            <flowNodeTargets>
+              <controlFlow Id="6d880804-be75-4909-91d0-6a84457e3cd4" isLeaf="false">
+                <opaqueActionMoniker Id="463d7cca-a363-46b6-b855-02e2bb897942" LastKnownName="Save Status of into transaction" />
+                <elementDefinition Id="755dfb27-8db5-4ed3-bace-943342a2fc7d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="463d7cca-a363-46b6-b855-02e2bb897942" name="Save Status of into transaction" isLeaf="false">
+            <elementDefinition Id="9d01d476-e5dd-4686-a887-cc8035e49c24" />
+            <flowNodeTargets>
+              <controlFlow Id="fc6d2df7-bdc0-4d85-8471-17d5b2ac79a4" isLeaf="false">
+                <activityFinalNodeMoniker Id="153943fd-205d-4646-8286-6c8d809b0ff0" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="5052640f-ede7-4902-995f-99386b82562d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="153943fd-205d-4646-8286-6c8d809b0ff0" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="9dbbc408-4630-4f64-a2fd-837fa1fceded" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="ea42d3e8-8fa3-4251-8be2-131f8abb51ec" name="SetTransactionState">
+    <elementDefinition Id="44d254a2-c254-4f5c-b8ee-ba69e4ef70e0" />
+  </package>
+</activityRootModel>

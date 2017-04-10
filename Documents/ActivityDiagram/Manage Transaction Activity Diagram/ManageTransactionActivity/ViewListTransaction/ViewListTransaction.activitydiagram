@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="243054f3-0858-42af-9f7d-f0d9aa71db48" name="ViewListTransaction" linkedPackageId="5523171a-e12f-4605-a005-b4ffd2f737e7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="3a6cfa92-e5f0-49b7-a351-2f47427b0e5b">
+      <profileInstance Id="69e94c47-26ef-4799-b7fa-3ccd24feac7b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c2290d48-3692-4936-bae2-9a151fb72eae">
+      <profileInstance Id="c300b19f-f19a-4f1b-b36c-fa41b6e32ba4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="ecb7d715-1ae8-4df5-8990-9c60a10bdc85" name="ViewListTransaction" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="8b886e4f-92a2-41b9-a61b-05b17737a295" />
+        <nodes>
+          <objectNode Id="d5af5239-2e7a-40e7-b4f6-853af1f7afd2" name="Manager" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="247846e5-207c-48ec-98bb-943b8b7bf95a" />
+            <upperBound>
+              <literalInteger Id="801eaf58-fb93-48b6-a716-8b0cd4bf5e02" name="2147483647" value="2147483647">
+                <elementDefinition Id="c9d503e4-bd13-40fe-8391-26d435b1215b" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="43ee7346-1d8d-45b7-a53f-8c3949684f4b" name="System" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="3b733bfe-9409-4d32-a5d6-17ec368ad077" />
+            <upperBound>
+              <literalInteger Id="2a4385ad-7e1c-4367-bd4d-55123eab5af0" name="2147483647" value="2147483647">
+                <elementDefinition Id="008025c9-17bd-46f9-bb28-34abffac692c" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="f1adc55e-49b5-4f3f-82b6-29a5bd78e208" name="Access in library website" isLeaf="false">
+            <elementDefinition Id="8ba4730b-1be9-46c8-8dd4-4b4e68d1c41d" />
+            <flowNodeTargets>
+              <controlFlow Id="dfa55d93-bda6-4539-a0a7-c143086f437e" isLeaf="false">
+                <opaqueActionMoniker Id="e99879a2-f7ab-410e-be98-e9fe04408fdb" LastKnownName="Click View list transaction button" />
+                <elementDefinition Id="a20b8392-481b-4946-b1a8-a939a9ae5861" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode Id="4137bd1c-06aa-4a92-9052-a0f2b6e85d32" name="Initial1" isLeaf="false">
+            <elementDefinition Id="6413364d-5093-4eac-9809-7940d4980b41" />
+            <flowNodeTargets>
+              <controlFlow Id="535c5b46-8ab3-4b98-9a86-82e6c715651d" isLeaf="false">
+                <opaqueActionMoniker Id="f1adc55e-49b5-4f3f-82b6-29a5bd78e208" LastKnownName="Access in library website" />
+                <elementDefinition Id="a62da2ae-b1ae-4be5-aeed-ca60b81e7031" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="e99879a2-f7ab-410e-be98-e9fe04408fdb" name="Click View list transaction button" isLeaf="false">
+            <elementDefinition Id="9089c4bb-29c8-48da-aeed-29e3d3a093a6" />
+            <flowNodeTargets>
+              <controlFlow Id="ae3a91b2-89fb-49c4-b281-1ea9d5a98fc0" isLeaf="false">
+                <opaqueActionMoniker Id="f50e61cb-e98e-423a-bea3-b19f066ea1e7" LastKnownName="Display all information of list transaction" />
+                <elementDefinition Id="32aba047-f1f8-4cf6-9571-8dab47feaeaf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f50e61cb-e98e-423a-bea3-b19f066ea1e7" name="Display all information of list transaction" isLeaf="false">
+            <elementDefinition Id="31ab3733-bb5e-47c9-ad93-fe2b49f6d59a" />
+            <flowNodeTargets>
+              <controlFlow Id="6e2b4ea5-c7af-4718-94fd-0cc481c9fdea" isLeaf="false">
+                <activityFinalNodeMoniker Id="8dd5eaa2-d550-4ea9-91f5-71ace4fff240" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="d5a6a0c1-142d-4e63-99f7-6752437c3ba3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="8dd5eaa2-d550-4ea9-91f5-71ace4fff240" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="4d744cf9-b0e7-4c51-97f3-14f7ad375a40" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="5523171a-e12f-4605-a005-b4ffd2f737e7" name="ViewListTransaction">
+    <elementDefinition Id="2b3432c9-7e8f-48a1-afb2-12b26cd73e24" />
+  </package>
+</activityRootModel>
