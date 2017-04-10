@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="660f1857-738f-4d0b-902f-4eb48f327d5c"
+  name="ViewListUsers" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="2e0a3dfe-5461-482c-956c-7f337bcf682a">
+      <body>Valid</body>
+    </comment>
+    <comment
+      Id="09ec0da0-0d0a-4a5d-9dae-870364a92fb7">
+      <body>Invalid</body>
+    </comment>
+    <comment
+      Id="f585edf7-d66a-4160-9a37-540e7b3ba584">
+      <body>Input again</body>
+    </comment>
+    <comment
+      Id="9a94ec8a-d9cb-4892-8132-a0486fe5c5ac">
+      <body>Don't input again</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="ab3de49d-ff57-4c4b-ab3e-e1691824ea3d"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="67ab60d5-95c7-44bd-b65d-e0189487e010"
+            name="Manager"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="18a40d8e-9644-4de3-9e2f-bf49621a1f45"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="b3f40a28-5d12-4de6-910d-859f98d0e790"
+            name="System"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="6a313f16-feb0-4b82-9c8a-c5716d717fb3"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <initialNode
+            Id="949863bb-c6ff-4aaf-857f-c0a6631160a9"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ed5a312e-4859-4ea0-9aaf-9a7e5947172e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3ddfcc7e-0a2a-47e7-b9f3-b5eebfb1648a"
+                  LastKnownName="Access in Library website"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="3ddfcc7e-0a2a-47e7-b9f3-b5eebfb1648a"
+            name="Access in Library website"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f6e02038-cbd3-4256-8325-6431d9b6ebff"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0a9f0083-34f1-4af4-b18b-7c63d778ffa2"
+                  LastKnownName="Click in login button"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0a9f0083-34f1-4af4-b18b-7c63d778ffa2"
+            name="Click in login button"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="aa140bfc-d3a0-4b11-8720-d66ccd679602"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="df9b45af-4720-4d0f-9443-23b3aeedd852"
+                  LastKnownName="Input Manager's individual account "
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="df9b45af-4720-4d0f-9443-23b3aeedd852"
+            name="Input Manager's individual account "
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0c9001e6-fddd-464b-9433-2b5db2e4c008"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1d138043-a124-41c9-9667-ea722642376c"
+                  LastKnownName="Check account"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="d1953527-61c1-45eb-a797-a4656096c1b4"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5b5edc4b-37c9-426c-890b-0a374e6fd543"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2f4fb1cd-4806-4f8f-9e6b-2ec922c4aaae"
+                  LastKnownName="Login successfully"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="86d067cb-ca07-40ec-a3fe-7ce94ddf6512"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="0fa196c3-d6d9-4c41-b2f9-50b6a919d8ca"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="1d138043-a124-41c9-9667-ea722642376c"
+            name="Check account"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3fb7978c-5a45-44f0-9a65-773355323caf"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="d1953527-61c1-45eb-a797-a4656096c1b4"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2f4fb1cd-4806-4f8f-9e6b-2ec922c4aaae"
+            name="Login successfully"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3702a6b1-50d4-47a4-9f9e-35d0cb9a772c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bec7afc2-4d29-41b7-a2d9-6bbf17061690"
+                  LastKnownName="Click in &quot;List users&quot;"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="0fa196c3-d6d9-4c41-b2f9-50b6a919d8ca"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cf37de13-f99e-46fe-909f-9ec685860b20"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="df9b45af-4720-4d0f-9443-23b3aeedd852"
+                  LastKnownName="Input Manager's individual account "
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="3b643ca6-57d8-4580-a298-1b769c1e29a2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c436fa9c-8428-41e1-baa1-d8e58487b931"
+                  LastKnownName="Send a Email for Admin mod to reset password"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="c436fa9c-8428-41e1-baa1-d8e58487b931"
+            name="Send a Email for Admin mod to reset password"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2ff1dbd3-8c07-4858-9388-cb904d0cf135"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="36e0d366-eccb-4940-bd9e-bcde7593f66a"
+                  LastKnownName="Send a mail to reset password"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="36e0d366-eccb-4940-bd9e-bcde7593f66a"
+            name="Send a mail to reset password"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8e9bd20d-6996-4ee8-ba23-9b01ba73a9d8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d3fc6190-5a02-4843-b9cb-1f52e82f0a8a"
+                  LastKnownName="Check mail &amp; get a new password"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d3fc6190-5a02-4843-b9cb-1f52e82f0a8a"
+            name="Check mail &amp; get a new password"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c9983edb-951f-481b-83bd-95f57d948dd3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="df9b45af-4720-4d0f-9443-23b3aeedd852"
+                  LastKnownName="Input Manager's individual account "
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode
+            Id="06ea9f41-75d6-4c72-8d93-7ee6b15daa56"
+            name="Admin mod"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="91a98a99-5254-4347-aab5-748dfe71ce86"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="bec7afc2-4d29-41b7-a2d9-6bbf17061690"
+            name="Click in &quot;List users&quot;"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4667e0c9-421c-4b6f-85b4-eec1b16373b7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="09d6f49b-d8f0-46d8-a32d-f8e88fdbedd7"
+                  LastKnownName="View list all users in system"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="09d6f49b-d8f0-46d8-a32d-f8e88fdbedd7"
+            name="View list all users in system"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="68e3e618-52b8-4de8-9627-bfa6ea03b27e"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="108a5af5-0065-43a4-88ca-1915f6edbc0f"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ViewListUsers.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="108a5af5-0065-43a4-88ca-1915f6edbc0f"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
