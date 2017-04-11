@@ -192,6 +192,9 @@
           <property Id="0b3cfef0-c7e0-4ef2-92a5-838d746e444c" name="ISBN" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f16517a2-615c-4894-9b1f-fdd918515852" />
           </property>
+          <property Id="6a7d47ce-dccd-414f-88d5-74f46b5f118e" name="DateofImport" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a3a9f006-7485-4b12-b8a3-28ccf306c4cc" />
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
