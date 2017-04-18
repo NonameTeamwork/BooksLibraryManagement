@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LibraryManagement", "LibraryManagement\LibraryManagement.xproj", "{C8D5934E-4168-4BCE-B5BE-3CE96A8CFAFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement", "LibraryManagement\LibraryManagement.csproj", "{C8D5934E-4168-4BCE-B5BE-3CE96A8CFAFD}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UMLBooksLibrary", "UMLBooksLibrary\UMLBooksLibrary.modelproj", "{0090B9F5-6788-4E2A-B602-2134FDD15E33}"
 EndProject
