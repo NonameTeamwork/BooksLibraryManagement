@@ -1,0 +1,289 @@
+* {padding: 0px; margin: 0px;}
+body{
+    font-family:Arial;
+    font-size:14px;
+}
+.clearfix{
+    clear:both;
+    display: block;
+}
+
+
+
+
+#wrapper{
+    width:1366px;
+    margin: auto;
+}
+
+
+
+
+
+
+#header{
+    width:1366px;
+    height:50px;
+    background-color:#403042;
+}
+#header ul{
+    padding-left: 80px;
+
+}
+#header li{
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+#header a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+}
+.headertext a{
+    display: table-cell;
+}
+.header_icon img{
+    width: 48px;
+    height: 30px;
+    margin-top: 15px;
+    line-height: 50px;
+}
+#borrow a
+{
+    padding-left: 450px;
+}
+
+
+
+
+
+#menu{
+    background-color: #4c394e;
+    height: 70px;
+    width: 1366px;
+    overflow: auto;
+}
+#menu ul li{
+    float: left;
+    list-style: none;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#menu form{
+    line-height: 70px;
+}
+.librarylogo img{
+    width: 200px;
+    height: 67px;
+}
+.search input{
+    line-height: 40px;
+}
+.button_s{
+    margin-left: 25px;
+    background-color: #11bad3;
+    border-radius: 10px;
+    width: 100px;
+    color: #ffffff;
+    font-size: 15px;
+}
+.button_a{
+    width: 150px;
+    background-color:transparent;
+    font-size: 15px;
+    color: #ffffff;
+    border-style: solid;
+    margin-left: 40px;
+}
+
+
+
+#menu2 {
+    width: 1366px;
+    height: 50px;
+    background-color: #ffffff;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    overflow: auto;
+}
+#menu2 ul li{
+    list-style: none;
+    float: left;
+    width: 150px;
+    text-align: center;
+    border-right: 1px solid;
+}
+#menu2 ul li a{
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+
+
+#content{
+    overflow: auto;
+}
+#left_content{
+    width: 828px;
+    height: 1300px;
+    background-color: #fffefb;
+    border: 2px solid #FFFFFF; 
+    border-radius: 10px 10px 10px 10px; 
+    box-shadow: #CCCCCC 1px 2px 26px 20px inset;
+    float: left;
+    
+}
+
+#top_new{
+    width: 800px;
+    height: 247px;
+    border-radius: 10px 10px 10px 10px; 
+    margin: auto;
+    margin-top: 22px;
+    background-image: url("images/readingbanner.png");
+    background-repeat: no-repeat;
+    background-size: 800px 247px;
+}
+
+
+#latestbook{
+    width: 800px;
+    height: 1000px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #fffefb;
+    margin: auto;
+    margin-top: 22px;
+}
+#headlatestbook {
+    width: 800px;
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #4c394e;
+
+    color: white;
+}
+#headlatestbook h1{
+    line-height: 40px;
+    margin-left: 80px;
+}
+
+
+
+#right_content{
+    width: 515px;
+    height: 1300px;
+    background-color: #fffefb;
+    border: 2px solid #FFFFFF; 
+    border-radius: 10px 10px 10px 10px; 
+    box-shadow: #CCCCCC 1px 2px 26px 20px inset;
+    float: right;
+    margin: auto;
+}
+#mostborrowedbook{
+    width: 500px;
+    height: 562px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: #CCCCCC 1px 2px 26px 20px inset;
+    margin:auto;
+    margin-top: 22px;
+
+}
+#headmostborrowedbook{
+    width: 500px;
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #4c394e;
+
+    color: white;
+}
+#headmostborrowedbook h1{
+    line-height: 40px;
+    margin-left: 50px;
+}
+
+#bookoftheday{
+    width: 500px;
+    height: 700px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: #CCCCCC 1px 2px 26px 20px inset;
+    margin:auto;
+    margin-top: 12px;
+
+}
+#headbookoftheday{
+    width: 500px;
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #4c394e;
+
+    color: white;
+}
+#headbookoftheday h1{
+    line-height: 40px;
+    margin-left: 50px;
+}
+
+
+#footer{
+    overflow: auto;
+    width: 1366px;
+    height: 300px;
+}
+#background_footer
+{
+    width: 1366px;
+    height: 200px;
+    background-image: url("images/librarylogo.png");
+    background-repeat: no-repeat;
+    background-size: 450px 200px;
+    background-color: #4c394e;
+
+}
+#connectwithus{
+    overflow: auto;
+    width: 1366px;
+    height: 40px;
+    background-color: #11bad3;
+
+    color: white;
+    float: left;
+}
+
+#connectwithus ul{
+    list-style: none;
+}
+
+#connectwithus ul li{
+    float: left;
+}
+
+#connectwithus .font_connectwithus{
+    margin-left: 80px;
+    line-height: 40px;
+}
+
+.footer_icon img{
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#copyright{
+    overflow: auto;
+    width: 1366px;
+    height: 50px;
+    background-color: #4c394e;
+    color: white;
+}
+#copyright .font_copyright{
+    margin-left: 50px;
+    line-height: 50px;
+}
