@@ -1,0 +1,360 @@
+﻿*{margin: 0;padding: 0;}
+
+
+#header{
+     
+width: 1304px;
+     
+height: 769px;
+     
+color: white;
+     
+margin: 0 auto;
+}
+
+
+
+#nav1{
+    
+	background-color: #403042;
+    
+	height: 61px;
+
+}
+
+
+#nav1 ul{ 
+  
+	list-style-type: none;
+  
+	width: 100%;
+  
+	text-align: center;
+
+}
+
+#menu1 li{
+  
+	float: left;
+  
+	width: 90px;
+  
+	height: 50px;
+ 
+	line-height: 60px;
+
+}
+
+#menu2 li{
+  
+	float: right;
+  
+	width: 100px;
+  
+	height: 50px;
+ 
+	line-height: 60px;
+}
+
+
+.image
+	margin: 7px 0 0 40px;
+
+}
+
+.image1{
+   
+ 	margin: 10px 0 0 0;
+
+}
+
+
+#nav2{
+    
+	background-color: #4c394e;
+    
+	height: 70px;
+
+}
+
+
+#nav2 ul{ 
+  
+	list-style-type: none;
+  
+	width: 100%;
+
+}
+
+
+#nav2 li{
+    
+float: left;
+    
+	margin: 0 0 0 38px;
+}
+
+
+#Search{
+    
+	margin: 10px 0 0 0;
+
+}
+
+
+#menu21 li{
+    
+	margin: 16px 10px 5px 30px;
+    
+	border-style: solid;
+    
+	border-width: 15px 40px 9px 40px;
+    
+	border-color: #11bad3;
+    
+	background-color: #11bad3;
+    
+	border-radius: 5px;
+
+}
+
+
+#menu22 li{
+    
+	border-style: solid;
+    
+	border-color: white;
+    
+	border-width: 0.5px;
+    
+	margin: 16px 10px 5px 30px;
+    
+	line-height: 41px;
+    width: 130px;
+   
+	height: 40px;
+    
+	text-align: center;
+
+}
+
+
+#nav3{
+    
+	float: left;
+    
+	height: 40px;
+    
+	width: 1304px;
+    
+	color: black;
+    
+	border-style: solid;
+    
+	border-width: 0px 0.25px 0.25px 0.25px;
+    
+	background-color: #ffffff;
+    
+	box-shadow: 5px 10px 10px #888888;
+
+}
+
+
+#nav3 ul{ 
+  
+	list-style-type: none;
+  
+	width: 100%;
+
+}
+
+#menu31 li{
+    
+	float: left;
+    
+	height: 40px;
+    
+	width: 130px;
+   
+	text-align: center;
+    
+	line-height: 40px;
+    
+	border-style: solid;
+    
+	border-width: 0px 2.5px 0px 0px;
+
+}
+
+
+
+#footer{
+    
+	background-color: #403042;
+    
+	color: white;
+    height: 350px;
+    
+	width: 1304px;
+}
+
+#navfooter1{
+     
+	background-color: #11bad3;
+     
+	height: 30px;
+
+}
+
+#navfooter1 ul{ 
+    
+	list-style-type: none;
+    
+	width: 100%;
+
+}
+
+#menufooter1 li{
+   
+	margin: 5px 0 0 35px;
+    
+	float: left;
+
+}
+
+#menufooter2 li{
+    
+	float: right;
+    
+	width: 55px;
+    
+	height: 30px;
+    
+	line-height: 46px;
+
+}
+
+#menufooter3{
+    
+	float: left;
+    
+	height: 30px;
+
+}
+
+#menufooter3 li{
+    
+	margin: 5px 0 0 35px;
+    
+	float: left;
+
+}
+
+
+input[type=text], input[type=password] 
+{
+    
+	width: 100%;
+    
+	padding: 12px 20px;
+    
+	margin: 8px 0;
+   
+	display: inline-block;
+    
+	border: 1px solid #ccc;
+   
+	box-sizing: 
+	border-box;
+
+}
+
+
+#login{
+    
+	vertical-align: middle;
+    
+	width: 400px;
+    
+	height: 700px;
+    
+	margin: 0 auto;
+
+}
+
+
+button {
+    
+	background-color: #11bad3;
+    
+	color: white;
+    
+	padding: 14px 20px;
+    
+	margin: 8px 0;
+    
+	border: none;
+    
+	cursor: pointer;
+    
+	width: 100%;
+
+}
+
+
+button:hover {
+    
+	opacity: 0.8;
+
+}
+
+
+.cancelbtn {
+    
+	width: auto;
+    
+	padding: 10px 18px;
+    
+	background-color: #f44336;
+
+}
+
+
+.imgcontainer {
+    
+	text-align: center;
+    
+	margin: 24px 0 12px 0;
+
+}
+
+
+.container {
+    
+	padding: 16px;
+
+}
+
+
+span.psw {
+    
+	float: right;
+    
+	padding-top: 16px;
+
+}
+
+
+span.psw {
+        
+display: block;
+        
+float: none;
+
+}
+
+.cancelbtn {
+       
+ 	width: 100%;
+
+}
