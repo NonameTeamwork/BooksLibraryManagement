@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+body {
+	margin: 0px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+#FRAME {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#HEADER {
+	position: relative;
+	width: 100%;
+}
+
+#header-bar-topmost {
+	background-color: #403042;
+	height: 45px;
+}
+
+#blockbtn {
+	position: absolute;
+	display: inline-block;
+	top: 7px;
+	left: 30px;
+	right: 30px;
+}
+
+#homebtn {
+	width: 83px;
+	height: 26px;
+	position: absolute;
+	left: 0px;
+}
+
+#aboutbtn {
+	width: 113px;
+	height: 26px;
+	position: absolute;
+	left: 148px;
+}
+
+#signinbtn {
+	width: 83px;
+	height: 26px;
+	position: absolute;
+	right: 0px;
+}
+
+#borrowbtn {
+	width: auto;
+	height: auto;
+	position: absolute;
+	right: 148px;
+}
+
+#header-bar-search {
+	background-color: #4c394e;
+	height: 74px;
+}
+
+#search-nav {
+	position: absolute;
+	display: block;
+	left: 30px;
+	right: 30px;
+}
+
+div #logobtn {
+	position: absolute;
+	top: 8px;
+	width: 192px;
+	height: 58px;
+	background-image: url(../image/library_logo_small.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#searchbox {
+	top: 16px;
+	left: 196px;
+	width: 800px;
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+}
+
+#searchbox input#search{
+	width: 800px;
+	height: 44px;
+	border: none;
+	font-size: 10pt;
+	float: left;
+	padding-left: 45px;
+}
+
+#searchbox #icon{
+	position: absolute;
+	top: 50%;
+	margin-left: 17px;
+	margin-top: 13px;
+	z-index: 1;
+	color: #4f5b66;
+}
+
+#search-btn {
+	position: absolute;
+	top: 16px;
+	right: 148px;
+	width: 120px;
+	height: 44px;
+	background-color: #10bbd5;
+	color: white;
+	text-align: center;
+	border-radius: 6px;
+	line-height: 44px;
+}
+
+#advanced-search-btn {
+	position: absolute;
+	top: 16px;
+	right: 0;
+	width: 120px;
+	height: 44px;
+	color: rgba(255,255,255,0.7);	
+	border: 1px solid rgba(255,255,255,0.7);
+	line-height: 44px;
+	text-align: center;
+	font-size: 14px;
+}
+
+#search-btn:hover {
+	background-color: #29D5EF;
+}
+
+#advanced-search-btn:hover {
+	color: white;	
+	border: 1px solid white;
+}
+
+#header-bar-menu {
+	background-color: white;
+}
+
+#header-bar-menu ul {
+	list-style-type: none;
+	font-size: 0;
+	margin: 0;
+	padding: 0;	
+}
+
+#header-bar-menu li {
+	font-size: 14px;
+	display: inline-block;
+	margin: 0;
+	padding: 11px 30px;
+}
+
+#header-bar-menu a {
+	text-decoration: none;
+}
+
+#header-bar-menu li:hover {
+	border-bottom: 2px solid black;
+}
+
+#header-bar-menu li:active {
+	border-bottom: 2px solid black;
+}
+
+#CONTENT {
+	height: 1000px;
+}
+
+#FOOTER {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#info-bar {
+	background-color: #4c394e;
+	height: 200px;
+}
+
+#logo-block {
+	position: absolute;
+	top: 40px;
+	left: 30px;
+}
+
+#logo-background {
+	background-image: url(../image/library_logo_medium.png);
+	width: 397px;
+	height: 128px;
+}
+
+#connect-bar {
+	height: 48px;
+	background-color: #11bad3;
+}
+
+#connect-content {
+	position: absolute;
+	left: 30px;
+	right: 30px;
+}
+
+#connect-text-content {
+	position: absolute;
+	top: 14px;
+	color: white;
+	font-size: 18px;
+}
+
+#connect-btn {
+	position: absolute;
+	top: 6px;
+	right: 0px;
+}
+
+#connect-btn ul {
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#connect-btn li {
+	display: inline;
+	margin-left: 30px;
+}
+
+#connect-btn img {
+	width: 36px;
+	height: 36px;
+}
+
+#copyright-bar {
+	height: 46px;
+	background-color: #4c394e;
+}
+
+#copyright-block {
+	position: absolute;
+	left: 30px;
+	right: 30px;
+}
+
+#copyright-text {
+	position: absolute;
+	top: 18px;
+	color: white;
+	font-size: 12px;
+}
+
+
+

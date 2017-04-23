@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<link href="../data/css/layout_style.css" rel="stylesheet" type="text/css">
+<link href="../data/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="FRAME">
+  <div id="HEADER">
+    <div id="header-bar-topmost">
+      <div id="blockbtn">
+        <div id="homebtn"><a href="#"><img src="../data/image/home_btn.png"></a></div>
+        <div id="aboutbtn"><a href="#"><img src="../data/image/About_btn.gif"></a></div>
+        <div id="signinbtn"><a href="#"><img src="../data/image/Sign_in_btn.png"></a></div>
+        <div id="borrowbtn"><a href="#"><img src="../data/image/Borrowed_list_btn.gif"></a></div>
+      </div>
+    </div>
+    <div id="header-bar-search">
+      <div id="search-nav"> <a href="#">
+        <div id="logobtn"></div>
+        </a>
+        <div class="box">
+          <div id="searchbox"> <span id="icon"><i class="fa fa-search"></i></span>
+            <input type="search" id="search" placeholder="Search for book by title/ author/ ISBN" />
+          </div>
+        </div>
+        <a href="">
+        <div id="search-btn" onClick="postSearchItem()">Search</div>
+        </a> <a href="#">
+        <div id="advanced-search-btn">Advanced Search</div>
+        </a> </div>
+    </div>
+    <div id="header-bar-menu">
+      <ul>
+        <a href="">
+        <li>News</li>
+        </a> <a href="">
+        <li>Look up document</li>
+        </a> <a href="">
+        <li>Services</li>
+        </a> <a href="">
+        <li>Support</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div id="CONTENT"> </div>
+  <div id="FOOTER">
+    <div id="info-bar">
+      <div id="logo-block">
+        <div id="logo-background"></div>
+      </div>
+    </div>
+    <div id="connect-bar">
+      <div id="connect-content"> <span id="connect-text-content">Connect with us</span>
+        <div id="connect-btn">
+          <ul>
+            <li><a href="#"><img src="../data/image/facebook_ico.png"></a></li>
+            <li><a href="#"><img src="../data/image/Twitter_ico.png"></a></li>
+            <li><a href="#"><img src="../data/image/Instagram_ico.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="copyright-bar">
+      <div id="copyright-block"> <span id="copyright-text">Copyright 2017 Flash's Library. All right reserved.</span> </div>
+    </div>
+  </div>
+</div>
+<script>
+	function postSearchItem() {
+		var param = document.getElementById('search').value;
+		
+	}
+</script>
+</body>
+</html>
