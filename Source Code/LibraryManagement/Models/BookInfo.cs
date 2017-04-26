@@ -15,12 +15,11 @@ namespace LibraryManagement.Models
         [MaxLength(13), MinLength(13)]
         [Column(TypeName =("char(13)"))]
         public string ISBN { get; set; }
-        public string ImageURL { get; set; }
         [Required]
         [Column(TypeName = ("varchar(200)"))]
         public string Title { get; set; }
         public List<BookAuthorJoiner> Authors { get; set; }
-        public Category Category { get; set; }
+        public List<BookCategoryJoiner> Categories { get; set; }
         public Publisher Publisher { get; set; }
         public DateTime PublicationDate { get; set; }
         [Column(TypeName = ("varchar(50)"))]
@@ -29,6 +28,10 @@ namespace LibraryManagement.Models
         public string Country { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int TotalBorrowed { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime DateofImport { get; set; }
         public List<BookCopyDetail> BooksCopy { get; set; }
 
     }
@@ -37,8 +40,16 @@ namespace LibraryManagement.Models
     {
         public string ISBN { get; set; }
         public BookInfo BookInfo { get; set; }
-        public string AuthorName { get; set; }
+        public int AuthorID { get; set; }
         public Author Author { get; set; }
+    }
+
+    public class BookCategoryJoiner
+    {
+        public string ISBN { get; set; }
+        public BookInfo BookInfo { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 
     public class Author
@@ -80,7 +91,7 @@ namespace LibraryManagement.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<BookInfo> Books { get; set; }
+        public List<BookCategoryJoiner> Books { get; set; }
     }
 
     public class Language

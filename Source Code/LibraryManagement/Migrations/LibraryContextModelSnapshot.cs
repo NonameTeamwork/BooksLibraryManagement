@@ -26,6 +26,8 @@ namespace LibraryManagement.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasAlternateKey("Name");
+
                     b.ToTable("Author");
                 });
 
@@ -33,13 +35,26 @@ namespace LibraryManagement.Migrations
                 {
                     b.Property<string>("ISBN");
 
-                    b.Property<string>("AuthorName");
+                    b.Property<int>("AuthorID");
 
-                    b.HasKey("ISBN", "AuthorName");
+                    b.HasKey("ISBN", "AuthorID");
 
-                    b.HasIndex("AuthorName");
+                    b.HasIndex("AuthorID");
 
                     b.ToTable("BookAuthorJoiner");
+                });
+
+            modelBuilder.Entity("LibraryManagement.Models.BookCategoryJoiner", b =>
+                {
+                    b.Property<string>("ISBN");
+
+                    b.Property<int>("CategoryId");
+
+                    b.HasKey("ISBN", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("BookCategoryJoiner");
                 });
 
             modelBuilder.Entity("LibraryManagement.Models.BookCopyDetail", b =>
@@ -68,10 +83,12 @@ namespace LibraryManagement.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("CategoryId");
-
                     b.Property<string>("Country")
                         .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("DateofImport")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("convert(datetime, getdate())");
 
                     b.Property<string>("Description");
 
@@ -79,8 +96,6 @@ namespace LibraryManagement.Migrations
                         .IsRequired()
                         .HasColumnType("char(13)")
                         .HasMaxLength(13);
-
-                    b.Property<string>("ImageURL");
 
                     b.Property<int?>("LanguageId");
 
@@ -94,9 +109,11 @@ namespace LibraryManagement.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(200)");
 
-                    b.HasKey("Id");
+                    b.Property<int>("TotalBorrowed")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(0);
 
-                    b.HasIndex("CategoryId");
+                    b.HasKey("Id");
 
                     b.HasIndex("LanguageId");
 
@@ -135,6 +152,24 @@ namespace LibraryManagement.Migrations
                     b.ToTable("Language");
                 });
 
+            modelBuilder.Entity("LibraryManagement.Models.Parameter", b =>
+                {
+                    b.Property<int>("ParameterId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ParameterName");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<string>("Type");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("ParameterId");
+
+                    b.ToTable("Parameter");
+                });
+
             modelBuilder.Entity("LibraryManagement.Models.Publisher", b =>
                 {
                     b.Property<int>("Id")
@@ -154,12 +189,25 @@ namespace LibraryManagement.Migrations
                 {
                     b.HasOne("LibraryManagement.Models.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorName")
-                        .HasPrincipalKey("Name")
+                        .HasForeignKey("AuthorID")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("LibraryManagement.Models.BookInfo", "BookInfo")
                         .WithMany("Authors")
+                        .HasForeignKey("ISBN")
+                        .HasPrincipalKey("ISBN")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("LibraryManagement.Models.BookCategoryJoiner", b =>
+                {
+                    b.HasOne("LibraryManagement.Models.Category", "Category")
+                        .WithMany("Books")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("LibraryManagement.Models.BookInfo", "BookInfo")
+                        .WithMany("Categories")
                         .HasForeignKey("ISBN")
                         .HasPrincipalKey("ISBN")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -176,10 +224,6 @@ namespace LibraryManagement.Migrations
 
             modelBuilder.Entity("LibraryManagement.Models.BookInfo", b =>
                 {
-                    b.HasOne("LibraryManagement.Models.Category", "Category")
-                        .WithMany("Books")
-                        .HasForeignKey("CategoryId");
-
                     b.HasOne("LibraryManagement.Models.Language", "Language")
                         .WithMany("Books")
                         .HasForeignKey("LanguageId");

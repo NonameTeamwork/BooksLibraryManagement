@@ -52,6 +52,22 @@ namespace LibraryManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Parameter",
+                columns: table => new
+                {
+                    ParameterId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ParameterName = table.Column<string>(nullable: true),
+                    Status = table.Column<bool>(nullable: false),
+                    Type = table.Column<string>(nullable: true),
+                    Value = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parameter", x => x.ParameterId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Publisher",
                 columns: table => new
                 {
@@ -71,27 +87,21 @@ namespace LibraryManagement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CategoryId = table.Column<int>(nullable: true),
                     Country = table.Column<string>(type: "varchar(50)", nullable: true),
+                    DateofImport = table.Column<DateTime>(nullable: false, defaultValueSql: "convert(datetime, getdate())"),
                     Description = table.Column<string>(nullable: true),
                     ISBN = table.Column<string>(type: "char(13)", maxLength: 13, nullable: false),
-                    ImageURL = table.Column<string>(nullable: true),
                     LanguageId = table.Column<int>(nullable: true),
                     Price = table.Column<double>(nullable: false),
                     PublicationDate = table.Column<DateTime>(nullable: false),
                     PublisherId = table.Column<int>(nullable: true),
-                    Title = table.Column<string>(type: "varchar(200)", nullable: false)
+                    Title = table.Column<string>(type: "varchar(200)", nullable: false),
+                    TotalBorrowed = table.Column<int>(nullable: false, defaultValue: 0)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BookInfo", x => x.Id);
                     table.UniqueConstraint("AK_BookInfo_ISBN", x => x.ISBN);
-                    table.ForeignKey(
-                        name: "FK_BookInfo_Category_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Category",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_BookInfo_Language_LanguageId",
                         column: x => x.LanguageId,
@@ -111,19 +121,43 @@ namespace LibraryManagement.Migrations
                 columns: table => new
                 {
                     ISBN = table.Column<string>(nullable: false),
-                    AuthorName = table.Column<string>(nullable: false)
+                    AuthorID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookAuthorJoiner", x => new { x.ISBN, x.AuthorName });
+                    table.PrimaryKey("PK_BookAuthorJoiner", x => new { x.ISBN, x.AuthorID });
                     table.ForeignKey(
-                        name: "FK_BookAuthorJoiner_Author_AuthorName",
-                        column: x => x.AuthorName,
+                        name: "FK_BookAuthorJoiner_Author_AuthorID",
+                        column: x => x.AuthorID,
                         principalTable: "Author",
-                        principalColumn: "Name",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_BookAuthorJoiner_BookInfo_ISBN",
+                        column: x => x.ISBN,
+                        principalTable: "BookInfo",
+                        principalColumn: "ISBN",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BookCategoryJoiner",
+                columns: table => new
+                {
+                    ISBN = table.Column<string>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BookCategoryJoiner", x => new { x.ISBN, x.CategoryId });
+                    table.ForeignKey(
+                        name: "FK_BookCategoryJoiner_Category_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BookCategoryJoiner_BookInfo_ISBN",
                         column: x => x.ISBN,
                         principalTable: "BookInfo",
                         principalColumn: "ISBN",
@@ -152,13 +186,13 @@ namespace LibraryManagement.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookAuthorJoiner_AuthorName",
+                name: "IX_BookAuthorJoiner_AuthorID",
                 table: "BookAuthorJoiner",
-                column: "AuthorName");
+                column: "AuthorID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookInfo_CategoryId",
-                table: "BookInfo",
+                name: "IX_BookCategoryJoiner_CategoryId",
+                table: "BookCategoryJoiner",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
@@ -178,16 +212,22 @@ namespace LibraryManagement.Migrations
                 name: "BookAuthorJoiner");
 
             migrationBuilder.DropTable(
+                name: "BookCategoryJoiner");
+
+            migrationBuilder.DropTable(
                 name: "BookCopyDetail");
+
+            migrationBuilder.DropTable(
+                name: "Parameter");
 
             migrationBuilder.DropTable(
                 name: "Author");
 
             migrationBuilder.DropTable(
-                name: "BookInfo");
+                name: "Category");
 
             migrationBuilder.DropTable(
-                name: "Category");
+                name: "BookInfo");
 
             migrationBuilder.DropTable(
                 name: "Language");

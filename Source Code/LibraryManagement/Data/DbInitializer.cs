@@ -141,8 +141,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-12-07"),
                     Price = double.Parse("23.03"),
-                    Category = Categories[0] ,
-                    Publisher = Publishers[0]},
+                    Publisher = Publishers[0]
+                },
 
                 new BookInfo
                 {
@@ -157,7 +157,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2014-03-27"),
                     Price = double.Parse("6.99"),
-                    Category = Categories[0],
                     Publisher = Publishers[1]
                 },
 
@@ -177,7 +176,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-11-20"),
                     Price = double.Parse("55.5"),
-                    Category = Categories[0],
                     Publisher = Publishers[2]
                 },
 
@@ -194,7 +192,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-12-09"),
                     Price = double.Parse("16.32"),
-                    Category = Categories[6],
                     Publisher = Publishers[3]
                 },
 
@@ -210,7 +207,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2015-05-14"),
                     Price = double.Parse("11.6"),
-                    Category = Categories[6],
                     Publisher = Publishers[4]
                 },
 
@@ -228,7 +224,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2011-05-17"),
                     Price = double.Parse("6.69"),
-                    Category = Categories[6],
                     Publisher = Publishers[5]
                 },
 
@@ -245,7 +240,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("1999-08-02"),
                     Price = double.Parse("7.86"),
-                    Category = Categories[8],
                     Publisher = Publishers[6]
                 },
 
@@ -260,7 +254,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-07-01"),
                     Price = double.Parse("18.45"),
-                    Category = Categories[8],
                     Publisher = Publishers[7]
                 },
 
@@ -275,7 +268,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2015-04-01"),
                     Price = double.Parse("5.47"),
-                    Category = Categories[8],
                     Publisher = Publishers[8]
                 },
 
@@ -293,7 +285,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2014-10-09"),
                     Price = double.Parse("10.17"),
-                    Category = Categories[1],
                     Publisher = Publishers[9]
                 },
 
@@ -308,7 +299,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-06-23"),
                     Price = double.Parse("63.16"),
-                    Category = Categories[1],
                     Publisher = Publishers[10]
                 },
 
@@ -327,7 +317,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2008-07-31"),
                     Price = double.Parse("7.34"),
-                    Category = Categories[1],
                     Publisher = Publishers[5],
                 },
 
@@ -341,7 +330,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-05-05"),
                     Price = double.Parse("9.54"),
-                    Category = Categories[21],
                     Publisher = Publishers[11]
                 },
 
@@ -356,7 +344,6 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-11-04"),
                     Price = double.Parse("12.66"),
-                    Category = Categories[21],
                     Publisher = Publishers[12]
                 },
 
@@ -370,7 +357,6 @@ namespace LibraryManagement.Data
                     Country = "London, United Kingdom",
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2008-12-02"),
-                    Category = Categories[21],
                     Publisher = Publishers[13]
                 }
 
@@ -652,6 +638,134 @@ namespace LibraryManagement.Data
             foreach ( BookCopyDetail bookcopydetail in BookCopiesDetail)
             {
                 context.BookCopyDetail.Add(bookcopydetail);
+            }
+            context.SaveChanges();
+
+            var BookCategoriesJoiner = new BookCategoryJoiner[]
+            {
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[0],
+                    Category = Categories[0]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[1],
+                    Category = Categories[0]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[2],
+                    Category = Categories[0]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[3],
+                    Category = Categories[6]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[4],
+                    Category = Categories[6]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[5],
+                    Category = Categories[6]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[6],
+                    Category = Categories[8]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[7],
+                    Category = Categories[8]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[8],
+                    Category = Categories[8]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[9],
+                    Category = Categories[1]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[10],
+                    Category = Categories[1]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[11],
+                    Category = Categories[1]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[12],
+                    Category = Categories[21]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[13],
+                    Category = Categories[21]
+                },
+
+                new BookCategoryJoiner
+                {
+                    BookInfo = Books[14],
+                    Category = Categories[21]
+                },
+
+            };
+
+            foreach (BookCategoryJoiner bookcategoriesjoiner in BookCategoriesJoiner)
+            {
+                context.BookCategoryJoiner.Add(bookcategoriesjoiner);
+            }
+            context.SaveChanges();
+
+            int count = context.BookInfo.Count();
+            int randomnumb = new Random().Next(0, count);
+
+            var Parameters = new Parameter[]
+            {
+                new Parameter
+                {
+                    ParameterName = "RadomNumb",
+                    Status = true,
+                    Type = "int",
+                    Value = randomnumb.ToString(),
+                },
+
+                new Parameter
+                {
+                    ParameterName = "DateofCreationNumb",
+                    Status = true,
+                    Type = "Datetime",
+                    Value = DateTime.Now.ToString()
+                }
+            };
+
+            foreach (Parameter param in Parameters)
+            {
+                context.Parameter.Add(param);
             }
             context.SaveChanges();
         }

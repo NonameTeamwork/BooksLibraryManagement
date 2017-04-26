@@ -1,0 +1,22 @@
+﻿@using LibraryManagement.ViewModels
+@model HomeViewModel
+
+@{ 
+    Layout = null;
+}
+
+@foreach (BookLatestViewModel  bl in Model.BookLatest)
+{
+    <h2>@bl.Title</h2>
+    <h2>@bl.Author</h2>
+}
+@foreach (BookBorrowedViewModel bb in Model.BookBorrowed)
+{
+    <h3>@bb.Title</h3>
+    <h3>@bb.Author</h3>
+    <h3>@bb.Publisher</h3>
+}
+<h4>@Model.BookDay.Title</h4>
+<h4>@Model.BookDay.Author</h4>
+<h4>@Model.BookDay.Publisher</h4>
+<h4>@Model.BookDay.Description</h4>
