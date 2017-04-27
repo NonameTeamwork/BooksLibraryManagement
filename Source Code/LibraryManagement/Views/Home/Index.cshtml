@@ -7,15 +7,19 @@
 
 @foreach (BookLatestViewModel  bl in Model.BookLatest)
 {
+    <img src="@bl.ImageURL" width="263px" height="400px" />
     <h2>@bl.Title</h2>
     <h2>@bl.Author</h2>
 }
 @foreach (BookBorrowedViewModel bb in Model.BookBorrowed)
 {
+    <img src="@bb.ImageURL" width="263px" height="400px" />
     <h3>@bb.Title</h3>
     <h3>@bb.Author</h3>
     <h3>@bb.Publisher</h3>
 }
+
+<img src="@Model.BookDay.ImageURL" width="263px" height="400px />  
 <h4>@Model.BookDay.Title</h4>
 <h4>@Model.BookDay.Author</h4>
 <h4>@Model.BookDay.Publisher</h4>

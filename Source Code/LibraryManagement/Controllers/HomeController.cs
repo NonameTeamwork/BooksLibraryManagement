@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using LibraryManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using LibraryManagement.ViewModels;
+using System.IO;
 
 namespace LibraryManagement.Controllers
 {
     public class HomeController : Controller
     {
         private readonly LibraryContext _context;
+        private const string IMAGEPATH = "Data/";
         public HomeController (LibraryContext context)
         {
             _context = context;
@@ -20,13 +22,13 @@ namespace LibraryManagement.Controllers
         public IActionResult Index()
         {
             HomeViewModel HomeViewModel = new HomeViewModel();
-
             IEnumerable<BookLatestViewModel> BookLatest = _context.BookInfo
                 .Include(bk => bk.Authors)
                 .ThenInclude(baj => baj.Author)
                 .OrderByDescending(bk => bk.DateofImport)
                 .Select(bk => new BookLatestViewModel
                 {
+                    ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
                 }).ToList().Take(12);
@@ -38,6 +40,7 @@ namespace LibraryManagement.Controllers
                 .OrderByDescending(bk => bk.TotalBorrowed)
                 .Select(bk => new BookBorrowedViewModel
                 {
+                    ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
                     Publisher = bk.Publisher.Name
@@ -68,7 +71,7 @@ namespace LibraryManagement.Controllers
             if (!DateTime.Now.Date.Equals(DateofCreationNumb.Date))
             {
                 var Param1 = _context.Parameter.Where(param => param.ParameterName == "RadomNumb").Single();
-                int randNumb = new Random().Next(0, _context.BookInfo.Count());
+                int randNumb = new Random().Next(0, _context.BookInfo.Count() - 1);
                 Param1.Value = randNumb.ToString();
                 var Param2 = _context.Parameter.Where(param => param.ParameterName == "DateofCreationNumb").Single();
                 Param2.Value = DateTime.Now.ToString();
@@ -93,6 +96,7 @@ namespace LibraryManagement.Controllers
                 .Where(bk => bk.Id == randNumb)
                 .Select(bk => new BookofTheDayViewModel
                 {
+                    ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
                     Description = bk.Description,

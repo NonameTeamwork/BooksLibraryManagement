@@ -9,6 +9,7 @@ namespace LibraryManagement.ViewModels
 
     public class BookLatestViewModel
     {
+        public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         
@@ -16,6 +17,7 @@ namespace LibraryManagement.ViewModels
 
     public class BookBorrowedViewModel
     {
+        public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }
@@ -23,6 +25,7 @@ namespace LibraryManagement.ViewModels
 
     public class BookofTheDayViewModel
     {
+        public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }

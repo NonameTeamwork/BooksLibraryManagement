@@ -741,7 +741,7 @@ namespace LibraryManagement.Data
             }
             context.SaveChanges();
 
-            int count = context.BookInfo.Count();
+            int count = context.BookInfo.Count() - 1;
             int randomnumb = new Random().Next(0, count);
 
             var Parameters = new Parameter[]
