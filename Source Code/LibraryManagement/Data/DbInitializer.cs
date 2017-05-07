@@ -3,17 +3,215 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LibraryManagement.Models;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace LibraryManagement.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(LibraryContext context)
+        private const string defaultAdminEmail = "DefaultAdminEmail";
+        private const string defaultAdminPassword = "DefaultAdminPassword";
+        private const string defaultUserEmail = "DefaultUserEmail";
+        private const string defaultUserPassword = "DefaultUserPassword";
+
+        public static async Task InitializeLibraryDatabaseAsync(IServiceProvider serviceProvider, bool createUsers = true)
         {
-            if (context.BookInfo.Any())
+            using (var serviceScope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var db = serviceScope.ServiceProvider.GetService<LibraryContext>();
+
+                if (await db.Database.EnsureCreatedAsync())
+                {
+                    await InitializeData(serviceProvider.GetService<LibraryContext>());
+                    if (createUsers)
+                    {
+                        await CreateAdminUser(serviceProvider);
+                    }
+                }
+            }
+        }
+
+        private static async Task CreateAdminUser(IServiceProvider serviceProvider)
+        {
+            var env = serviceProvider.GetService<IHostingEnvironment>();
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables();
+            var configuration = builder.Build();
+
+            const string adminRole = "Administrator";
+            const string userRole = "User";
+
+            var personManager = serviceProvider.GetService<UserManager<Person>>();
+            // TODO: Identity SQL does not support roles yet
+            var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
+            if (!await roleManager.RoleExistsAsync(adminRole))
+            {
+                await roleManager.CreateAsync(new IdentityRole(adminRole));
+            }
+            if (!await roleManager.RoleExistsAsync(userRole))
+            {
+                await roleManager.CreateAsync(new IdentityRole(userRole));
+            }
+
+            var user = await personManager.FindByEmailAsync(configuration[defaultUserEmail]);
+            if (user == null)
+            {
+                //var us = new User()
+                //{
+                //    PersonId = Person.GenerateId(serviceProvider.GetService<LibraryContext>(), "user"),
+                //    Email = configuration[defaultUserEmail],
+                //    PhoneNumber = "0123456789",
+                //    Address = "HCM VN",
+                //    DateOfBirth = DateTime.Parse("1990-10-2"),
+                //    FullName = "Nguyen Van A",
+                //    Status = serviceProvider.GetService<LibraryContext>().UserStatus.First(),
+                //};
+                //await serviceProvider.GetService<LibraryContext>().User.AddAsync(us);
+                //await serviceProvider.GetService<LibraryContext>().SaveChangesAsync();
+                user = new User()
+                {
+                    //Person = us
+                    UserName = Person.GenerateId(serviceProvider.GetService<LibraryContext>(), "user"),
+                    Email = configuration[defaultUserEmail],
+                    PhoneNumber = "0123456789",
+                    Address = "HCM VN",
+                    DateOfBirth = DateTime.Parse("1990-10-2"),
+                    FullName = "Nguyen Van A",
+                    Status = serviceProvider.GetService<LibraryContext>().UserStatus.First(),
+                };
+                var checkUsr = await personManager.CreateAsync(user, configuration[defaultUserPassword]);
+                if (checkUsr.Succeeded)
+                    await personManager.AddToRoleAsync(user, userRole);
+            }
+
+            var admin = await personManager.FindByEmailAsync(configuration[defaultAdminEmail]);
+            if (admin == null)
+            {
+                //var ad = new Admin()
+                //{
+                //    PersonId = Person.GenerateId(serviceProvider.GetService<LibraryContext>(), "admin"),
+                //    Email = configuration[defaultAdminEmail],
+                //    PhoneNumber = "0987654321",
+                //    Address = "HCM VN",
+                //    DateOfBirth = DateTime.Parse("1976-10-2"),
+                //    FullName = "Pham Van Admin",
+                //    Status = serviceProvider.GetService<LibraryContext>().AdminStatus.First(),
+                //};
+                //await serviceProvider.GetService<LibraryContext>().Admin.AddAsync(ad);
+                //await serviceProvider.GetService<LibraryContext>().SaveChangesAsync();
+                admin = new Admin()
+                {
+                    //Person = ad,
+                    UserName = Person.GenerateId(serviceProvider.GetService<LibraryContext>(), "admin"),
+                    Email = configuration[defaultAdminEmail],
+                    PhoneNumber = "0987654321",
+                    Address = "HCM VN",
+                    DateOfBirth = DateTime.Parse("1976-10-2"),
+                    FullName = "Pham Van Admin",
+                    Status = serviceProvider.GetService<LibraryContext>().AdminStatus.First(),
+                };
+                var checkUsr = await personManager.CreateAsync(admin, configuration[defaultAdminPassword]);
+                if (checkUsr.Succeeded)
+                    await personManager.AddToRoleAsync(admin, adminRole);
+            }
+        }
+
+        public static async Task InitializeData(LibraryContext context)
+        {
+            if (context.Book.Any())
             {
                 return;
             }
+            var BookStatus = new BookStatus[]
+            {
+                new BookStatus
+                {
+                    Name = "Available",
+                },
+
+                new BookStatus
+                {
+                    Name = "Borrowed"
+                }
+            };
+
+            foreach (BookStatus state in BookStatus)
+            {
+                await context.BookStatus.AddAsync(state);
+            }
+            await context.SaveChangesAsync();
+
+            var UserStatus = new UserStatus[]
+           {
+                new UserStatus
+                {
+                    Name = "Active",
+                },
+
+                new UserStatus
+                {
+                    Name = "Blocked",
+                }
+           };
+
+            foreach (UserStatus admin in UserStatus)
+            {
+                await context.UserStatus.AddAsync(admin);
+            }
+            await context.SaveChangesAsync();
+
+
+            var AdminStatus = new AdminStatus[]
+            {
+                new AdminStatus
+                {
+                    Name = "Active",
+                },
+
+                new AdminStatus
+                {
+                    Name = "Retired",
+                }
+            };
+
+            foreach (AdminStatus admin in AdminStatus)
+            {
+                await context.AdminStatus.AddAsync(admin);
+            }
+            await context.SaveChangesAsync();
+
+            var TransactionStatus = new TransactionStatus[]
+            {
+                new TransactionStatus
+                {
+                    Name = "Active"
+                },
+
+                new TransactionStatus
+                {
+                    Name = "Closed"
+                },
+
+                new TransactionStatus
+                {
+                    Name = "Expired"
+                }
+            };
+
+            foreach (TransactionStatus transaction in TransactionStatus)
+            {
+                await context.TransactionStatus.AddAsync(transaction);
+            }
+            await context.SaveChangesAsync();
+
+
             var Authors = new Author[]
             {
                 new Author { Name = "Bruce Springsteen"},
@@ -35,9 +233,9 @@ namespace LibraryManagement.Data
 
             foreach (Author author in Authors)
             {
-                context.Author.Add(author);
+                await context.Author.AddAsync(author);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
 
             var Languages = new Language[]
@@ -57,9 +255,9 @@ namespace LibraryManagement.Data
 
             foreach (Language language in Languages)
             {
-                context.Language.Add(language);
+                await context.Language.AddAsync(language);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
             var Publishers = new Publisher[]
             {
@@ -81,10 +279,10 @@ namespace LibraryManagement.Data
 
             foreach (Publisher Publisher in Publishers)
             {
-                context.Publisher.Add(Publisher);
+                await context.Publisher.AddAsync(Publisher);
             }
 
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
 
             var Categories = new Category[]
@@ -118,15 +316,15 @@ namespace LibraryManagement.Data
 
             foreach ( Category category in Categories)
             {
-                context.Category.Add(category);
+                await context.Category.AddAsync(category);
             }
 
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
 
-            var Books = new BookInfo[]
+            var Books = new Book[]
             {
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781471157790",
                     Title ="Born to Run",
@@ -144,7 +342,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[0]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781908944191",
                     Title = "Everyone Can Draw",
@@ -160,7 +358,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[1]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9783836508766",
                     Title="Dali: Les Diners De Gala",
@@ -179,7 +377,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[2]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9780730324218",
                     Title = "The Barefoot Investor : The Only Money Guide You'll Ever Need",
@@ -195,7 +393,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[3]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781473611528",
                     Title = "Business Adventures : Twelve Classic Tales from the World of Wall Street",
@@ -210,7 +408,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[4]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781439199190",
                     Title = "How to Win Friends and Influence People",
@@ -227,7 +425,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[5]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9780205309023",
                     Title = "The Elements of Style",
@@ -243,7 +441,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[6]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781137585042",
                     Title = "Cite Them Right : The Essential Referencing Guide",
@@ -257,7 +455,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[7]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781743214404",
                     Title = "Lonely Planet Japanese Phrasebook & Dictionary",
@@ -271,7 +469,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[8]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781780226583",
                     Title = "I am Malala : The Girl Who Stood Up for Education and Was Shot by the Taliban",
@@ -288,7 +486,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[9]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9780170364379",
                     Title = "Supporting Education: the Teaching Assistant's Handbook",
@@ -302,7 +500,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[10]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9780684838281",
                     Title = "Experience and Education",
@@ -320,7 +518,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[5],
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9780552779777",
                     Title = "The Girl on the Train",
@@ -333,7 +531,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[11]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9781786070159",
                     Title = "The Sellout",
@@ -347,7 +545,7 @@ namespace LibraryManagement.Data
                     Publisher = Publishers[12]
                 },
 
-                new BookInfo
+                new Book
                 {
                     ISBN = "9780747599876",
                     Title = "The Tales of Beedle the Bard",
@@ -362,11 +560,11 @@ namespace LibraryManagement.Data
 
             };
 
-            foreach (BookInfo book in Books)
+            foreach (Book book in Books)
             {
-                context.BookInfo.Add(book);
+                await context.Book.AddAsync(book);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
 
             var BookAuthorJoiners = new BookAuthorJoiner[]
@@ -465,9 +663,9 @@ namespace LibraryManagement.Data
 
             foreach (BookAuthorJoiner bookauthorjoiner in BookAuthorJoiners)
             {
-                context.BookAuthorJoiner.Add(bookauthorjoiner);
+                await context.BookAuthorJoiner.AddAsync(bookauthorjoiner);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
 
             var BookCopiesDetail = new BookCopyDetail[]
@@ -476,7 +674,8 @@ namespace LibraryManagement.Data
                 {
                     BookInfo = Books[0],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
@@ -484,48 +683,55 @@ namespace LibraryManagement.Data
                     BookInfo = Books[1],
                     Condition = "Old",
                     CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[0],
                     Condition = "Brand new",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[2],
                     Condition = "Old",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0]
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[10],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0]
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[14],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[11],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[2],
                     Condition = "Old",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
@@ -533,113 +739,128 @@ namespace LibraryManagement.Data
                     BookInfo = Books[4],
                     Condition = "Brand new",
                     CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[9],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[10],
                     Condition = "Old",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[12],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[13],
                     Condition = "Brand new",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[3],
                     Condition = "Old",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[6],
                     Condition = "Old",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[8],
                     Condition = "Old",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[7],
                     Condition = "Old",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[4],
                     Condition = "Old",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[5],
                     Condition = "Old",
-                    CopyNo = 0
+                    CopyNo = 0,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[1],
                     Condition = "Old",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[10],
                     Condition = "Old",
-                    CopyNo = 2
+                    CopyNo = 2,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[14],
                     Condition = "Old",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
                 new BookCopyDetail
                 {
                     BookInfo = Books[11],
                     Condition = "Old",
-                    CopyNo = 1
+                    CopyNo = 1,
+                    Status = BookStatus[0],
                 },
 
             };
 
             foreach ( BookCopyDetail bookcopydetail in BookCopiesDetail)
             {
-                context.BookCopyDetail.Add(bookcopydetail);
+                await context.BookCopyDetail.AddAsync(bookcopydetail);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
             var BookCategoriesJoiner = new BookCategoryJoiner[]
             {
@@ -737,11 +958,11 @@ namespace LibraryManagement.Data
 
             foreach (BookCategoryJoiner bookcategoriesjoiner in BookCategoriesJoiner)
             {
-                context.BookCategoryJoiner.Add(bookcategoriesjoiner);
+                await context.BookCategoryJoiner.AddAsync(bookcategoriesjoiner);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
-            int count = context.BookInfo.Count() - 1;
+            int count = context.Book.Count() - 1;
             int randomnumb = new Random().Next(0, count);
 
             var Parameters = new Parameter[]
@@ -765,9 +986,9 @@ namespace LibraryManagement.Data
 
             foreach (Parameter param in Parameters)
             {
-                context.Parameter.Add(param);
+                await context.Parameter.AddAsync(param);
             }
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

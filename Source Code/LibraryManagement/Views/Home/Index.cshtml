@@ -1,9 +1,6 @@
 ﻿@using LibraryManagement.ViewModels
-@model HomeViewModel
+@model HomeViewModels
 
-@{ 
-    Layout = null;
-}
 
 @foreach (BookLatestViewModel  bl in Model.BookLatest)
 {
@@ -19,8 +16,18 @@
     <h3>@bb.Publisher</h3>
 }
 
-<img src="@Model.BookDay.ImageURL" width="263px" height="400px />  
+<img src="@Model.BookDay.ImageURL" width="263px" height="400px" />
 <h4>@Model.BookDay.Title</h4>
 <h4>@Model.BookDay.Author</h4>
 <h4>@Model.BookDay.Publisher</h4>
 <h4>@Model.BookDay.Description</h4>
+
+<form asp-controller="Search" method="get">
+    <input type="text" name="SearchString" value="@ViewBag.currentFilter" />
+    <input type="submit" value="Search"/>
+</form>
+
+<a asp-controller="Account" asp-action="Register">Register</a>
+<a asp-controller="Account" asp-action="Login">Login</a>
+<a asp-controller="Account" asp-action="ChangePassword">Change password</a>
+<a asp-controller="Account" asp-action="LogOut">Log out</a>

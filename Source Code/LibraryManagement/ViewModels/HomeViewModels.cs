@@ -9,14 +9,15 @@ namespace LibraryManagement.ViewModels
 
     public class BookLatestViewModel
     {
+        public string ISBN { get; set; }
         public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
-        
     }
 
     public class BookBorrowedViewModel
     {
+        public string ISBN { get; set; }
         public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
@@ -25,6 +26,7 @@ namespace LibraryManagement.ViewModels
 
     public class BookofTheDayViewModel
     {
+        public string ISBN { get; set; }
         public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
@@ -32,10 +34,10 @@ namespace LibraryManagement.ViewModels
         public string Description { get; set; }
     }
 
-    public class HomeViewModel
+    public class HomeViewModels
     {
-        public IEnumerable<BookLatestViewModel> BookLatest { get; set; }
-        public IEnumerable<BookBorrowedViewModel> BookBorrowed { get; set; }
+        public List<BookLatestViewModel> BookLatest { get; set; }
+        public List<BookBorrowedViewModel> BookBorrowed { get; set; }
         public BookofTheDayViewModel BookDay { get; set; }
     }
 }

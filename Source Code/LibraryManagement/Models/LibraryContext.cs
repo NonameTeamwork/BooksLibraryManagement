@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Models
 {
-    public class LibraryContext : DbContext
+    public class LibraryContext : IdentityDbContext<Person>
     {
-        public DbSet<BookInfo> BookInfo { get; set; }
+        public DbSet<Book> Book { get; set; }
         public DbSet<BookAuthorJoiner> BookAuthorJoiner { get; set; }
         public DbSet<BookCategoryJoiner> BookCategoryJoiner { get; set; }
         public DbSet<Author> Author { get; set; }
@@ -18,14 +19,21 @@ namespace LibraryManagement.Models
         public DbSet<Publisher> Publisher { get; set; }
         public DbSet<Language> Language { get; set; }
         public DbSet<Parameter> Parameter { get; set; }
+        public DbSet<BookStatus> BookStatus { get; set; }
+        public DbSet<AdminStatus> AdminStatus { get; set; }
+        public DbSet<UserStatus> UserStatus { get; set; }
+        public DbSet<TransactionStatus> TransactionStatus { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Admin> Admin { get; set; }
         public LibraryContext(DbContextOptions<LibraryContext> options) : base(options)
         {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             //make column become alternate key (unique in each row)
-            modelBuilder.Entity<BookInfo>()
+            modelBuilder.Entity<Book>()
                 .HasAlternateKey(bk => bk.ISBN);
 
             modelBuilder.Entity<Category>()
@@ -41,7 +49,7 @@ namespace LibraryManagement.Models
                 .HasAlternateKey(lg => lg.Name);
 
             //initialize dateofimport on add automatically with date on adding
-            modelBuilder.Entity<BookInfo>()
+            modelBuilder.Entity<Book>()
                 .Property(bk => bk.DateofImport)
                 .HasDefaultValueSql("convert(datetime, getdate())");
 
@@ -54,17 +62,12 @@ namespace LibraryManagement.Models
                 .Property(bcd => bcd.DateofImport)
                 .HasDefaultValueSql("convert(datetime, getdate())");
 
-            //
+            //Map many-to-one relationship between BookCopyDetail and Book
             modelBuilder.Entity<BookCopyDetail>()
                 .HasOne(bcd => bcd.BookInfo)
                 .WithMany(bk => bk.BooksCopy)
                 .HasForeignKey(bcd => bcd.ISBN)
                 .HasPrincipalKey(bk => bk.ISBN);
-
-            //Initialize state of each book when adding in available
-            modelBuilder.Entity<BookCopyDetail>()
-                .Property(bcd => bcd.State)
-                .HasDefaultValue(BookState.Available);
 
             //Map many to many between BookInfo and Author
             modelBuilder.Entity<BookAuthorJoiner>()
@@ -99,19 +102,26 @@ namespace LibraryManagement.Models
                 .HasPrincipalKey(ctg => ctg.Id);
 
             //create relationship between bookinfo and publisher
-            modelBuilder.Entity<BookInfo>()
+            modelBuilder.Entity<Book>()
                 .HasOne(bk => bk.Publisher)
                 .WithMany(pl => pl.Books);
 
             //create relationship between bookinfo and language
-            modelBuilder.Entity<BookInfo>()
+            modelBuilder.Entity<Book>()
                 .HasOne(bk => bk.Language)
                 .WithMany(lg => lg.Books);
 
             //Each time adding new book the time of borrowed will be initialize to 0
-            modelBuilder.Entity<BookInfo>()
+            modelBuilder.Entity<Book>()
                 .Property(bk => bk.TotalBorrowed)
                 .HasDefaultValue(0);
+
+            //Map one-to-one relationship between ApplicationUser and Person
+            //modelBuilder.Entity<ApplicationUser>()
+            //    .HasOne(au => au.Person)
+            //    .WithOne(ps => ps.AppUser)
+            //    .HasForeignKey<ApplicationUser>(au => au.PersonId)
+            //    .HasPrincipalKey<Person>(ps => ps.PersonId);
         }
     }
 

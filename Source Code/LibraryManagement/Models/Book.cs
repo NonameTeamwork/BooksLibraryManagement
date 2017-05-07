@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Models
 {
-    public class BookInfo
+    public class Book
     {
         [Key]
         public int Id { get; set; }
         [Required]
         [MaxLength(13), MinLength(13)]
-        [Column(TypeName =("char(13)"))]
+        [Column(TypeName = ("char(13)"))]
         public string ISBN { get; set; }
         [Required]
         [Column(TypeName = ("varchar(200)"))]
@@ -21,6 +21,8 @@ namespace LibraryManagement.Models
         public List<BookAuthorJoiner> Authors { get; set; }
         public List<BookCategoryJoiner> Categories { get; set; }
         public Publisher Publisher { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:MM:dd:yy}", ApplyFormatInEditMode =true)]
         public DateTime PublicationDate { get; set; }
         [Column(TypeName = ("varchar(50)"))]
         public Language Language { get; set; }
@@ -39,7 +41,7 @@ namespace LibraryManagement.Models
     public class BookAuthorJoiner
     {
         public string ISBN { get; set; }
-        public BookInfo BookInfo { get; set; }
+        public Book BookInfo { get; set; }
         public int AuthorID { get; set; }
         public Author Author { get; set; }
     }
@@ -47,7 +49,7 @@ namespace LibraryManagement.Models
     public class BookCategoryJoiner
     {
         public string ISBN { get; set; }
-        public BookInfo BookInfo { get; set; }
+        public Book BookInfo { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
     }
@@ -60,20 +62,13 @@ namespace LibraryManagement.Models
         public List<BookAuthorJoiner> Books { get; set; }
     }
 
-    public enum BookState
-    {
-        Available,
-        Borrowed,
-    }
-
     public class BookCopyDetail
     {
         public string ISBN { get; set; }
         public int CopyNo { get; set; }
-        public BookInfo BookInfo { get; set; }
+        public Book BookInfo { get; set; }
         public string Condition { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public BookState State { get; set; }
+        public BookStatus Status { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime DateofImport { get; set; }
     }
@@ -83,7 +78,7 @@ namespace LibraryManagement.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<BookInfo> Books { get; set; }
+        public List<Book> Books { get; set; }
     }
 
     public class Category
@@ -99,7 +94,7 @@ namespace LibraryManagement.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<BookInfo> Books { get; set; }
+        public List<Book> Books { get; set; }
     }
 
 

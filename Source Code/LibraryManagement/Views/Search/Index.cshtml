@@ -1,0 +1,16 @@
+﻿@using LibraryManagement.ViewModels
+@model PaginatedList<BookItemViewModel>
+
+
+<form asp-controller="Search" method="get">
+    <input type="text" name="SearchString" value="@ViewBag.currentFilter" />
+    <input type="submit" value="Search"></>
+</form>
+
+@foreach (var book in Model)
+{
+    <img src="@book.ImageURL"/>
+    @Html.DisplayFor(itemModel => book.Title)
+    @Html.DisplayFor(itemModel => book.Author)
+    @Html.DisplayFor(itemModel => book.PublicationDate)
+} 

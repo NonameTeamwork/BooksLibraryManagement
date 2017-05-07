@@ -19,21 +19,22 @@ namespace LibraryManagement.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            HomeViewModel HomeViewModel = new HomeViewModel();
-            IEnumerable<BookLatestViewModel> BookLatest = _context.BookInfo
+            HomeViewModels HomeViewModel = new HomeViewModels();
+            var BookLatest = await _context.Book
                 .Include(bk => bk.Authors)
                 .ThenInclude(baj => baj.Author)
                 .OrderByDescending(bk => bk.DateofImport)
                 .Select(bk => new BookLatestViewModel
                 {
                     ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
+                    ISBN = bk.ISBN,
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
-                }).ToList().Take(12);
+                }).Take(12).ToListAsync();
 
-            IEnumerable<BookBorrowedViewModel> BookMostBorrowed = _context.BookInfo
+            var BookMostBorrowed = await _context.Book
                 .Include(bk => bk.Authors)
                 .ThenInclude(baj => baj.Author)
                 .Include(bk => bk.Publisher)
@@ -41,55 +42,46 @@ namespace LibraryManagement.Controllers
                 .Select(bk => new BookBorrowedViewModel
                 {
                     ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
+                    ISBN = bk.ISBN,
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
                     Publisher = bk.Publisher.Name
-                }).ToList().Take(2);
+                }).Take(2).ToListAsync();
 
             HomeViewModel.BookLatest = BookLatest;
             HomeViewModel.BookBorrowed = BookMostBorrowed;
-            HomeViewModel.BookDay = getBookofTheDay();
+            HomeViewModel.BookDay = await GetBookofTheDay();
             return View(HomeViewModel);
         }
 
-        public IActionResult Error()
+        private async Task<BookofTheDayViewModel> GetBookofTheDay()
         {
-            return View("~/Views/Shared/Error.cshtml");
-        }
-
-        public IActionResult AccessDenied()
-        {
-            return View("~/Views/Shared/AccessDenied.cshtml");
-        }
-
-        private BookofTheDayViewModel getBookofTheDay()
-        {
-            DateTime DateofCreationNumb = DateTime.Parse(_context.Parameter
+            DateTime DateofCreationNumb = DateTime.Parse( await _context.Parameter
                 .Where(param => param.ParameterName == "DateofCreationNumb")
-                .Select(param => param.Value).
-                Single());
+                .Select(param => param.Value)
+                .SingleAsync());
             if (!DateTime.Now.Date.Equals(DateofCreationNumb.Date))
             {
-                var Param1 = _context.Parameter.Where(param => param.ParameterName == "RadomNumb").Single();
-                int randNumb = new Random().Next(0, _context.BookInfo.Count() - 1);
+                var Param1 = await _context.Parameter.Where(param => param.ParameterName == "RadomNumb").SingleAsync();
+                int randNumb = new Random().Next(0, _context.Book.Count() - 1);
                 Param1.Value = randNumb.ToString();
-                var Param2 = _context.Parameter.Where(param => param.ParameterName == "DateofCreationNumb").Single();
+                var Param2 = await _context.Parameter.Where(param => param.ParameterName == "DateofCreationNumb").SingleAsync();
                 Param2.Value = DateTime.Now.ToString();
-                _context.SaveChanges();
-                return getBookofTheDayInfo(randNumb);
+                await _context.SaveChangesAsync();
+                return await GetBookofTheDayInfo(randNumb);
             }
             else
             {
                 int randNumb = int.Parse(_context.Parameter.Where(param => param.ParameterName == "RadomNumb")
                     .Single().Value);
-                return getBookofTheDayInfo(randNumb);
+                return await GetBookofTheDayInfo(randNumb);
             }
 
         }
 
-        private BookofTheDayViewModel getBookofTheDayInfo(int randNumb)
+        private async Task<BookofTheDayViewModel> GetBookofTheDayInfo(int randNumb)
         {
-            BookofTheDayViewModel bookday = _context.BookInfo
+            BookofTheDayViewModel bookday = await _context.Book
                 .Include(bk => bk.Authors)
                 .ThenInclude(baj => baj.Author)
                 .Include(bk => bk.Publisher)
@@ -97,11 +89,12 @@ namespace LibraryManagement.Controllers
                 .Select(bk => new BookofTheDayViewModel
                 {
                     ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
+                    ISBN = bk.ISBN,
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
                     Description = bk.Description,
                     Publisher = bk.Publisher.Name
-                }).Single();
+                }).SingleAsync();
             return bookday;
         }
     }
