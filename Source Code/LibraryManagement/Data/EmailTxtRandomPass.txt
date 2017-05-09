@@ -1,0 +1,15 @@
+﻿Flash Library
+
+************
+Hi {{name}},
+************
+
+Your account has been created with initialized password:  "{{password_init}}"  .
+You should change your password after login to system.
+
+Thanks,
+The Flash Team
+
+© 2017 Flash Library. All rights reserved.
+
+Somewhere in Vietnam :))

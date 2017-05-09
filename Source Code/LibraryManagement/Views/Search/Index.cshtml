@@ -13,4 +13,7 @@
     @Html.DisplayFor(itemModel => book.Title)
     @Html.DisplayFor(itemModel => book.Author)
     @Html.DisplayFor(itemModel => book.PublicationDate)
+    <div>
+        <a asp-controller="Book" asp-action="Details" asp-route-id="@book.ISBN">Details</a> |
+    </div>
 } 

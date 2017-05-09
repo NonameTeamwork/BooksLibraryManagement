@@ -1,0 +1,50 @@
+@model BookDetailViewModel
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <img src="@Model.ImageURL" width="263px" height="400px"/>
+        </dt>
+        <dt>
+           @Model.ISBN
+        </dt>
+        <dt>
+            @Model.Title
+        </dt>
+        <dt>
+            @foreach (var author in Model.Authors)
+            {
+                <a asp-controller="Search" asp-action="Author" asp-route-id="@author.Name">@author.Name</a>
+            }
+        </dt>
+        <dt>
+            @foreach (var category in Model.Categories)
+            {
+                <a asp-controller="Search" asp-action="Category" asp-route-id="@category.Name">@category.Name</a>
+            }
+        </dt>
+        <dt>
+            <a asp-controller="Search" asp-action="Publisher" asp-route-id="@Model.Publisher.Name">@Model.Publisher.Name</a>
+        </dt>
+        <dt>
+            @Model.Country
+        </dt>
+        <dt>
+            <a asp-controller="Search" asp-action="Language" asp-route-id="@Model.Language.Name">@Model.Language.Name</a>
+        </dt>
+        <dt>
+            @Model.Description
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ISBN">Edit</a> |
+    <a asp-controller="Search" asp-action="Index">Back to List</a>
+</div>
+

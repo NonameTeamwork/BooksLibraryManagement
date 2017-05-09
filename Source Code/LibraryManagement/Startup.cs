@@ -9,11 +9,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 using LibraryManagement.Models;
 using LibraryManagement.Data;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using LibraryManagement.Components;
+using LibraryManagement.Services;
 
 namespace LibraryManagement
 {
@@ -26,6 +27,8 @@ namespace LibraryManagement
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+            if (env.IsDevelopment())
+                builder.AddUserSecrets<Startup>();
             Configuration = builder.Build();
         }
 
@@ -68,6 +71,12 @@ namespace LibraryManagement
             });
 
             services.AddMvc();
+
+            services.AddSingleton<IConfiguration>(Configuration);
+            // Add application services.
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

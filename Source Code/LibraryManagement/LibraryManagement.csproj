@@ -5,9 +5,13 @@
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
     <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
   </PropertyGroup>
+  <PropertyGroup>
+    <UserSecretsId>SendGridUser</UserSecretsId>
+    <UserSecretsId>SendGridKey</UserSecretsId>
+  </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Book\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
@@ -25,6 +29,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="1.1.0" />
+    <PackageReference Include="Sendgrid" Version="9.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.1" />
+    <PackageReference Include="System.Net.Mail" Version="1.0.0-rtm-00002" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>

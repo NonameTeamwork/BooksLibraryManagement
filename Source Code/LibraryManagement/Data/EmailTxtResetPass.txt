@@ -1,0 +1,22 @@
+﻿Use this link to reset your password. The link is only valid for 24 hours.
+
+Flash Library
+
+************
+Hi {{name}},
+************
+
+You recently requested to reset your password for your [Product Name] account. Use the button below to reset it. This password reset is only valid for the next 24 hours.
+
+Reset your password ( {{action_url}} )
+
+Thanks,
+The Flash Team
+
+If you’re having trouble with the button above, copy and paste the URL below into your web browser.
+
+{{action_url}}
+
+© 2017 Flash Library. All rights reserved.
+
+Somewhere in Vietnam :))

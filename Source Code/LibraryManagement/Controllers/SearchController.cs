@@ -74,5 +74,6 @@ namespace LibraryManagement.Controllers
             return View(PaginatedList<BookItemViewModel>.Create(Books.AsNoTracking(), page ?? 1, pageSize));
         }
 
+
     }
 }

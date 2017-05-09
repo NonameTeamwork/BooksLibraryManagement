@@ -10,7 +10,7 @@ namespace LibraryManagement.ViewModels
     {
         [Required(ErrorMessage ="You must fill your ID or email")]
         [Display(Name = "Reader ID or Email")]
-        public string Identify { get; set; }
+        public string Identifier { get; set; }
 
         [Required(ErrorMessage ="You must enter your password")]
         [DataType(DataType.Password)]
@@ -53,17 +53,6 @@ namespace LibraryManagement.ViewModels
         [StringLength(200)]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = "You must enter your new password")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [Required(ErrorMessage = "You must enter your new password twice to confirm")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
     }
 
     public class ChangePasswordViewModel
@@ -86,4 +75,34 @@ namespace LibraryManagement.ViewModels
         public string ConfirmPassword { get; set; }
 
     }
+
+    public class ResetPasswordViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+
+        public string Code { get; set; }
+    }
+
+    public class ForgotPasswordViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+    }
+
 }
