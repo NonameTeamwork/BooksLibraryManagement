@@ -8,10 +8,17 @@
     <hr />
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
-        <label asp-for="FullName" class="col-md-2 control-label"></label>
+        <label asp-for="FirstName" class="col-md-2 control-label"></label>
         <div class="col-md-10">
-            <input asp-for="FullName" class="form-control" />
-            <span asp-validation-for="FullName" class="text-danger"></span>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FisrtName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
@@ -58,6 +65,3 @@
         </div>
     </div>
 </form>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-}

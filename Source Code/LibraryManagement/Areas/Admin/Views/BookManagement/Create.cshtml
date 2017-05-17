@@ -1,0 +1,103 @@
+@model CreateBookViewModel
+@{
+    ViewBag.Title = "Create new book";
+}
+@section styles {
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/selectize/dist/css/selectize.default.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/selectize/dist/js/standalone/selectize.min.js"></script>
+}
+<body>
+<h2>@ViewBag.Title</h2>
+    <form asp-area="Admin" asp-controller="BookManagement" asp-action="Create" method="post" class="form-horizontal" role="form">
+        <h4>Create a new book.</h4>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ISBN" class="col-md-2 control-label">ISBN *</label>
+            <div class="col-md-10">
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Title" class="col-md-2 control-label">Title *</label>
+            <div class="col-md-10">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Authors" class="col-md-2 control-label">Authors *</label>
+            <div class="col-md-10">
+                <select asp-for="Authors" asp-items="@ViewBag.AuthorsList"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Categories" class="col-md-2 control-label">Categories *</label>
+            <div class="col-md-10">
+                <select asp-for="Categories" asp-items="@ViewBag.CategoriesList"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Publisher" class="col-md-2 control-label">Publishers *</label>
+            <div class="col-md-10">
+                <select class="select-block" asp-for="Publisher" ></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Country" class="col-md-2 control-label">Country *</label>
+            <div class="col-md-10">
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label">Description *</label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateofImport" class="col-md-2 control-label">Date Of Import</label>
+            <div class="col-md-10">
+                <input asp-for="DateofImport" class="form-control" />
+                <span asp-validation-for="DateofImport" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Create" />
+            </div>
+        </div>
+    </form>
+    <script>
+        $('.select-block').selectize({
+            persist: false,
+            maxItems: null,
+            valueField: 'name',
+            searchField: 'name',
+            options: [
+            @foreach (var pl in ViewBag.PublishersList)
+            {
+                @:{name: '@pl'},
+            }
+            ],
+            render: {
+                item: function (item, escape) {
+                    return '<div class="item">' + escape(item.name) + '</div>';
+                },
+                option: function (item, escape) {
+                    return '<div class="option">' + escape(item.name) + '</div>';
+                }
+            },
+            create: function (input) {
+                return {
+                    name : input,
+                };
+            }
+        });
+    </script>
+</body>

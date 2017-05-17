@@ -11,6 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Views\BookManagement\" />
+    <Folder Include="Areas\Admin\Views\UserManagement\" />
     <Folder Include="Views\Book\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
@@ -31,7 +33,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="1.1.0" />
     <PackageReference Include="Sendgrid" Version="9.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.1" />
-    <PackageReference Include="System.Net.Mail" Version="1.0.0-rtm-00002" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />

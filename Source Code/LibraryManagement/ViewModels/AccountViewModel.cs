@@ -23,10 +23,14 @@ namespace LibraryManagement.ViewModels
 
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "You must fill in your full name")]
-        [Display(Name ="Full Name")]
+        [Required(ErrorMessage = "You must fill in your first name")]
+        [Display(Name ="First Name")]
         [StringLength(100)]
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "You must fill in your last name")]
+        [Display(Name = "Last Name")]
+        [StringLength(100)]
+        public string LastName { get; set; }
 
         [Required]
         public string Gender { get; set; }

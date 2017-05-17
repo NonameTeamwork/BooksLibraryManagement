@@ -64,7 +64,7 @@ namespace LibraryManagement
                 options.Cookies.ApplicationCookie.ExpireTimeSpan = TimeSpan.FromDays(150);
                 options.Cookies.ApplicationCookie.LoginPath = "/Account/LogIn";
                 options.Cookies.ApplicationCookie.LogoutPath = "/Account/LogOff";
-                options.Cookies.ApplicationCookie.AccessDeniedPath = "/Account/AccessDenied";
+                options.Cookies.ApplicationCookie.AccessDeniedPath = "/Shared/AccessDenied";
 
                 // User settings
                 options.User.RequireUniqueEmail = true;
@@ -73,9 +73,12 @@ namespace LibraryManagement
             services.AddMvc();
 
             services.AddSingleton<IConfiguration>(Configuration);
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<UserRepository>();
 
         }
 
@@ -100,6 +103,9 @@ namespace LibraryManagement
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areaRoute",
+                    template: "{area:exists}/{controller=Dashboard}/{action=Index}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

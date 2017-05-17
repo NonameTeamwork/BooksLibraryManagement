@@ -20,15 +20,19 @@ namespace LibraryManagement.Models
         public string Title { get; set; }
         public List<BookAuthorJoiner> Authors { get; set; }
         public List<BookCategoryJoiner> Categories { get; set; }
+        [Required]
         public Publisher Publisher { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0:MM:dd:yy}", ApplyFormatInEditMode =true)]
         public DateTime PublicationDate { get; set; }
+        [Required]
         [Column(TypeName = ("varchar(50)"))]
         public Language Language { get; set; }
         [Column(TypeName = ("varchar(50)"))]
+        [Required]
         public string Country { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public double Price { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TotalBorrowed { get; set; }

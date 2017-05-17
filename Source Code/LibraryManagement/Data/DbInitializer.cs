@@ -83,7 +83,8 @@ namespace LibraryManagement.Data
                     PhoneNumber = "0123456789",
                     Address = "HCM VN",
                     DateOfBirth = DateTime.Parse("1990-10-2"),
-                    FullName = "Nguyen Van A",
+                    FirstName = "A",
+                    LastName = "Nguyen Van",
                     Status = serviceProvider.GetService<LibraryContext>().UserStatus.First(),
                 };
                 var checkUsr = await personManager.CreateAsync(user, configuration[defaultUserPassword]);
@@ -114,7 +115,8 @@ namespace LibraryManagement.Data
                     PhoneNumber = "0987654321",
                     Address = "HCM VN",
                     DateOfBirth = DateTime.Parse("1976-10-2"),
-                    FullName = "Pham Van Admin",
+                    FirstName = "Anh",
+                    LastName = "Bui Hoang",
                     Status = serviceProvider.GetService<LibraryContext>().AdminStatus.First(),
                 };
                 var checkUsr = await personManager.CreateAsync(admin, configuration[defaultAdminPassword]);
@@ -962,8 +964,8 @@ namespace LibraryManagement.Data
             }
             await context.SaveChangesAsync();
 
-            int count = context.Book.Count() - 1;
-            int randomnumb = new Random().Next(0, count);
+            int count = context.Book.Count();
+            int randomnumb = new Random().Next(1, count);
 
             var Parameters = new Parameter[]
             {

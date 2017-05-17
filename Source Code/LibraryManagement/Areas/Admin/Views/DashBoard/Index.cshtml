@@ -1,0 +1,152 @@
+@{
+    ViewBag.Title = "Dashboard";
+}
+@section menu {
+    <script src="~/Scripts/Home/DashboardV1-menu.js"></script>
+}
+@section styles{
+    <link href="~/AdminLTE/plugins/datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/bootstrap-wysihtml5/css/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+}
+<div class="row">
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <h3>@ViewBag.Books</h3>
+                <p>Total Books</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-ios-book"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+            <div class="inner">
+                <h3>@ViewBag.AvailBooks</h3>
+                <p>Books</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-ios-book-outline"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <h3>@ViewBag.Users</h3>
+                <p>Total Users</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-stalker"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+            <div class="inner">
+                <h3>65</h3>
+                <p>Visitors</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+<div class="row">
+    <section class="col-lg-7 connectedSortable">
+        @Html.Partial("QuickEmailPartial.cshtml")
+    </section>
+    <section class="col-lg-5 connectedSortable">
+        <div class="box box-solid bg-green-gradient">
+            <div class="box-header">
+                <i class="fa fa-calendar"></i>
+                <h3 class="box-title">Calendar</h3>
+                <div class="pull-right box-tools">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="#">Add new event</a></li>
+                            <li><a href="#">Clear events</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">View calendar</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-success btn-sm" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm" data-widget="remove">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body no-padding">
+                <div id="calendar" style="width: 100%"></div>
+            </div>
+            <div class="box-footer text-black">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="clearfix">
+                            <span class="pull-left">Task #1</span>
+                            <small class="pull-right">90%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+                        </div>
+                        <div class="clearfix">
+                            <span class="pull-left">Task #2</span>
+                            <small class="pull-right">70%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="clearfix">
+                            <span class="pull-left">Task #3</span>
+                            <small class="pull-right">60%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
+                        </div>
+                        <div class="clearfix">
+                            <span class="pull-left">Task #4</span>
+                            <small class="pull-right">40%</small>
+                        </div>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section scripts {
+    <script src="~/AdminLTE/plugins/jquery-ui/js/jquery-ui.min.js"></script>
+    <script>
+                $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script src="~/AdminLTE/plugins/bootstrap-wysihtml5/js/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="~/AdminLTE/plugins/sparkline/js/jquery.sparkline.min.js"></script>
+    <script asp-src-include="~/AdminLTE/plugins/jvectormap/js/*.js"></script>
+    <script asp-src-include="~/AdminLTE/plugins/daterangepicker/js/*.js"></script>
+    <script src="~/AdminLTE/plugins/knob/js/jquery.knob.js"></script>
+    <script asp-src-include="~/AdminLTE/plugins/datepicker/js/**/*.js"></script>
+    <script src="~/Scripts/Home/DashboardV1.js"></script>
+}

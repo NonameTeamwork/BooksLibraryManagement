@@ -19,7 +19,9 @@ namespace LibraryManagement.Models
         //public int Id { get; set; }
         //public ApplicationUser AppUser { get; set; }
         [Required]
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]
@@ -27,6 +29,14 @@ namespace LibraryManagement.Models
         public string Gender { get; set; }
         public DateTime StartDate { get; set; }
         public string HomeTown { get; set; }
+
+        public string GetFullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
         public static string GenerateId(LibraryContext context, string role)
         {
             string YearDigitPair = (DateTime.UtcNow.Year % 100).ToString();

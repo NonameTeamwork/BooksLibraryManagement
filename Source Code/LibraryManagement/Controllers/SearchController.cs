@@ -20,7 +20,7 @@ namespace LibraryManagement.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string searchString,
+        public async Task<IActionResult> Index(string searchString,
             string currentFilter,
             string sortOrder,
             int? page)
@@ -45,14 +45,14 @@ namespace LibraryManagement.Controllers
                     ISBN = bk.ISBN,
                     ImageURL = IMAGEPATH + bk.ISBN + ".jpg",
                     Title = bk.Title,
-                    Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
-                    PublicationDate = bk.PublicationDate.ToString(),
+                    Author = String.Join(", ", bk.Authors.Select(at => at.Author.Name)),
+                    PublicationDate = bk.PublicationDate,
                 });
             if (!String.IsNullOrEmpty(searchString))
             {
                 Books = Books.Where(bk => bk.ISBN.Equals(searchString) ||
-                bk.Title.ToLower().Contains(searchString.ToLower()) ||
-                bk.Author.ToLower().Contains(searchString.ToLower()));
+                                          bk.Author.ToLower().Contains(searchString.ToLower()) ||
+                                          bk.Title.ToLower().Contains(searchString.ToLower()));
             }
             switch (sortOrder)
             {
@@ -71,7 +71,7 @@ namespace LibraryManagement.Controllers
             }
 
             int pageSize = 20;
-            return View(PaginatedList<BookItemViewModel>.Create(Books.AsNoTracking(), page ?? 1, pageSize));
+            return View( PaginatedList<BookItemViewModel>.Create(Books.AsNoTracking(), page ?? 1, pageSize));
         }
 
 

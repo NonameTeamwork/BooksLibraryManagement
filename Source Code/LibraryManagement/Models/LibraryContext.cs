@@ -69,7 +69,7 @@ namespace LibraryManagement.Models
                 .HasForeignKey(bcd => bcd.ISBN)
                 .HasPrincipalKey(bk => bk.ISBN);
 
-            //Map many to many between BookInfo and Author
+            //Map many to many between Book and Author
             modelBuilder.Entity<BookAuthorJoiner>()
                 .HasKey(baj => new { baj.ISBN, baj.AuthorID });
 

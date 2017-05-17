@@ -1,6 +1,7 @@
 ﻿using LibraryManagement.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,7 +13,8 @@ namespace LibraryManagement.ViewModels
         public string ImageURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
-        public string PublicationDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM:dd:yyyy}", ApplyFormatInEditMode = false)]
+        public DateTime PublicationDate { get; set; }
     }
 
     public class BookDetailViewModel
@@ -23,6 +25,7 @@ namespace LibraryManagement.ViewModels
         public ICollection<Author> Authors { get; set; }
         public ICollection<Category> Categories { get; set; }
         public Publisher Publisher { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM:dd:yyyy}", ApplyFormatInEditMode = false)]
         public DateTime PublicationDate { get; set; }
         public Language Language { get; set; }
         public string Country { get; set; }

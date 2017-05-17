@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Services
 {
+    interface IEmailSender
+    {
+        Task SendEmail(string email, string subject, string htmlmessage, string txtmessage);
+    }
     public class AuthMessageSender : IEmailSender
     {
         public AuthMessageSender(IOptions<AuthMessageSenderOptions> optionsAccessor)
@@ -23,7 +27,7 @@ namespace LibraryManagement.Services
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("support.books.holycode.io@gmail.com", "Anh B."),
+                From = new EmailAddress("support.flash.team@gmail.com", "Anh B."),
                 Subject = subject,
                 PlainTextContent = txtmessage,
                 HtmlContent = htmlmessage
@@ -31,6 +35,12 @@ namespace LibraryManagement.Services
             msg.AddTo(new EmailAddress(email));
             var response = await client.SendEmailAsync(msg);
         }
+    }
+
+    public class AuthMessageSenderOptions
+    {
+        public string SendGridUser { get; set; }
+        public string SendGridKey { get; set; }
     }
 
 }

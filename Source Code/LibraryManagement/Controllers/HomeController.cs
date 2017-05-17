@@ -63,7 +63,7 @@ namespace LibraryManagement.Controllers
             if (!DateTime.Now.Date.Equals(DateofCreationNumb.Date))
             {
                 var Param1 = await _context.Parameter.Where(param => param.ParameterName == "RadomNumb").SingleAsync();
-                int randNumb = new Random().Next(0, _context.Book.Count() - 1);
+                int randNumb = new Random().Next(1, _context.Book.Count());
                 Param1.Value = randNumb.ToString();
                 var Param2 = await _context.Parameter.Where(param => param.ParameterName == "DateofCreationNumb").SingleAsync();
                 Param2.Value = DateTime.Now.ToString();

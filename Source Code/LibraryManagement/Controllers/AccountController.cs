@@ -92,7 +92,8 @@ namespace LibraryManagement.Controllers
                 {
                     UserName = Person.GenerateId(context, "user"),
                     Email = model.Email,
-                    FullName = model.FullName,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     Address = model.Address,
                     DateOfBirth = model.DateOfBirth,
                     Gender = model.Gender
@@ -101,6 +102,7 @@ namespace LibraryManagement.Controllers
                 var result = await _userManager.CreateAsync(user, Password);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "User");
                     await new AuthMessageSender(authOptions).SendEmail(model.Email, "Password Initlize",
                         CreateMessage(user, "/Data/EmailHtmlRandomPass.html", new String[] { Password }, ModifyStrInitPassword, env),
                         CreateMessage(user, "/Data/EmailTxtRandomPass.txt", new String[] { Password }, ModifyStrInitPassword, env));
@@ -350,14 +352,14 @@ namespace LibraryManagement.Controllers
         private string ModifyStrResetPassword(string content, Person user, string[] strArray)
         {
 
-            string fileContent = content.Replace("{{name}}", user.FullName);
+            string fileContent = content.Replace("{{name}}", user.FirstName);
             fileContent = fileContent.Replace("{{action_url}}", strArray[0]);
             return fileContent;
         }
 
         private string ModifyStrInitPassword(string content, Person user, string[] strArray)
         {
-            string fileContent = content.Replace("{{name}}", user.FullName);
+            string fileContent = content.Replace("{{name}}", user.FirstName);
             fileContent = fileContent.Replace("{{password_init}}", strArray[0]);
             return fileContent;
         }
