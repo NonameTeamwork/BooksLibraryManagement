@@ -1,0 +1,95 @@
+@model IEnumerable<LibraryManagement.ViewModels.BookDetailViewModel>
+@{
+    ViewData["Title"] = "ManageAllBooks";
+}
+
+<h2>ManageAllBooks</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model=>Model.First().ImageURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Authors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Categories)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Publisher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().PublicationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.First().TotalBorrowed)
+        </th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => item.ISBN)
+            </td>
+            <td>
+                <img src="@Url.Content(item.ImageURL)" width="100px" height="150px" />
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.Title)
+            </td>
+            <td>
+                @foreach(var author in item.Authors)
+                {
+                    @author.Name
+                }
+            </td>
+            <td>
+                @foreach(var category in item.Categories)
+                {
+                    @category.Name
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.Publisher.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.PublicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(Model=>item.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.TotalBorrowed)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ISBN })
+                @Html.ActionLink("Edit","Edit",new { /**/})
+                @Html.ActionLink("Delete", "DeleteBook", new {id = item.ISBN})
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,91 @@
+@model BookDetailViewModel
+@{
+    ViewData["Title"] = "DeleteBook";
+}
+
+<h2>Do you really want to delete this book?</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.ImageURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Authors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Categories)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Publisher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.PublicationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.TotalBorrowed)
+        </th>
+    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => Model.ISBN)
+            </td>
+            <td>
+                <img src="@Url.Content(Model.ImageURL)" width="100px" height="150px" />
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Title)
+            </td>
+            <td>
+                @foreach (var author in Model.Authors)
+                {
+                    @author.Name
+                }
+            </td>
+            <td>
+                @foreach (var category in Model.Categories)
+                {
+                    @category.Name
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Publisher.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.PublicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.TotalBorrowed)
+            </td>
+        </tr>
+</table>
+
+
+@Html.ActionLink("Delete", "DeleteBookAbsolutely", new { id = Model.ISBN })
+
+
+@Html.ActionLink("Back","ManageAllBooks")
