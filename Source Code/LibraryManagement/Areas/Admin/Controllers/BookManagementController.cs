@@ -17,6 +17,8 @@ namespace LibraryManagement.Areas.Admin.Controllers
     {
         private readonly LibraryContext _dbcontext;
 
+        private const string PATH = "/Data/";
+
         public BookManagementController(LibraryContext dbcontext)
         {
             _dbcontext = dbcontext;
@@ -183,6 +185,123 @@ namespace LibraryManagement.Areas.Admin.Controllers
                 await _dbcontext.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+        }
+
+
+        public IActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var Book = _dbcontext.Book
+                .Include(bk => bk.Authors)
+                .ThenInclude(baj => baj.Author)
+                .Include(bk => bk.Publisher)
+                .Include(bk => bk.Categories)
+                .ThenInclude(ctg => ctg.Category)
+                .Include(bk => bk.Language)
+                .Select(bk => new BookDetailViewModel
+                {
+                    ISBN = bk.ISBN,
+                    Title = bk.Title,
+                    Authors = bk.Authors.Select(at => at.Author).ToList(),
+                    Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
+                    Country = bk.Country,
+                    Language = bk.Language,
+                    PublicationDate = bk.PublicationDate,
+                    Publisher = bk.Publisher,
+                    TotalBorrowed = bk.TotalBorrowed,
+                    Description = bk.Description,
+                    ImageURL = PATH + bk.ISBN + ".jpg",
+                })
+                .AsNoTracking()
+                .Single(bk => bk.ISBN == id);
+
+            if (Book == null)
+            {
+                return NotFound();
+            }
+            return View(Book);
+        }
+        public ActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var Book = _dbcontext.Book
+                .Include(bk => bk.Authors)
+                .ThenInclude(baj => baj.Author)
+                .Include(bk => bk.Publisher)
+                .Include(bk => bk.Categories)
+                .ThenInclude(ctg => ctg.Category)
+                .Include(bk => bk.Language)
+                .Select(bk => new BookDetailViewModel
+                {
+                    ISBN = bk.ISBN,
+                    Title = bk.Title,
+                    Authors = bk.Authors.Select(at => at.Author).ToList(),
+                    Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
+                    Country = bk.Country,
+                    Language = bk.Language,
+                    PublicationDate = bk.PublicationDate,
+                    Publisher = bk.Publisher,
+                    TotalBorrowed = bk.TotalBorrowed,
+                    Description = bk.Description,
+                    ImageURL = PATH + bk.ISBN + ".jpg",
+                })
+                .AsNoTracking()
+                .Single(bk => bk.ISBN == id);
+
+            if (Book == null)
+            {
+                return NotFound();
+            }
+            return View("Details", Book);
+        }
+        public ActionResult DeleteBookAbsolutely(string id)
+        {
+            var book = _dbcontext.Book.SingleOrDefault(x => x.ISBN == id);
+
+            if (book == null)
+                return NotFound();
+
+            _dbcontext.Remove(book);
+            _dbcontext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult EditView(string id)
+        {
+            var Book = _dbcontext.Book
+                .Include(bk => bk.Authors)
+                .ThenInclude(baj => baj.Author)
+                .Include(bk => bk.Publisher)
+                .Include(bk => bk.Categories)
+                .ThenInclude(ctg => ctg.Category)
+                .Include(bk => bk.Language)
+                .Select(bk => new BookDetailViewModel
+                {
+                    ISBN = bk.ISBN,
+                    Title = bk.Title,
+                    Authors = bk.Authors.Select(at => at.Author).ToList(),
+                    Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
+                    Country = bk.Country,
+                    Language = bk.Language,
+                    PublicationDate = bk.PublicationDate,
+                    Publisher = bk.Publisher,
+                    TotalBorrowed = bk.TotalBorrowed,
+                    Description = bk.Description,
+                    ImageURL = PATH + bk.ISBN + ".jpg",
+                })
+                .AsNoTracking()
+                .Single(bk => bk.ISBN == id);
+
+            if (Book == null)
+                return NotFound();
+
+            return View(Book);
         }
     }
 }

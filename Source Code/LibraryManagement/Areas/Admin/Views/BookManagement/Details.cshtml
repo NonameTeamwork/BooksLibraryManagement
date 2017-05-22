@@ -1,0 +1,55 @@
+@model BookDetailViewModel
+@{
+    Layout = null;
+
+}
+@section styles {
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/selectize/dist/css/selectize.default.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/selectize/dist/js/standalone/selectize.min.js"></script>
+}
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("http://wallpapercave.com/wp/r1fMFxw.jpg");
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>@ViewBag.Title</h2>
+    <div style="display:flex;align-items:center;justify-content:center">
+        <div>
+            <img class="card-img-top rounded" src="@Url.Content(Model.ImageURL)" alt="Card image cap">
+        </div>
+        <div>
+            <div class="card " style="width: 40rem; font-size:small">
+                <div class="card-block">
+                    <h4 class="card-title">@Model.Title</h4>
+                    <p class="card-text">Description @Model.Description</p>
+                </div>
+                <ul class="list-group list-group-flush" >
+                    <li class="list-group-item" > 
+                        <span class="text-primary" style="width:10rem;">IBSN</span>
+                        <span class="text-right">@Model.ISBN</span>         
+                    </li>
+                    <li class="list-group-item">Author @foreach (var author in Model.Authors) { @author.Name}</li>
+                    <li class="list-group-item">Categories @foreach (var category in Model.Categories) { @category.Name}</li>
+                    <li class="list-group-item">Publication Date @Model.PublicationDate</li>
+                    <li class="list-group-item">Language @Model.Language.Name</li>
+                    <li class="list-group-item">Country @Model.Country</li>
+                    <li class="list-group-item">Price @Model.Price</li>
+                    <li class="list-group-item">Total borrowed @Model.TotalBorrowed</li>
+                </ul>
+                <div class="card-block">
+                    <a href="@Url.Action("Index","BookManagement")" class="card-link">Get Back</a>
+                    <a href="@Url.Action("DeleteBookAbsolutely","BookManagement")" class="card-link">Delete this book</a>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

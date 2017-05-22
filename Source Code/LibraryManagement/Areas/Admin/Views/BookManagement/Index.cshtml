@@ -59,9 +59,9 @@
                         @Html.DisplayFor(modelItem => item.TotalBorrowed)
                     </td>
                     <td>
-                        <a asp-area="Admin" asp-controller="ManageBook" asp-action="Edit" asp-route-id="@item.ISBN">Edit</a> |
-                        <a asp-area="Admin" asp-controller="ManageBook" asp-action="Details" asp-route-id="@item.ISBN">Details</a> |
-                        <a asp-area="Admin" asp-controller="ManageBook" asp-action="Delete" asp-route-id="@item.ISBN">Delete</a>
+                        <a asp-area="Admin" asp-controller="BookManagement" asp-action="EditView" asp-route-id="@item.ISBN">Edit</a> |
+                        <a asp-area="Admin" asp-controller="BookManagement" asp-action="Details" asp-route-id="@item.ISBN">Details</a> |
+                        <a asp-area="Admin" asp-controller="BookManagement" asp-action="Delete" asp-route-id="@item.ISBN">Delete</a>
                     </td>
                 </tr>
             }

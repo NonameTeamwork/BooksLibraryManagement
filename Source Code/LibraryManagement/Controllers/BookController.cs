@@ -51,88 +51,34 @@ namespace LibraryManagement.Controllers
             return View(Book);
         }
 
-        [HttpGet]
-        public ActionResult ManageAllBooks()
-        {
-            var Book = _context.Book
-                .Include(bk => bk.Authors)
-                .ThenInclude(baj => baj.Author)
-                .Include(bk => bk.Publisher)
-                .Include(bk => bk.Categories)
-                .ThenInclude(ctg => ctg.Category)
-                .Include(bk => bk.Language)
-                .Select(bk => new BookDetailViewModel
-                {
-                    ISBN = bk.ISBN,
-                    Title = bk.Title,
-                    Authors = bk.Authors.Select(at => at.Author).ToList(),
-                    Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
-                    Country = bk.Country,
-                    Language = bk.Language,
-                    PublicationDate = bk.PublicationDate,
-                    Publisher = bk.Publisher,
-                    TotalBorrowed = bk.TotalBorrowed,
-                    Description = bk.Description,
-                    ImageURL = PATH + bk.ISBN + ".jpg",
-                })
-                .AsNoTracking()
-                .OrderBy(x=>x.ISBN)
-                .ToList();
-            return View(Book);
-        }
-
-        [HttpGet]
-        public ActionResult DeleteBook(string id)
-        {
-            if (id == null)
-                return NotFound();
-
-            var Book = _context.Book
-                .Include(bk => bk.Authors)
-                .ThenInclude(baj => baj.Author)
-                .Include(bk => bk.Publisher)
-                .Include(bk => bk.Categories)
-                .ThenInclude(ctg => ctg.Category)
-                .Include(bk => bk.Language)
-                .Select(bk => new BookDetailViewModel
-                {
-                    ISBN = bk.ISBN,
-                    Title = bk.Title,
-                    Authors = bk.Authors.Select(at => at.Author).ToList(),
-                    Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
-                    Country = bk.Country,
-                    Language = bk.Language,
-                    PublicationDate = bk.PublicationDate,
-                    Publisher = bk.Publisher,
-                    TotalBorrowed = bk.TotalBorrowed,
-                    Description = bk.Description,
-                    ImageURL = PATH + bk.ISBN + ".jpg",
-                })
-                .AsNoTracking()
-                .Single(bk => bk.ISBN == id);
-
-            return View(Book);
-        }
-
-        [HttpGet]
-        public ActionResult DeleteBookAbsolutely(string id)
-        {
-            
-
-            var book = _context.Book.SingleOrDefault(x => x.ISBN == id);
-
-            if (book == null)
-                return NotFound();
-
-            _context.Remove(book);
-            _context.SaveChanges();
-            return RedirectToAction("ManageAllBooks");
-        }
-
-        [HttpGet]
-        public ActionResult Edit(string id)
-        {
-            return null;
-        }
+        //[HttpGet]
+        //public ActionResult ManageAllBooks()
+        //{
+        //    var Book = _context.Book
+        //        .Include(bk => bk.Authors)
+        //        .ThenInclude(baj => baj.Author)
+        //        .Include(bk => bk.Publisher)
+        //        .Include(bk => bk.Categories)
+        //        .ThenInclude(ctg => ctg.Category)
+        //        .Include(bk => bk.Language)
+        //        .Select(bk => new BookDetailViewModel
+        //        {
+        //            ISBN = bk.ISBN,
+        //            Title = bk.Title,
+        //            Authors = bk.Authors.Select(at => at.Author).ToList(),
+        //            Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
+        //            Country = bk.Country,
+        //            Language = bk.Language,
+        //            PublicationDate = bk.PublicationDate,
+        //            Publisher = bk.Publisher,
+        //            TotalBorrowed = bk.TotalBorrowed,
+        //            Description = bk.Description,
+        //            ImageURL = PATH + bk.ISBN + ".jpg",
+        //        })
+        //        .AsNoTracking()
+        //        .OrderBy(x=>x.ISBN)
+        //        .ToList();
+        //    return View(Book);
+        //}
     }
 }
