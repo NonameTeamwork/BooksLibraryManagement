@@ -271,8 +271,7 @@ namespace LibraryManagement.Areas.Admin.Controllers
             _dbcontext.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        public ActionResult EditView(string id)
+        public async ActionResult EditView(string id)
         {
             var Book = _dbcontext.Book
                 .Include(bk => bk.Authors)
@@ -300,6 +299,18 @@ namespace LibraryManagement.Areas.Admin.Controllers
 
             if (Book == null)
                 return NotFound();
+
+            //ViewBag.AuthorsList = new MultiSelectList(_dbcontext.Author.ToList(),"Id","Name");
+            //ViewBag.CategoriesList = new MultiSelectList(_dbcontext.Category.ToList().OrderBy(x => x.Name), "Id", "Name");
+            //ViewBag.PublisherList = new MultiSelectList(_dbcontext.Publisher.ToList(), "Id", "Name");
+
+            var Authors = await _dbcontext.Author.Select(at => at.Name).ToListAsync();
+            ViewBag.AuthorsList = new MultiSelectList(Authors, "Name");
+            var Categories = await _dbcontext.Category.Select(ctg => ctg.Name).ToListAsync();
+            ViewBag.CategoriesList = new MultiSelectList(Categories, "Name");
+            var Publisher = await _dbcontext.Publisher.Select(ctg => ctg.Name).ToListAsync();
+            ViewBag.PublishersList = new List<String>(Publisher);
+
 
             return View(Book);
         }

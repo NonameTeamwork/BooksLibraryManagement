@@ -1,48 +1,64 @@
 @model BookDetailViewModel
 @{
-    Layout = null;
+    ViewBag.Title = "Edit Book";
+}
+@section styles {
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/selectize/dist/css/selectize.default.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/selectize/dist/js/standalone/selectize.min.js"></script>
 }
 
 <body>
     <h2>@ViewBag.Title</h2>
-    <form asp-area="Admin" asp-controller="BookManagement" asp-action="Edit" method="post" class="form-horizontal" role="form">
+    <form asp-area="Admin" asp-controller="BookManagement" asp-action="Create" method="post" class="form-horizontal" role="form">
         <hr />
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="ISBN" class="col-md-2 control-label">ISBN *</label>
             <div class="col-md-10">
-                
+                <input asp-for="ISBN" class="form-control" value="@Model.ISBN" disabled />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Title" class="col-md-2 control-label">Title *</label>
             <div class="col-md-10">
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control" value="@Model.Title"/>
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Authors" class="col-md-2 control-label">Authors *</label>
             <div class="col-md-10">
-                <select asp-for="Authors" asp-items="@ViewBag.AuthorsList"></select>
+                @*@Html.ListBox("Authors",ViewBag.AuthorsList as MultiSelectList)*@
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Categories" class="col-md-2 control-label">Categories *</label>
             <div class="col-md-10">
-                <select asp-for="Categories" asp-items="@ViewBag.CategoriesList"></select>
+                @*@Html.ListBox("Categories",ViewBag.CategoriesList as MultiSelectList)*@
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Publisher" class="col-md-2 control-label">Publishers *</label>
             <div class="col-md-10">
-                <select class="select-block" asp-for="Publisher"></select>
+                <div class="col-md-10">
+                    <select class="select-block" asp-for="Publisher"></select>
+                </div>
             </div>
         </div>
+        @*<div class="form-group">
+            <label asp-for="Date" class="col-md-2 control-label">Publication Date *</label>
+            <div class="col-md-10">
+                <input asp-for="PublicationDate" class="form-control"/>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>*@
         <div class="form-group">
             <label asp-for="Country" class="col-md-2 control-label">Country *</label>
             <div class="col-md-10">
-                <input asp-for="Country" class="form-control" />
+                <input asp-for="Country" class="form-control" value="@Model.Country"/>
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
         </div>
@@ -53,13 +69,13 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label asp-for="DateofImport" class="col-md-2 control-label">Date Of Import</label>
             <div class="col-md-10">
                 <input asp-for="DateofImport" class="form-control" />
                 <span asp-validation-for="DateofImport" class="text-danger"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" class="btn btn-default" value="Create" />
@@ -73,7 +89,7 @@
             valueField: 'name',
             searchField: 'name',
             options: [
-            @foreach (var pl in ViewBag.PublishersList)
+            @foreach (var pl in ViewBag.PublisherList)
             {
                 @:{name: '@pl'},
             }

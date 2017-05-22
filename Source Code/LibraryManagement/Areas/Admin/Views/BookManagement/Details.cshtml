@@ -29,20 +29,42 @@
             <div class="card " style="width: 40rem; font-size:small">
                 <div class="card-block">
                     <h4 class="card-title">@Model.Title</h4>
-                    <p class="card-text">Description @Model.Description</p>
+                    <span class="text-primary" style="width:10rem;">Description</span>
+                    <span class="text-right">@Model.Description</span>
                 </div>
                 <ul class="list-group list-group-flush" >
                     <li class="list-group-item" > 
                         <span class="text-primary" style="width:10rem;">IBSN</span>
                         <span class="text-right">@Model.ISBN</span>         
                     </li>
-                    <li class="list-group-item">Author @foreach (var author in Model.Authors) { @author.Name}</li>
-                    <li class="list-group-item">Categories @foreach (var category in Model.Categories) { @category.Name}</li>
-                    <li class="list-group-item">Publication Date @Model.PublicationDate</li>
-                    <li class="list-group-item">Language @Model.Language.Name</li>
-                    <li class="list-group-item">Country @Model.Country</li>
-                    <li class="list-group-item">Price @Model.Price</li>
-                    <li class="list-group-item">Total borrowed @Model.TotalBorrowed</li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Authors</span> 
+                        <span class="text-right">@foreach (var author in Model.Authors){ @author.Name}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Categories</span>
+                        <span class="text-right">@foreach (var category in Model.Categories){ @category.Name}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Publication Date</span>
+                        <span class="text-right">@Model.PublicationDate</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Language</span>
+                        <span class="text-right">@Model.Language.Name</span>  
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Country</span>
+                        <span class="text-right">@Model.Country</span>  
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Price</span>
+                        <span class="text-right">@Model.Price</span>  
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Total borrowed</span>
+                        <span class="text-right">@Model.TotalBorrowed</span>  
+                    </li>
                 </ul>
                 <div class="card-block">
                     <a href="@Url.Action("Index","BookManagement")" class="card-link">Get Back</a>
