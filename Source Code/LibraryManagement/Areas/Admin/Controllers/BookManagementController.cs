@@ -271,7 +271,7 @@ namespace LibraryManagement.Areas.Admin.Controllers
             _dbcontext.SaveChanges();
             return RedirectToAction("Index");
         }
-        public async ActionResult EditView(string id)
+        public async Task<ActionResult> EditView(string id)
         {
             var Book = _dbcontext.Book
                 .Include(bk => bk.Authors)
