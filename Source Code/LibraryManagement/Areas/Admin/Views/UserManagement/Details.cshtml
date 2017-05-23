@@ -1,0 +1,85 @@
+@model User
+@{
+    ViewBag.Title = "Details";
+}
+@section styles {
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/selectize/dist/css/selectize.default.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/selectize/dist/js/standalone/selectize.min.js"></script>
+}
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("http://wallpapercave.com/wp/r1fMFxw.jpg");
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>@ViewBag.Title</h2>
+    <div style="display:flex;align-items:center;justify-content:center">
+        @*<div>
+            <img class="card-img-top rounded" src="@Url.Content("/~Data/user-group-icon.png")" alt="Card image cap">
+        </div>*@
+        <div>
+
+
+
+
+
+            <div class="card " style="width: 40rem; font-size:small">
+                <div class="card-block">
+                    <h4 class="card-title"></h4>
+                    <span class="text-primary" style="width:10rem;"></span>
+                    <span class="text-right"></span>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">ID</span>
+                        <span class="text-right">@Model.Id</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">User name</span>
+                        <span class="text-right">@Model.UserName</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Full name</span>
+                        <span class="text-right">@Model.GetFullName</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Gender</span>
+                        <span class="text-right">@Model.Gender</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Date of birth</span>
+                        <span class="text-right">@Model.DateOfBirth</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Address</span>
+                        <span class="text-right">@Model.Address</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Email</span>
+                        <span class="text-right">@Model.Email</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Home town</span>
+                        <span class="text-right">@Model.HomeTown</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-primary" style="width:10rem;">Start date</span>
+                        <span class="text-right">@Model.StartDate</span>
+                    </li>
+                </ul>
+                <div class="card-block">
+                    <a href="@Url.Action("Index","UserManagement")" class="card-link">Get Back</a>
+                    <a href="@Url.Action("DeleteBookAbsolutely","UserManagement")" class="card-link">Delete this user</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
