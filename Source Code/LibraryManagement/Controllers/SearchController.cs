@@ -20,7 +20,7 @@ namespace LibraryManagement.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(string searchString,
+        public IActionResult Index(string searchString,
             string currentFilter,
             string sortOrder,
             int? page)

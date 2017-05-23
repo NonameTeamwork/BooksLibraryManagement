@@ -1,4 +1,5 @@
 @model CreateBookViewModel
+@inject LibraryManagement.Services.BookRepository repo
 @{
     ViewBag.Title = "Create new book";
 }
@@ -7,97 +8,215 @@
     <link href="~/lib/selectize/dist/css/selectize.default.css" rel="stylesheet" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/selectize/dist/js/standalone/selectize.min.js"></script>
+    <link href="~/css/prism.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/lib/Croppie/croppie.css"/>
+    <link href="~/css/demo.css" rel="stylesheet" type="text/css" />
 }
-<body>
-<h2>@ViewBag.Title</h2>
-    <form asp-area="Admin" asp-controller="BookManagement" asp-action="Create" method="post" class="form-horizontal" role="form">
-        <h4>Create a new book.</h4>
-        <hr />
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="ISBN" class="col-md-2 control-label">ISBN *</label>
-            <div class="col-md-10">
-                <input asp-for="ISBN" class="form-control" />
-                <span asp-validation-for="ISBN" class="text-danger"></span>
-            </div>
+
+<form asp-area="Admin" asp-controller="BookManagement" asp-action="Create" method="post" class="form-horizontal" role="form">
+    <hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="ISBN" class="col-md-2 control-label">ISBN *</label>
+        <div class="col-md-9">
+            <input asp-for="ISBN" class="form-control" />
+            <span asp-validation-for="ISBN" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="Title" class="col-md-2 control-label">Title *</label>
-            <div class="col-md-10">
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title" class="col-md-2 control-label">Title *</label>
+        <div class="col-md-9">
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="Authors" class="col-md-2 control-label">Authors *</label>
-            <div class="col-md-10">
-                <select asp-for="Authors" asp-items="@ViewBag.AuthorsList"></select>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Authors" class="col-md-2 control-label">Authors *</label>
+        <div class="col-md-9">
+            <select id="ath-block" asp-for="Authors"></select>
         </div>
-        <div class="form-group">
-            <label asp-for="Categories" class="col-md-2 control-label">Categories *</label>
-            <div class="col-md-10">
-                <select asp-for="Categories" asp-items="@ViewBag.CategoriesList"></select>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Categories" class="col-md-2 control-label">Categories *</label>
+        <div class="col-md-9">
+            <select id="ctg-block" asp-for="Categories"></select>
         </div>
-        <div class="form-group">
-            <label asp-for="Publisher" class="col-md-2 control-label">Publishers *</label>
-            <div class="col-md-10">
-                <select class="select-block" asp-for="Publisher" ></select>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publisher" class="col-md-2 control-label">Publishers *</label>
+        <div class="col-md-9">
+            <select id="pbl-block" asp-for="Publisher" ></select>
         </div>
-        <div class="form-group">
-            <label asp-for="Country" class="col-md-2 control-label">Country *</label>
-            <div class="col-md-10">
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country" class="col-md-2 control-label">Country *</label>
+        <div class="col-md-9">
+            <input asp-for="Country" class="form-control" />
+            <span asp-validation-for="Country" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="Description" class="col-md-2 control-label">Description *</label>
-            <div class="col-md-10">
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Language" class="col-md-2 control-label">Language *</label>
+        <div class="col-md-9">
+            <select id="lg-block" asp-for="Language" ></select>
+            <span asp-validation-for="Language" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="DateofImport" class="col-md-2 control-label">Date Of Import</label>
-            <div class="col-md-10">
-                <input asp-for="DateofImport" class="form-control" />
-                <span asp-validation-for="DateofImport" class="text-danger"></span>
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="col-md-2 control-label">Description *</label>
+        <div class="col-md-9">
+            <textarea asp-for="Description" class="form-control" rows="4" cols="50"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="btn btn-default" value="Create" />
-            </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateofImport" class="col-md-2 control-label">Date Of Import</label>
+        <div class="col-md-9">
+            <input asp-for="DateofImport" class="form-control" />
+            <span asp-validation-for="DateofImport" class="text-danger"></span>
         </div>
-    </form>
-    <script>
-        $('.select-block').selectize({
-            persist: false,
-            maxItems: null,
-            valueField: 'name',
-            searchField: 'name',
-            options: [
-            @foreach (var pl in ViewBag.PublishersList)
-            {
-                @:{name: '@pl'},
-            }
-            ],
-            render: {
-                item: function (item, escape) {
-                    return '<div class="item">' + escape(item.name) + '</div>';
-                },
-                option: function (item, escape) {
-                    return '<div class="option">' + escape(item.name) + '</div>';
-                }
+    </div>
+    <div class="col-1-2">
+        <div class="upload-msg">
+            Upload a file to start cropping
+        </div>
+        <div class="upload-demo-wrap">
+            <div id="upload-demo"></div>
+        </div>
+    </div>
+    <div class="actions">
+        <a class="btn file-btn">
+            <span>Upload</span>
+            <input type="file" id="upload" value="Choose a file" />
+        </a>
+        <button class="upload-result">Result</button>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Create" />
+        </div>
+    </div>
+</form>
+@section scripts {
+    <script src="~/lib/Croppie/croppie.min.js"></script>
+    <script src="~/Scripts/Croppie/prism.js"></script>
+    <script src="~/Scripts/Croppie/demo.js"></script>
+}
+<script>
+    $('#pbl-block').selectize({
+        persist: false,
+        maxItems: 1,
+        valueField: 'name',
+        searchField: 'name',
+        options: [
+        @foreach (var pl in repo.getPubishers())
+        {
+            @:{name: '@pl.Name'},
+        }
+        ],
+        render: {
+            item: function (item, escape) {
+                return '<div class="item">' + escape(item.name) + '</div>';
             },
-            create: function (input) {
-                return {
-                    name : input,
-                };
+            option: function (item, escape) {
+                return '<div class="option">' + escape(item.name) + '</div>';
             }
+        },
+        create: function (input) {
+            return {
+                name : input,
+            };
+        }
+    });
+
+        $('#ctg-block').selectize({
+        persist: false,
+        maxItems: null,
+        valueField: 'name',
+        searchField: 'name',
+        options: [
+        @foreach (var ctg in repo.getCategories())
+        {
+            @:{name: '@ctg.Name'},
+        }
+        ],
+        render: {
+            item: function (item, escape) {
+                return '<div class="item">' + escape(item.name) + '</div>';
+            },
+            option: function (item, escape) {
+                return '<div class="option">' + escape(item.name) + '</div>';
+            }
+        },
+        create: function (input) {
+            return {
+                name : input,
+            };
+        }
+    });
+
+        $('#ath-block').selectize({
+        persist: false,
+        maxItems: null,
+        valueField: 'name',
+        searchField: 'name',
+        options: [
+        @foreach (var ath in repo.getAuthors())
+        {
+            @:{name: '@ath.Name'},
+        }
+        ],
+        render: {
+            item: function (item, escape) {
+                return '<div class="item">' + escape(item.name) + '</div>';
+            },
+            option: function (item, escape) {
+                return '<div class="option">' + escape(item.name) + '</div>';
+            }
+        },
+        create: function (input) {
+            return {
+                name : input,
+            };
+        }
         });
-    </script>
-</body>
+
+    $('#lg-block').selectize({
+        persist: false,
+        maxItems: 1,
+        valueField: 'name',
+        searchField: 'name',
+        options: [
+        @foreach (var lg in repo.getLanguages())
+        {
+            @:{name: '@lg.Name'},
+        }
+        ],
+        render: {
+            item: function (item, escape) {
+                return '<div class="item">' + escape(item.name) + '</div>';
+            },
+            option: function (item, escape) {
+                return '<div class="option">' + escape(item.name) + '</div>';
+            }
+        },
+        create: function (input) {
+            return {
+                name : input,
+            };
+        }
+        });
+
+    $uploadCrop = $('#upload-demo').croppie({
+        enableExif: true,
+        viewport: {
+            width: 246,
+            height: 400,
+            type: 'rectangle'
+        },
+        boundary: {
+            width: 300,
+            height: 300
+        }
+    });
+</script>

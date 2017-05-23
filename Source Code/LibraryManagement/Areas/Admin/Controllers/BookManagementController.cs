@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using LibraryManagement.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using LibraryManagement.Areas.Admin.ViewModels;
 
 namespace LibraryManagement.Areas.Admin.Controllers
 {
@@ -87,14 +88,8 @@ namespace LibraryManagement.Areas.Admin.Controllers
             return View(await PaginatedList<IndexBookViewModel>.CreateAsync(book.AsNoTracking(), page ?? 1, pageSize));
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            var Authors = await _dbcontext.Author.Select(at => at.Name).ToListAsync();
-            ViewBag.AuthorsList = new MultiSelectList(Authors,"Name");
-            var Categories = await _dbcontext.Category.Select(ctg => ctg.Name ).ToListAsync();
-            ViewBag.CategoriesList = new MultiSelectList(Categories, "Name");
-            var Publisher = await _dbcontext.Publisher.Select(ctg => ctg.Name ).ToListAsync();
-            ViewBag.PublishersList = new List<String>(Publisher);
             return View();
         }
 
@@ -271,7 +266,7 @@ namespace LibraryManagement.Areas.Admin.Controllers
             _dbcontext.SaveChanges();
             return RedirectToAction("Index");
         }
-        public async ActionResult EditView(string id)
+        public async Task<ActionResult> EditView(string id)
         {
             var Book = _dbcontext.Book
                 .Include(bk => bk.Authors)

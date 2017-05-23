@@ -32,7 +32,7 @@ namespace LibraryManagement.Controllers
                     ISBN = bk.ISBN,
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
-                }).Take(12).ToListAsync();
+                }).Take(9).ToListAsync();
 
             var BookMostBorrowed = await _context.Book
                 .Include(bk => bk.Authors)
@@ -46,7 +46,7 @@ namespace LibraryManagement.Controllers
                     Title = bk.Title,
                     Author = string.Join(",", bk.Authors.Select(at => at.Author.Name).ToArray()),
                     Publisher = bk.Publisher.Name
-                }).Take(2).ToListAsync();
+                }).Take(3).ToListAsync();
 
             HomeViewModel.BookLatest = BookLatest;
             HomeViewModel.BookBorrowed = BookMostBorrowed;

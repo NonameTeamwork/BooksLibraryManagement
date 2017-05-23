@@ -63,18 +63,6 @@ namespace LibraryManagement.Data
             var user = await personManager.FindByEmailAsync(configuration[defaultUserEmail]);
             if (user == null)
             {
-                //var us = new User()
-                //{
-                //    PersonId = Person.GenerateId(serviceProvider.GetService<LibraryContext>(), "user"),
-                //    Email = configuration[defaultUserEmail],
-                //    PhoneNumber = "0123456789",
-                //    Address = "HCM VN",
-                //    DateOfBirth = DateTime.Parse("1990-10-2"),
-                //    FullName = "Nguyen Van A",
-                //    Status = serviceProvider.GetService<LibraryContext>().UserStatus.First(),
-                //};
-                //await serviceProvider.GetService<LibraryContext>().User.AddAsync(us);
-                //await serviceProvider.GetService<LibraryContext>().SaveChangesAsync();
                 user = new User()
                 {
                     //Person = us
@@ -95,18 +83,6 @@ namespace LibraryManagement.Data
             var admin = await personManager.FindByEmailAsync(configuration[defaultAdminEmail]);
             if (admin == null)
             {
-                //var ad = new Admin()
-                //{
-                //    PersonId = Person.GenerateId(serviceProvider.GetService<LibraryContext>(), "admin"),
-                //    Email = configuration[defaultAdminEmail],
-                //    PhoneNumber = "0987654321",
-                //    Address = "HCM VN",
-                //    DateOfBirth = DateTime.Parse("1976-10-2"),
-                //    FullName = "Pham Van Admin",
-                //    Status = serviceProvider.GetService<LibraryContext>().AdminStatus.First(),
-                //};
-                //await serviceProvider.GetService<LibraryContext>().Admin.AddAsync(ad);
-                //await serviceProvider.GetService<LibraryContext>().SaveChangesAsync();
                 admin = new Admin()
                 {
                     //Person = ad,
@@ -341,7 +317,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-12-07"),
                     Price = double.Parse("23.03"),
-                    Publisher = Publishers[0]
+                    Publisher = Publishers[0],
+                    TotalBorrowed = 10,
                 },
 
                 new Book
@@ -357,7 +334,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2014-03-27"),
                     Price = double.Parse("6.99"),
-                    Publisher = Publishers[1]
+                    Publisher = Publishers[1],
+                    TotalBorrowed = 20,
                 },
 
                 new Book
@@ -376,7 +354,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-11-20"),
                     Price = double.Parse("55.5"),
-                    Publisher = Publishers[2]
+                    Publisher = Publishers[2],
+                    TotalBorrowed = 35,
                 },
 
                 new Book
@@ -392,7 +371,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-12-09"),
                     Price = double.Parse("16.32"),
-                    Publisher = Publishers[3]
+                    Publisher = Publishers[3],
+                    TotalBorrowed = 21,
                 },
 
                 new Book
@@ -407,7 +387,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2015-05-14"),
                     Price = double.Parse("11.6"),
-                    Publisher = Publishers[4]
+                    Publisher = Publishers[4],
+                    TotalBorrowed = 51,
                 },
 
                 new Book
@@ -424,7 +405,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2011-05-17"),
                     Price = double.Parse("6.69"),
-                    Publisher = Publishers[5]
+                    Publisher = Publishers[5],
+                    TotalBorrowed = 46,
                 },
 
                 new Book
@@ -454,7 +436,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-07-01"),
                     Price = double.Parse("18.45"),
-                    Publisher = Publishers[7]
+                    Publisher = Publishers[7],
+                    TotalBorrowed = 22,
                 },
 
                 new Book
@@ -468,7 +451,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2015-04-01"),
                     Price = double.Parse("5.47"),
-                    Publisher = Publishers[8]
+                    Publisher = Publishers[8],
+                    TotalBorrowed = 11,
                 },
 
                 new Book
@@ -485,7 +469,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2014-10-09"),
                     Price = double.Parse("10.17"),
-                    Publisher = Publishers[9]
+                    Publisher = Publishers[9],
+                    TotalBorrowed = 14
                 },
 
                 new Book
@@ -499,7 +484,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-06-23"),
                     Price = double.Parse("63.16"),
-                    Publisher = Publishers[10]
+                    Publisher = Publishers[10],
+                    TotalBorrowed = 15
                 },
 
                 new Book
@@ -544,7 +530,8 @@ namespace LibraryManagement.Data
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2016-11-04"),
                     Price = double.Parse("12.66"),
-                    Publisher = Publishers[12]
+                    Publisher = Publishers[12],
+                    TotalBorrowed = 15
                 },
 
                 new Book
@@ -557,7 +544,8 @@ namespace LibraryManagement.Data
                     Country = "London, United Kingdom",
                     Language = Languages[0],
                     PublicationDate = DateTime.Parse("2008-12-02"),
-                    Publisher = Publishers[13]
+                    Publisher = Publishers[13],
+                    TotalBorrowed = 6
                 }
 
             };

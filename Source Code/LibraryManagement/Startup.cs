@@ -78,7 +78,8 @@ namespace LibraryManagement
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<UserRepository>();
+            services.AddTransient<UserRepository>();
+            services.AddTransient<BookRepository>();
 
         }
 
