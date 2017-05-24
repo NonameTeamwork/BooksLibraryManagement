@@ -59,7 +59,7 @@ namespace LibraryManagement.Controllers
             if (result.Succeeded)
             {
                 _logger.LogInformation("Logged in {userName}.", model.Identifier);
-                return RedirectToLocal(returnUrl);
+                return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
             }
             if (result.IsLockedOut)
             {

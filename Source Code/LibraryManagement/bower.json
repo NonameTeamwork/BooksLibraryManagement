@@ -2,14 +2,5 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.6",
-    "jquery": "3.1.1",
-    "selectize": "v0.12.4",
-    "magnific-popup": "1.1.0",
-    "scrollreveal": "v3.3.3",
-    "font-awesome": "Font-Awesome#v4.7.0"
-  },
-  "resolutions": {
-    "bootstrap": "v4.0.0-alpha.6"
   }
 }

@@ -106,6 +106,7 @@ namespace LibraryManagement.Areas.Admin.Controllers
                     CopyNo = noofBook,
                     Status = _dbcontext.BookStatus.Single(bs => bs.Name == "Available"),
                     Condition = model.Condition,
+                    
                 };
                 if (model.DateofImport != null)
                     bookCopy.DateofImport = model.DateofImport;
@@ -132,39 +133,60 @@ namespace LibraryManagement.Areas.Admin.Controllers
                 foreach (var author in model.Authors)
                 {
 
-                    newBook.Authors.Add(new BookAuthorJoiner
+                    var anAuthor = await _dbcontext.Author.SingleOrDefaultAsync(at => at.Name == author);
+                    if (anAuthor == null)
                     {
-                        BookInfo = newBook,
-                        Author = new Author {
-                            Name = author,
-                        },
-                    });
-                    if (!_dbcontext.Author.Any(at => at.Name == author))
-                    {
-                        _dbcontext.Author.Add(new Author
+                        var newAuthor = new Author
                         {
                             Name = author,
-                        });
+                        };
+                        await _dbcontext.Author.AddAsync(newAuthor);
+
+                        var authorJoiner = new BookAuthorJoiner
+                        {
+                            Author = newAuthor,
+                            BookInfo = newBook,
+                        };
+                        await _dbcontext.BookAuthorJoiner.AddAsync(authorJoiner);
+                    }
+                    else
+                    {
+                        var authorJoiner = new BookAuthorJoiner
+                        {
+                            Author = anAuthor,
+                            BookInfo = newBook,
+                        };
+                        await _dbcontext.BookAuthorJoiner.AddAsync(authorJoiner);
                     }
                 }
 
                 //Map relationship between new book and category
                 foreach (var category in model.Categories)
                 {
-                    newBook.Categories.Add(new BookCategoryJoiner
+                    var aCategory = await _dbcontext.Category.SingleOrDefaultAsync(ctg => ctg.Name == category);
+                    if (aCategory == null)
                     {
-                        BookInfo = newBook,
-                        Category = new Category
+                        var newCategory = new Category
                         {
                             Name = category,
-                        },
-                    });
-                    if (!_dbcontext.Author.Any(at => at.Name == category))
-                    {
-                        _dbcontext.Category.Add(new Category
+                        };
+                        await _dbcontext.Category.AddAsync(newCategory);
+
+                        var categoryJoiner = new BookCategoryJoiner
                         {
-                            Name = category,
-                        });
+                            Category = newCategory,
+                            BookInfo = newBook,
+                        };
+                        await _dbcontext.BookCategoryJoiner.AddAsync(categoryJoiner);
+                    }
+                    else
+                    {
+                        var categoryJoiner = new BookCategoryJoiner
+                        {
+                            Category = aCategory,
+                            BookInfo = newBook,
+                        };
+                        await _dbcontext.BookCategoryJoiner.AddAsync(categoryJoiner);
                     }
                 }
 
@@ -174,9 +196,38 @@ namespace LibraryManagement.Areas.Admin.Controllers
                     BookInfo = newBook,
                     Condition = model.Condition,
                     CopyNo = 0,
-                    Status = _dbcontext.BookStatus.Single(bs => bs.Name == "Available"),
+                    Status = await _dbcontext.BookStatus.SingleOrDefaultAsync(bs => bs.Name == "Available"),
                 });
-                _dbcontext.Book.Add(newBook);
+                await _dbcontext.Book.AddAsync(newBook);
+
+                var publisher = await _dbcontext.Publisher.SingleOrDefaultAsync(pl => pl.Name == model.Publisher);
+                if (publisher == null)
+                {
+                    var newPublisher = new Publisher
+                    {
+                        Name = model.Publisher,
+                    };
+                    await _dbcontext.Publisher.AddAsync(newPublisher);
+                    newBook.Publisher = newPublisher;
+                }
+                else
+                    newBook.Publisher = publisher;
+
+
+                var language = await _dbcontext.Language.SingleOrDefaultAsync(lg => lg.Name == model.Language);
+                if (language == null)
+                {
+                    var newLanguage = new Language
+                    {
+                        Name = model.Language,
+
+                    };
+                    await _dbcontext.Language.AddAsync(newLanguage);
+                    newBook.Language = newLanguage;
+                }
+                else
+                    newBook.Language = language;
+
                 await _dbcontext.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -219,51 +270,21 @@ namespace LibraryManagement.Areas.Admin.Controllers
             }
             return View(Book);
         }
-        public ActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
+        {
+            return RedirectToAction("Details", new { id = id });
+        }
+        public async Task<IActionResult> DeleteBookAbsolutely(string id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
-            var Book = _dbcontext.Book
-                .Include(bk => bk.Authors)
-                .ThenInclude(baj => baj.Author)
-                .Include(bk => bk.Publisher)
-                .Include(bk => bk.Categories)
-                .ThenInclude(ctg => ctg.Category)
-                .Include(bk => bk.Language)
-                .Select(bk => new BookDetailViewModel
-                {
-                    ISBN = bk.ISBN,
-                    Title = bk.Title,
-                    Authors = bk.Authors.Select(at => at.Author).ToList(),
-                    Categories = bk.Categories.Select(ctg => ctg.Category).ToList(),
-                    Country = bk.Country,
-                    Language = bk.Language,
-                    PublicationDate = bk.PublicationDate,
-                    Publisher = bk.Publisher,
-                    TotalBorrowed = bk.TotalBorrowed,
-                    Description = bk.Description,
-                    ImageURL = PATH + bk.ISBN + ".jpg",
-                })
-                .AsNoTracking()
-                .Single(bk => bk.ISBN == id);
 
-            if (Book == null)
-            {
-                return NotFound();
-            }
-            return View("Details", Book);
-        }
-        public ActionResult DeleteBookAbsolutely(string id)
-        {
-            var book = _dbcontext.Book.SingleOrDefault(x => x.ISBN == id);
+            var book = await _dbcontext.Book.SingleOrDefaultAsync(x => x.ISBN == id);
 
             if (book == null)
                 return NotFound();
-
-            _dbcontext.Remove(book);
-            _dbcontext.SaveChanges();
+            _dbcontext.Book.Remove(book);
+            await _dbcontext.SaveChangesAsync();
             return RedirectToAction("Index");
         }
         public async Task<ActionResult> EditView(string id)

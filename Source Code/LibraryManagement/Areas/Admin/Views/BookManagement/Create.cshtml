@@ -8,9 +8,9 @@
     <link href="~/lib/selectize/dist/css/selectize.default.css" rel="stylesheet" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/selectize/dist/js/standalone/selectize.min.js"></script>
-    <link href="~/css/prism.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/css/prism.css" rel="stylesheet" type="text/css" />*@
     <link rel="stylesheet" href="~/lib/Croppie/croppie.css"/>
-    <link href="~/css/demo.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/css/demo.css" rel="stylesheet" type="text/css" />*@
 }
 
 <form asp-area="Admin" asp-controller="BookManagement" asp-action="Create" method="post" class="form-horizontal" role="form">
@@ -75,21 +75,6 @@
             <input asp-for="DateofImport" class="form-control" />
             <span asp-validation-for="DateofImport" class="text-danger"></span>
         </div>
-    </div>
-    <div class="col-1-2">
-        <div class="upload-msg">
-            Upload a file to start cropping
-        </div>
-        <div class="upload-demo-wrap">
-            <div id="upload-demo"></div>
-        </div>
-    </div>
-    <div class="actions">
-        <a class="btn file-btn">
-            <span>Upload</span>
-            <input type="file" id="upload" value="Choose a file" />
-        </a>
-        <button class="upload-result">Result</button>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

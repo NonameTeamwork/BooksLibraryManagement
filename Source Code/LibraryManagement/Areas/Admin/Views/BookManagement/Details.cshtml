@@ -68,7 +68,7 @@
                 </ul>
                 <div class="card-block">
                     <a href="@Url.Action("Index","BookManagement")" class="card-link">Get Back</a>
-                    <a href="@Url.Action("DeleteBookAbsolutely","BookManagement")" class="card-link">Delete this book</a>
+                    <a href="@Url.Action("DeleteBookAbsolutely","BookManagement", new { id = Model.ISBN })" class="card-link">Delete this book</a>
                 </div>
             </div>
         </div>
